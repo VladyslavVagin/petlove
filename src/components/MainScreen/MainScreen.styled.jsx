@@ -8,6 +8,7 @@ export const MainScreenContainer = styled.div`
   width: 100dvw;
   height: 100dvh;
   background: url(${bgImg}) no-repeat center / cover;
+  z-index: 103;
 
   svg {
     position: absolute;

@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import SharedLayout from "./SharedLayout/SharedLayout";
 
 const HomePage = lazy(() => import("../pages/Home/HomePage"));
@@ -13,11 +13,15 @@ const Profile = lazy(() => import("../pages/Profile/Profile"));
 const AddPet = lazy(() => import("../pages/AddPet/AddPet"));
 
 function App() {
+  const location = useLocation();
+
+  if (location.pathname === "/") {
+    location.pathname = "/home";
+  }
+
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
         <Route path="/" element={<SharedLayout />}>
           <Route index path="home" element={<HomePage />} />
           <Route path="news" element={<News />} />
@@ -25,6 +29,8 @@ function App() {
           <Route path="friends" element={<Friends />} />
           <Route path="profile" element={<Profile />} />
           <Route path="add-pet" element={<AddPet />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route />
         </Route>
       </Routes>

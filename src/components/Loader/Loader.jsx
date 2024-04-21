@@ -10,7 +10,7 @@ useEffect(() => {
       if (progress < 100) {
         setProgress(progress + 1);
       }
-    }, 4);
+    }, 30);
 
     return () => clearInterval(interval);
   }, [progress]);

@@ -7,12 +7,12 @@ const MainScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(true), 3000);
+    setTimeout(() => setIsLoading(true), 2000);
   }, []);
 
   useEffect(() => {
     if(isLoading) {
-        setTimeout(() => setIsLoading(false), 4000);
+        setTimeout(() => setIsLoading(false), 3300);
     }
   }, [isLoading])
 
