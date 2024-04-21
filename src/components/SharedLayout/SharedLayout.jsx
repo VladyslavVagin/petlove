@@ -1,8 +1,20 @@
-import React from 'react'
+// @ts-nocheck
+import React, { Suspense } from 'react'
+import { Outlet } from "react-router-dom";
+import Loader from "../Loader/Loader";
+import Header from '../Header/Header';
 
 const SharedLayout = () => {
+
   return (
-    <div>SharedLayout</div>
+    <>
+     <Header/>
+      <main>
+        <Suspense fallback={<Loader/>}>
+          <Outlet/>
+        </Suspense>
+      </main>
+    </>
   )
 }
 
