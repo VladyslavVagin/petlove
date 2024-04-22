@@ -1,3 +1,4 @@
+// @ts-nocheck
 import styled from "styled-components";
 
 export const Backdrop = styled.div`
@@ -10,7 +11,7 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  background-color: var(--white-color);
+  background-color: ${({ ishomepage }) => ishomepage === "true" ? "var(--white-color)" : "var(--accent-color)"};
   max-width: 60%;
   width: 100%;
   position: absolute;

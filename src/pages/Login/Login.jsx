@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import LoginImage from "../../components/SignIn/LoginImage/LoginImage";
+import { LoginSection } from "./Login.styled";
 
 const Login = () => {
   return (
-    <div>Login</div>
-  )
-}
+    <LoginSection>
+      <LoginImage />
+    </LoginSection>
+  );
+};
 
-export default Login
+export default Login;
