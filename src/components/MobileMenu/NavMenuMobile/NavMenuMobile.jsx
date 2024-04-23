@@ -12,7 +12,7 @@ const NavMenuMobile = ({ isHomepage }) => {
   return (
     <NavMenuList>
       {linksData.map(({ to, label }) => (
-        <StyledNavLink to={to} ishomepage={isHomepage.toString()}>
+        <StyledNavLink key={to} to={to} ishomepage={isHomepage.toString()}>
           {label}
         </StyledNavLink>
       ))}

@@ -2,12 +2,17 @@
 
 :root {
   --hover-general: all 400ms ease;
+  --bg-main: #f9f9f9;
   --dark-color: #262626;
   --white-color: #ffffff;
   --accent-color: #f6b83d;
   --accent-light: #fff4df;
   --title-accent: rgba(255, 255, 255, 0.4);
   --white-light: rgba(255, 255, 255, 0.15);
+  --link-gray: rgba(38, 38, 38, 0.15);
+  --error-color: #ef2447;
+  --placeholder-color: rgba(38, 38, 38, 0.5);
+  --text-input: rgba(38, 38, 38, 0.8);
 }
 
 * {
@@ -16,6 +21,7 @@
 
 body {
   font-family: "Manrope", sans-serif;
+  background-color: var(--bg-main);
   margin: 0;
 }
 

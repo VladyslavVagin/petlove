@@ -19,7 +19,7 @@ export const StyledNavLink = styled(NavLink)`
   line-height: 129%;
   letter-spacing: -0.03em;
   color:  ${({ ishomepage }) => ishomepage === "true" ? "var(--dark-color)" : "var(--white-color)"};
-  border: ${({ ishomepage }) => ishomepage === "true" ? "1px solid var(--dark-color)" : "1px solid var(--white-light)"};
+  border: ${({ ishomepage }) => ishomepage === "true" ? "1px solid var(--link-gray)" : "1px solid var(--white-light)"};
   border-radius: 30px;
   display: flex;
   align-items: center;
