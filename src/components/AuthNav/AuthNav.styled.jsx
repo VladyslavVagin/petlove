@@ -15,6 +15,7 @@ export const LoginBtn = styled(Link)`
   color: var(--white-color);
   background-color: var(--accent-color);
   border-radius: 30px;
+  border: 1px solid var(--white-color);
   width: 178px;
   height: 42px;
   text-transform: uppercase;

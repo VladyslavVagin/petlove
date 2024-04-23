@@ -16,5 +16,11 @@
     <symbol id="icon-shape" viewBox="0 0 41 32">
       <path fill="#fff" d="M.148 7.435C-.434 2.879 3.711-.858 8.183.191L36.015 6.72a6.585 6.585 0 0 1 4.847 8.15l-3.027 11.048a29.49 29.49 0 0 0-1.048 7.794v9.07c0 4.668-4.723 7.853-9.051 6.105L4.568 39.528a6.583 6.583 0 0 1-4.105-6.513l.755-12.158c.14-2.254.067-4.516-.219-6.756L.148 7.436z" opacity=".1" style="fill:var(--color1, #fff)"/>
     </symbol>
+    <symbol id="icon-close" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M24 8 8 24M8 8l16 16"/>
+    </symbol>
+    <symbol id="icon-burger-menu" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 16h24M4 8h24M4 24h24"/>
+    </symbol>
   </defs>
 </svg>

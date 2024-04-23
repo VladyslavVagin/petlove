@@ -1,21 +1,23 @@
 // @ts-nocheck
-import React from 'react'
-import { NavMenuList, StyledNavLink } from './NavMenuMobile.styled'
+import React from "react";
+import { NavMenuList, StyledNavLink } from "./NavMenuMobile.styled";
 
-const NavMenuMobile = () => {
+const linksData = [
+  { to: "/news", label: "News" },
+  { to: "/notices", label: "Find pet" },
+  { to: "friends", label: "Our friends" },
+];
+
+const NavMenuMobile = ({ isHomepage }) => {
   return (
-        <NavMenuList>
-            <li>
-                <StyledNavLink to={'/news'}>News</StyledNavLink>
-            </li>
-            <li>
-                <StyledNavLink to={'/notices'}>Find pet</StyledNavLink>
-            </li>
-            <li>
-                <StyledNavLink to={'/friends'}>Our friends</StyledNavLink>
-            </li>
-        </NavMenuList>
-  )
-}
+    <NavMenuList>
+      {linksData.map(({ to, label }) => (
+        <StyledNavLink to={to} ishomepage={isHomepage.toString()}>
+          {label}
+        </StyledNavLink>
+      ))}
+    </NavMenuList>
+  );
+};
 
-export default NavMenuMobile
+export default NavMenuMobile;

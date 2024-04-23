@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
-import { BurgerBtnContainer, Button, BtnIcon } from "./BurgerBtn.styled";
 import MobileMenu from "../../MobileMenu/MobileMenu";
+import sprite from "../../../assets/icons/icons.svg";
+import { BurgerBtnContainer, Button } from "./BurgerBtn.styled";
 
 const BurgerBtn = ({ isHomepage }) => {
   const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
@@ -23,14 +24,14 @@ const BurgerBtn = ({ isHomepage }) => {
         <Button
           type="button"
           onClick={() => setIsShowMobileMenu((prev) => !prev)}
+          ishomepage={isHomepage.toString()}
         >
-          <BtnIcon
-            isshowmobilemenu={isShowMobileMenu.toString()}
-            ishomepage={isHomepage.toString()}
-          ></BtnIcon>
+          <svg width={32} height={32}>
+            <use xlinkHref={`${sprite}#icon-burger-menu`}></use>
+          </svg>
         </Button>
       </BurgerBtnContainer>
-      {isShowMobileMenu && <MobileMenu setIsShowMobileMenu={setIsShowMobileMenu}/>}
+      {isShowMobileMenu && <MobileMenu setIsShowMobileMenu={setIsShowMobileMenu} isHomepage={isHomepage}/>}
     </>
   );
 };

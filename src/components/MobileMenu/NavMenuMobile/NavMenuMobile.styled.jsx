@@ -1,3 +1,4 @@
+// @ts-nocheck
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
@@ -17,14 +18,14 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
-  color: var(--dark-color);
-  border: 1px solid var(--dark-color);
+  color:  ${({ ishomepage }) => ishomepage === "true" ? "var(--dark-color)" : "var(--white-color)"};
+  border: ${({ ishomepage }) => ishomepage === "true" ? "1px solid var(--dark-color)" : "1px solid var(--white-light)"};
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   &.active {
-    border: 1px solid var(--accent-color);
+    border: ${({ ishomepage }) => ishomepage === "true" ? "1px solid var(--accent-color)" : "1px solid var(--white-color)"};
   }
 `;

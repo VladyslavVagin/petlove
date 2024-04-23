@@ -7,6 +7,7 @@
   --accent-color: #f6b83d;
   --accent-light: #fff4df;
   --title-accent: rgba(255, 255, 255, 0.4);
+  --white-light: rgba(255, 255, 255, 0.15);
 }
 
 * {
