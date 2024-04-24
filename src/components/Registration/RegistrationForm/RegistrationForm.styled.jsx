@@ -38,8 +38,35 @@ export const StyledForm = styled(Form)`
 
   label {
     width: 100%;
+    position: relative;
   }
 `;
+
+export const IconCheck = styled.span`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+`;
+
+export const IconCheckPassword = styled.span`
+  position: absolute;
+  top: 12px;
+  right: 44px;
+`;
+
+export const ShowPasswordBtn = styled.button`
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 6px;
+  right: 12px;
+`
 
 export const StyledField = styled(Field)`
   font-family: "Manrope", sans-serif;
@@ -69,6 +96,14 @@ export const StyledErrorMessage = styled(ErrorMessage)`
   line-height: 1.2;
   letter-spacing: -0.03em;
   text-transform: capitalize;
+`;
+
+export const PasswordSecure = styled.p`
+  color: var(--success-color);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
 `;
 
 export const SubmitBtn = styled.button`
