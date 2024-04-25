@@ -8,11 +8,11 @@ const linksData = [
   { to: "friends", label: "Our friends" },
 ];
 
-const NavMenuMobile = ({ isHomepage }) => {
+const NavMenuMobile = ({ isHomepage, setIsShowMobileMenu }) => {
   return (
     <NavMenuList>
       {linksData.map(({ to, label }) => (
-        <StyledNavLink key={to} to={to} ishomepage={isHomepage.toString()}>
+        <StyledNavLink key={to} to={to} ishomepage={isHomepage.toString()} onClick={() => setIsShowMobileMenu(false)}>
           {label}
         </StyledNavLink>
       ))}

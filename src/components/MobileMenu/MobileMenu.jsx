@@ -15,8 +15,8 @@ const MobileMenu = ({ setIsShowMobileMenu, isHomepage }) => {
             <use xlinkHref={`${sprite}#icon-close`}></use>
           </svg>
         </button>
-        <NavMenuMobile isHomepage={isHomepage}/>
-        <AuthNav />
+        <NavMenuMobile isHomepage={isHomepage} setIsShowMobileMenu={setIsShowMobileMenu}/>
+        <AuthNav setIsShowMobileMenu={setIsShowMobileMenu}/>
       </MobileMenuContainer>
     </Modal>
   );
