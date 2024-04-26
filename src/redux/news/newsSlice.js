@@ -4,6 +4,7 @@ import { fetchNews } from "./operations";
 
 const initialState = {
     news: [],
+    totalPages: null,
     isLoading: false,
     isError: false
 }
@@ -17,6 +18,7 @@ export const newsSlice = createSlice({
           state.isLoading = false;
           state.isError = false;
           state.news = payload.results;
+          state.totalPages = payload.totalPages;
         }).addCase(fetchNews.pending, (state) => {
             state.isLoading = true;
             state.isError = false;

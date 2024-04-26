@@ -34,20 +34,18 @@ export const DateReadBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
 
   span {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.29;
-    letter-spacing: -0.02em;
     color: var(--placeholder-color);
   }
 
-  button {
-    display: flex;
-    outline: none;
-    border: none;
-    background-color: transparent;
+  a {
     color: var(--accent-color);
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
   }
 `;

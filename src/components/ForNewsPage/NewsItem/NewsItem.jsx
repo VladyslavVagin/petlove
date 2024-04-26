@@ -2,7 +2,7 @@ import React from "react";
 import { DateReadBox, ItemContainer } from "./NewsItem.styled";
 
 const NewsItem = ({ item }) => {
- const {imgUrl, text, title, date } = item;
+ const {imgUrl, text, title, date, url } = item;
  const dateStr = date.split('T')[0];
  const dateObj = new Date(dateStr);
  const formattedDate = `${dateObj.getDate().toString().padStart(2, '0')}/${(dateObj.getMonth() + 1).toString().padStart(2, '0')}/${dateObj.getFullYear()}`;
@@ -13,7 +13,7 @@ const NewsItem = ({ item }) => {
     <p>{text}</p>
     <DateReadBox>
         <span>{formattedDate}</span>
-        <button type="button">Read more</button>
+        <a href={url} target="_blank" rel="noreferrer">Read more</a>
     </DateReadBox>
   </ItemContainer>;
 };
