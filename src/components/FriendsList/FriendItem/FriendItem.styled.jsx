@@ -79,4 +79,11 @@ export const InfoLink = styled(Link)`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow-x: hidden;
+  transition: var(--hover-general);
+
+  &:hover, 
+  &:focus {
+    color: var(--accent-color);
+    text-decoration: underline;
+  }
 `;

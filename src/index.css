@@ -76,3 +76,16 @@ img {
   border-color: var(--accent-color)!important;
   color: var(--white-color)!important;
 }
+
+.css-1u9des2-indicatorSeparator {
+  display: none;
+}
+
+.css-tj5bde-Svg {
+  stroke: var(--dark-color)!important;
+  fill: var(--dark-color)!important;
+}
+
+.css-1jqq78o-placeholder {
+  color: var(--dark-color)!important;
+}
