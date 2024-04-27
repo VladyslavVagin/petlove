@@ -8,7 +8,7 @@ import { HomePageSection } from '../Home/HomePage.styled';
 
 const News = () => {
   const dispatch = useDispatch();
-  const [currentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     dispatch(fetchNews(currentPage));
@@ -19,7 +19,7 @@ const News = () => {
     <HomePageSection>
       <h1>News</h1>
       <SearchBar/>
-      <NewsList/>
+      <NewsList setCurrentPage={setCurrentPage}/>
     </HomePageSection>
   )
 }

@@ -5,7 +5,7 @@ import NewsItem from "../NewsItem/NewsItem";
 import PaginationGeneral from "../../Pagination/Pagination";
 import { List } from "./NewsList.styled";
 
-const NewsList = () => {
+const NewsList = ({ setCurrentPage }) => {
   const { news, totalPages } = useNews();
 
   return (
@@ -15,7 +15,10 @@ const NewsList = () => {
           <NewsItem key={item._id} item={item} />
         ))}
       </List>
-      <PaginationGeneral totalPages={totalPages}/>
+      <PaginationGeneral
+        totalPages={totalPages}
+        setCurrentPage={setCurrentPage}
+      />
     </>
   );
 };
