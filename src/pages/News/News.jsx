@@ -9,17 +9,22 @@ import { HomePageSection } from '../Home/HomePage.styled';
 const News = () => {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    dispatch(fetchNews(currentPage));
-  }, [currentPage, dispatch])
+    if(!searchValue || searchValue === "") {
+      dispatch(fetchNews({ page: currentPage, searchQuery: null }));
+    } else {
+      dispatch(fetchNews({ page: currentPage, searchQuery: searchValue }));
+    }
+  }, [currentPage, dispatch, searchValue]);
 
 
   return (
     <HomePageSection>
       <h1>News</h1>
-      <SearchBar/>
-      <NewsList setCurrentPage={setCurrentPage}/>
+      <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setCurrentPage={setCurrentPage}/>
+      <NewsList setCurrentPage={setCurrentPage} currentPage={currentPage}/>
     </HomePageSection>
   )
 }

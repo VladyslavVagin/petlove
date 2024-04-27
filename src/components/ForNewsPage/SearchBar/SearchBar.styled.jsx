@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 export const SearchForm = styled.form`
   position: relative;
@@ -20,9 +20,10 @@ export const SearchForm = styled.form`
       letter-spacing: -0.03em;
     }
   }
+`;
 
-  button {
-    width: 32px;
+export const SubmitSearchBtn = styled.button`
+  width: 32px;
     height: 32px;
     outline: none;
     border: none;
@@ -35,5 +36,19 @@ export const SearchForm = styled.form`
         fill: var(--white-color);
         stroke: var(--dark-color);
     }
-  }
-`;
+`
+
+export const CancelSearchBtn = styled.button`
+    width: 32px;
+    height: 32px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 6px;
+    right: 42px;
+
+    svg {
+        stroke: var(--placeholder-color);
+    }
+`
