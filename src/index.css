@@ -69,6 +69,7 @@ img {
   }
 }
 
+.css-bf9wz-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected,
 .css-1y7coo4-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected,
 .css-1ysyrvn-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
   background-color: var(--accent-color)!important;

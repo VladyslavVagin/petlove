@@ -6,4 +6,5 @@ export const PaginationContainer = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 44px;
+    margin-bottom: 44px;
 `

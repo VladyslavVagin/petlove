@@ -35,6 +35,7 @@ export const SubmitSearchBtn = styled.button`
     svg {
         fill: var(--white-color);
         stroke: var(--dark-color);
+        transition: var(--hover-general);
     }
 `
 
@@ -50,5 +51,10 @@ export const CancelSearchBtn = styled.button`
 
     svg {
         stroke: var(--placeholder-color);
+        transition: var(--hover-general);
+    }
+
+    &:hover svg {
+        transform: scale(1.2);
     }
 `

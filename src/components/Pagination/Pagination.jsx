@@ -33,6 +33,7 @@ const PaginationGeneral = ({ totalPages, setCurrentPage, currentPage }) => {
               count={totalPages}
               page={localCurrentPage}
               onChange={onPageChanged}
+              variant="outlined"
               boundaryCount={0}
               siblingCount={0}
               color="primary"

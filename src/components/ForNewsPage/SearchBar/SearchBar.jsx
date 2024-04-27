@@ -23,8 +23,6 @@ const SearchBar = ({ setSearchValue, setCurrentPage, searchValue }) => {
     }
   };
 
-  console.log(searchValue);
-
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
