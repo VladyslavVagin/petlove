@@ -54,3 +54,9 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.css-1ysyrvn-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: var(--accent-color)!important;
+  border-color: var(--accent-color)!important;
+  color: var(--white-color)!important;
+}
