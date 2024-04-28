@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCategories, fetchGenders } from "./operations";
+import { fetchCategories, fetchGenders, fetchSpecies, fetchCities } from "./operations";
 
 const initialState = {
   notices: [],
   categories: [],
   genders: [],
+  species: [],
+  cities: [],
   isLoading: false,
   isError: false,
 };
@@ -39,6 +41,20 @@ export const noticesSlice = createSlice({
       })
       .addCase(fetchGenders.pending, isPending)
       .addCase(fetchGenders.rejected, isRejected)
+      .addCase(fetchSpecies.fulfilled, (state, {payload}) => {
+        state.species = payload;
+        state.isLoading = false;
+        state.isError = false;
+      })
+      .addCase(fetchSpecies.pending, isPending)
+      .addCase(fetchSpecies.rejected, isRejected)
+      .addCase(fetchCities.fulfilled, (state, {payload}) => {
+        state.cities = payload;
+        state.isLoading = false;
+        state.isError = false;
+      })
+      .addCase(fetchCities.pending, isPending)
+      .addCase(fetchCities.rejected, isRejected)
   },
 });
 

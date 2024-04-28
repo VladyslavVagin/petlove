@@ -29,3 +29,30 @@ export const fetchGenders = createAsyncThunk(
     }
   }
 );
+
+// GET SPECIES TYPES FOR SELECT
+export const fetchSpecies = createAsyncThunk(
+  "species/fetchAll",
+  async (thunkAPI) => {
+    try {
+      const response = await axios.get("/notices/species");
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// GET CITIES LOCATIONS FOR SELECT
+export const fetchCities = createAsyncThunk(
+  "cities/fetchAll",
+  async (thunkAPI) => {
+    try {
+      const response = await axios.get("/cities");
+      console.log(response);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

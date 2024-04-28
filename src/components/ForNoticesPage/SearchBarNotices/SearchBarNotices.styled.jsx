@@ -8,6 +8,7 @@ export const SearchContainer = styled.div`
 `
 export const SelectContainer = styled.div`
     margin-top: 12px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
