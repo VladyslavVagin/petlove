@@ -49,10 +49,26 @@ export const fetchCities = createAsyncThunk(
   async (thunkAPI) => {
     try {
       const response = await axios.get("/cities");
-      console.log(response);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
+
+// GET NOTICES BY FILTER FROM BACKEND
+export const fetchNotices = createAsyncThunk("notices/fetchAll",
+ async ({keyword, category, species, locationId, byPrice, byPopularity}, thunkAPI) => {
+  let filteredData;
+  try {
+    if(!keyword && !category && !species && !locationId && !byPrice && !byPopularity) {
+      const response = await axios.get('/notices');
+      filteredData = response.data;
+      console.log(filteredData);
+    }
+    return filteredData;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+ }
+)
