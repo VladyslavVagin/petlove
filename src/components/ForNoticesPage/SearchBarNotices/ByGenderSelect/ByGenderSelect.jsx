@@ -26,9 +26,11 @@ const ByGenderSelect = () => {
       styles={{
         control: (baseStyles) => ({
           ...baseStyles,
-          border: "none",
+          border: "1px solid transparent",
           width: "143px",
           height: "42px",
+          outline: "none",
+          boxShadow: "none",
           background: "var(--white-color)",
           borderRadius: "30px",
           fontSize: "14px",
@@ -38,6 +40,13 @@ const ByGenderSelect = () => {
           color: "var(--dark-color)",
           fontFamily: "Manrope",
           cursor: "pointer",
+          "&:hover": {
+            borderColor: "var(--accent-color)",
+          },
+          "&:focus-within": {
+            borderColor: "var(--accent-color)",
+            outline: "none",
+          },
         }),
         option: (baseStyles, state) => ({
           ...baseStyles,

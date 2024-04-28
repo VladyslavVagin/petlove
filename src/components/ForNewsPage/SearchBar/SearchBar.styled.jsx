@@ -9,11 +9,15 @@ export const SearchForm = styled.form`
     height: 42px;
     padding: 12px;
     border-radius: 30px;
-    border: 1px solid var(--link-gray);
+    border: 1px solid transparent;
     outline: none;
+    &:focus-within,
+    &:hover {
+      border-color: var(--accent-color);
+    }
 
     &::placeholder {
-      color: var(--placeholder-color);
+      color: var(--dark-color);
       font-weight: 500;
       font-size: 14px;
       line-height: 1.29;

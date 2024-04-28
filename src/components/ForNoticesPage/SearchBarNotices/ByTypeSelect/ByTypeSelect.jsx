@@ -26,18 +26,27 @@ const ByTypeSelect = () => {
         styles={{
           control: (baseStyles) => ({
             ...baseStyles,
-            border: "none",
+            border: "1px solid transparent",
             width: "100%",
             height: "42px",
             background: "var(--white-color)",
             borderRadius: "30px",
+            boxShadow: "none",
             fontSize: "14px",
+            outline: "none",
             fontWeight: "500",
             lineHeight: "1.29",
             letterSpacing: "-0.03em",
             color: "var(--dark-color)",
             fontFamily: "Manrope",
             cursor: "pointer",
+            "&:hover": {
+              borderColor: "var(--accent-color)",
+            },
+            "&:focus-within": {
+              borderColor: "var(--accent-color)",
+              outline: "none",
+            },
           }),
           option: (baseStyles, state) => ({
             ...baseStyles,

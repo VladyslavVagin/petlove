@@ -36,22 +36,30 @@ const SearchLocation = () => {
         isClearable={true}
         components={{DropdownIndicator}}
         styles={{
-          control: (baseStyles, state) => ({
+          control: (baseStyles) => ({
             ...baseStyles,
-            border: "none",
+            border: "1px solid transparent",
             width: "100%",
             height: "42px",
             marginTop: "12px",
             background: "var(--white-color)",
             borderRadius: "30px",
             fontSize: "14px",
+            outline: "none",
+            boxShadow: "none",
             fontWeight: "500",
             lineHeight: "1.29",
             letterSpacing: "-0.03em",
             color: "var(--dark-color)",
             fontFamily: "Manrope",
             cursor: "pointer",
-            borderColor: state.isFocused ? "var(--accent-color)" : "transparent"
+            "&:hover": {
+              borderColor: "var(--accent-color)",
+            },
+            "&:focus-within": {
+              borderColor: "var(--accent-color)",
+              outline: "none",
+            },
           }),
           option: (baseStyles, state) => ({
             ...baseStyles,
