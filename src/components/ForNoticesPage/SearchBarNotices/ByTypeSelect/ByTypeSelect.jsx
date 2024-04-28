@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const ByTypeSelect = () => {
+const ByTypeSelect = ({setByTypeQuery}) => {
   const { species } = useNotices();
 
   const speciesData = [
@@ -13,7 +13,7 @@ const ByTypeSelect = () => {
     })),
   ];
 
-  const handleByType = (e) => console.log(e?.value);
+  const handleByType = (e) => setByTypeQuery(e?.value);
 
   return (
     <div>

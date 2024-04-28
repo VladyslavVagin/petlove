@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const CategorySelect = () => {
+const CategorySelect = ({setCategoryQuery}) => {
   const { categories } = useNotices();
   const categoriesData = [
     { value: "all", label: "Show all" },
@@ -12,7 +12,7 @@ const CategorySelect = () => {
     }))
   ];
 
-  const handleChangeCategory = (e) => console.log(e?.value);
+  const handleChangeCategory = (e) => setCategoryQuery(e?.value);
 
   return (
     <div>

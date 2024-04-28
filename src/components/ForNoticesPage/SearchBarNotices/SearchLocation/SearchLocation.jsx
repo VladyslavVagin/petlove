@@ -3,7 +3,7 @@ import Select from "react-select";
 import { DropdownIndicator } from "./DropDownIndicator";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const SearchLocation = () => {
+const SearchLocation = ({setLocationQuery}) => {
   const [inputValue, setInputValue] = useState("");
   const { cities } = useNotices();
   let filteredCities;
@@ -42,6 +42,7 @@ const SearchLocation = () => {
     <>
       <Select
         onInputChange={handleByCity}
+        onChange={(e) => setLocationQuery(e?.value)}
         options={options}
         placeholder={"Location"}
         maxMenuHeight={216}

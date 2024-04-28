@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const ByGenderSelect = () => {
+const ByGenderSelect = ({setGenderQuery}) => {
   const { genders } = useNotices();
    
   const gendersData = [
@@ -13,7 +13,7 @@ const ByGenderSelect = () => {
     }))
   ];
 
-  const handleChangeGender = (e) => console.log(e?.value);
+  const handleChangeGender = (e) => setGenderQuery(e?.value);
 
   return (
     <div>
