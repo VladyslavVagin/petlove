@@ -28,8 +28,6 @@ export const OptionsList = styled.ul`
     align-items: center;
     cursor: pointer;
     transition: var(--hover-general);
-    position: relative;
-    z-index: 10;
  
     &:hover {
       background-color: var(--accent-color);
@@ -42,8 +40,6 @@ export const OptionsList = styled.ul`
       background: transparent;
       width: 20px;
       height: 20px;
-      position: relative;
-      z-index: 12;
 
       svg {
         stroke: var(--white-color);
