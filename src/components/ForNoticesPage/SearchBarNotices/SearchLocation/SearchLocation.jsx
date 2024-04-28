@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from "react";
 import Select from "react-select";
 import { DropdownIndicator } from "./DropDownIndicator";
@@ -11,9 +10,7 @@ const SearchLocation = () => {
 
   if (inputValue?.length >= 3) {
     filteredCities = cities?.filter((city) =>
-      `${city?.stateEn}, ${city?.cityEn}`
-        .toLowerCase()
-        .includes(inputValue?.toLowerCase())
+      `${city?.cityEn}`.toLowerCase().startsWith(inputValue?.toLowerCase())
     );
   }
 
@@ -21,6 +18,21 @@ const SearchLocation = () => {
     value: `${city.stateEn}, ${city.cityEn}`,
     label: `${city.stateEn}, ${city.cityEn}`,
   }));
+
+  const formatOptionLabel = ({ value, label }) => {
+    const parts = label.split(new RegExp(`(${inputValue})`, "gi"));
+    return (
+      <div>
+        {parts.map((part, index) =>
+          part.toLowerCase() === inputValue.toLowerCase() ? (
+            <strong key={index}>{part}</strong>
+          ) : (
+            part
+          )
+        )}
+      </div>
+    );
+  };
 
   const handleByCity = (value) => {
     setTimeout(() => setInputValue(value), 600);
@@ -34,7 +46,8 @@ const SearchLocation = () => {
         placeholder={"Location"}
         maxMenuHeight={216}
         isClearable={true}
-        components={{DropdownIndicator}}
+        components={{ DropdownIndicator }}
+        formatOptionLabel={formatOptionLabel}
         styles={{
           control: (baseStyles) => ({
             ...baseStyles,
