@@ -15,7 +15,7 @@ const SearchLocation = ({setLocationQuery}) => {
   }
 
   const options = filteredCities?.map((city) => ({
-    value: `${city.stateEn}, ${city.cityEn}`,
+    value: `${city._id}`,
     label: `${city.stateEn}, ${city.cityEn}`,
   }));
 
