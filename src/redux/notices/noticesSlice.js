@@ -56,7 +56,7 @@ export const noticesSlice = createSlice({
       .addCase(fetchCities.pending, isPending)
       .addCase(fetchCities.rejected, isRejected)
       .addCase(fetchNotices.fulfilled, (state, {payload}) => {
-        state.notices = payload;
+        state.notices = payload.results;
         state.isLoading = false;
         state.isError = false;
       })
