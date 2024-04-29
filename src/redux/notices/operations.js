@@ -58,11 +58,11 @@ export const fetchCities = createAsyncThunk(
 
 // GET NOTICES BY FILTER FROM BACKEND
 export const fetchNotices = createAsyncThunk("notices/fetchAll",
- async ({keyword, category, species, locationId, byPrice, byPopularity}, thunkAPI) => {
+ async ({keyword, category, species, locationId, byPrice, byPopularity, page}, thunkAPI) => {
   let filteredData;
   try {
     if(!keyword && !category && !species && !locationId && !byPrice && !byPopularity) {
-      const response = await axios.get('/notices');
+      const response = await axios.get(`/notices?page=${page}`);
       filteredData = response.data;
       console.log(filteredData);
     }

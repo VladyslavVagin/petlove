@@ -10,7 +10,7 @@ import TextInput from "./TextInput/TextInput";
 import RadioSection from "./RadioSection/RadioSection";
 import { fetchNotices } from "../../../redux/notices/operations";
 
-const SearchBarNotices = () => {
+const SearchBarNotices = ({currentPage}) => {
   const [radioSearch, setRadioSearch] = useState(null);
   const [categoryQuery, setCategoryQuery] = useState(null);
   const [genderQuery, setGenderQuery] = useState(null);
@@ -22,8 +22,8 @@ const SearchBarNotices = () => {
   console.log(categoryQuery, radioSearch, genderQuery, byTypeQuery, locationQuery, textQuery);
 
   useEffect(() => {
-    dispatch(fetchNotices({keyword: textQuery, category: categoryQuery, species: byTypeQuery, locationId: locationQuery, byPrice: radioSearch, byPopularity: radioSearch}));
-  }, [byTypeQuery, categoryQuery, dispatch, locationQuery, radioSearch, textQuery])
+    dispatch(fetchNotices({page: currentPage, keyword: textQuery, category: categoryQuery, species: byTypeQuery, locationId: locationQuery, byPrice: radioSearch, byPopularity: radioSearch}));
+  }, [byTypeQuery, categoryQuery, currentPage, dispatch, locationQuery, radioSearch, textQuery])
 
   return (
     <SearchContainer>

@@ -9,6 +9,7 @@ const initialState = {
   cities: [],
   isLoading: false,
   isError: false,
+  totalPages: 1,
 };
 
 const isPending = (state) => {
@@ -57,6 +58,7 @@ export const noticesSlice = createSlice({
       .addCase(fetchCities.rejected, isRejected)
       .addCase(fetchNotices.fulfilled, (state, {payload}) => {
         state.notices = payload.results;
+        state.totalPages = payload.totalPages;
         state.isLoading = false;
         state.isError = false;
       })

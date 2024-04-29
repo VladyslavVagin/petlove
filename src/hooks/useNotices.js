@@ -6,7 +6,8 @@ import {
   selectIsLoading,
   selectGender,
   selectSpecies,
-  selectCities
+  selectCities,
+  selectTotalPagesNotices
 } from "../redux/notices/selectors";
 
 export const useNotices = () => {
@@ -17,6 +18,7 @@ export const useNotices = () => {
     const notices = useSelector(selectNotices);
     const isErrorNotices = useSelector(selectIsError);
     const isLoadNotices = useSelector(selectIsLoading);
+    const totalPagesNotices = useSelector(selectTotalPagesNotices);
   
-    return { categories, isLoadNotices, isErrorNotices, notices, genders, species, cities };
+    return { categories, isLoadNotices, isErrorNotices, notices, genders, species, cities, totalPagesNotices };
   };

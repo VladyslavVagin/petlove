@@ -6,6 +6,7 @@
   --dark-color: #262626;
   --white-color: #ffffff;
   --accent-color: #f6b83d;
+  --hover-color: #fbe7c1;
   --accent-light: #fff4df;
   --title-accent: rgba(255, 255, 255, 0.4);
   --white-light: rgba(255, 255, 255, 0.15);
@@ -14,6 +15,7 @@
   --placeholder-color: rgba(38, 38, 38, 0.5);
   --text-input: rgba(38, 38, 38, 0.8);
   --success-color: #08aa83;
+  --bright-orange: #f9b020;
 }
 
 * {
