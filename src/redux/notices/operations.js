@@ -76,20 +76,18 @@ export const fetchNotices = createAsyncThunk("notices/fetchAll",
     } else if (!keyword && !category && !species && locationId && !radioSearch && !sex) {
       const response = await axios.get(`/notices?page=${page}&locationId=${locationId}`);
       filteredData = response.data;
-    } else if (!keyword && !category && !species && !locationId && radioSearch && !sex) {
-      if (radioSearch === "Popular") {
-        const response = await axios.get(`/notices?page=${page}&byPopularity=true}`);
-        filteredData = response.data;
-      } else if (radioSearch === "Unpopular") {
-        const response = await axios.get(`/notices?page=${page}&byPopularity=false}`);
-        filteredData = response.data;
-      } else if (radioSearch === "Cheap") {
-        const response = await axios.get(`/notices?page=${page}&byPrice=true}`);
-        filteredData = response.data;
-      } else if (radioSearch === "Expensive") {
-        const response = await axios.get(`/notices?page=${page}&byPrice=false}`);
-        filteredData = response.data;
-      }
+    } else if (!keyword && !category && !species && !locationId && !radioSearch && sex) {
+         const itemsPerPage = 6;
+         const currentPage = page;
+         const startIndex = (currentPage - 1) * itemsPerPage;
+         const endIndex = startIndex + itemsPerPage;
+      const response = await axios.get(`/notices?&limit=2000`);
+      let filteredResults = response.data.results.filter(item => item.sex === sex);
+      const totalPages = Math.ceil(filteredResults?.length / 6);
+      const displayedObjects = filteredResults.slice(startIndex, endIndex);
+      const sendData = {results: displayedObjects, totalPages: totalPages};
+      console.log(sendData);
+      return sendData;
     }
     return filteredData;
   } catch (error) {
