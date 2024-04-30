@@ -58,13 +58,38 @@ export const fetchCities = createAsyncThunk(
 
 // GET NOTICES BY FILTER FROM BACKEND
 export const fetchNotices = createAsyncThunk("notices/fetchAll",
- async ({keyword, category, species, locationId, byPrice, byPopularity, page}, thunkAPI) => {
+ async ({keyword, category, species, locationId, radioSearch, page, sex}, thunkAPI) => {
   let filteredData;
   try {
-    if(!keyword && !category && !species && !locationId && !byPrice && !byPopularity) {
+    if(!keyword && !category && !species && !locationId && !radioSearch && !sex) {
       const response = await axios.get(`/notices?page=${page}`);
       filteredData = response.data;
-      console.log(filteredData);
+    } else if (keyword && !category && !species && !locationId && !radioSearch && !sex) {
+      const response = await axios.get(`/notices?page=${page}&keyword=${keyword}`);
+      filteredData = response.data;
+    } else if (!keyword && category && !species && !locationId && !radioSearch && !sex) {
+      const response = await axios.get(`/notices?page=${page}&category=${category}`);
+      filteredData = response.data;
+    } else if (!keyword && !category && species && !locationId && !radioSearch && !sex) {
+      const response = await axios.get(`/notices?page=${page}&species=${species}`);
+      filteredData = response.data;
+    } else if (!keyword && !category && !species && locationId && !radioSearch && !sex) {
+      const response = await axios.get(`/notices?page=${page}&locationId=${locationId}`);
+      filteredData = response.data;
+    } else if (!keyword && !category && !species && !locationId && radioSearch && !sex) {
+      if (radioSearch === "Popular") {
+        const response = await axios.get(`/notices?page=${page}&byPopularity=true}`);
+        filteredData = response.data;
+      } else if (radioSearch === "Unpopular") {
+        const response = await axios.get(`/notices?page=${page}&byPopularity=false}`);
+        filteredData = response.data;
+      } else if (radioSearch === "Cheap") {
+        const response = await axios.get(`/notices?page=${page}&byPrice=true}`);
+        filteredData = response.data;
+      } else if (radioSearch === "Expensive") {
+        const response = await axios.get(`/notices?page=${page}&byPrice=false}`);
+        filteredData = response.data;
+      }
     }
     return filteredData;
   } catch (error) {

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCategories, fetchGenders, fetchSpecies, fetchCities, fetchNotices } from "./operations";
 

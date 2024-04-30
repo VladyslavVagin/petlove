@@ -7,9 +7,8 @@ import { ListOfNotices } from "./AnimalList.styled";
 const AnimalsList = () => {
 const { notices } = useNotices();
 
-
   return <ListOfNotices>
-    {notices.map(notice => <Card notice={notice} key={notice._id}/>)}
+    {notices?.map(notice => <Card notice={notice} key={notice?._id}/>)}
   </ListOfNotices>;
 };
 

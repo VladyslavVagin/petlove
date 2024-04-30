@@ -19,11 +19,9 @@ const SearchBarNotices = ({currentPage}) => {
   const [textQuery, setTextQuery] = useState("");
   const dispatch = useDispatch();
 
-  console.log(categoryQuery, radioSearch, genderQuery, byTypeQuery, locationQuery, textQuery);
-
   useEffect(() => {
-    dispatch(fetchNotices({page: currentPage, keyword: textQuery, category: categoryQuery, species: byTypeQuery, locationId: locationQuery, byPrice: radioSearch, byPopularity: radioSearch}));
-  }, [byTypeQuery, categoryQuery, currentPage, dispatch, locationQuery, radioSearch, textQuery])
+    dispatch(fetchNotices({page: currentPage, keyword: textQuery, category: categoryQuery, species: byTypeQuery, locationId: locationQuery, radioSearch: radioSearch, sex: genderQuery}));
+  }, [byTypeQuery, categoryQuery, currentPage, dispatch, genderQuery, locationQuery, radioSearch, textQuery])
 
   return (
     <SearchContainer>
