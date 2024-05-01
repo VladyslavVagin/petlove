@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { Suspense, useState, useEffect } from 'react'
+import { ToastContainer } from "react-toastify";
 import { Outlet } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import Header from '../Header/Header';
@@ -21,6 +22,7 @@ const SharedLayout = () => {
           <Outlet/>
         </Suspense>
       </main>
+      <ToastContainer/>
     </>
   )
 }
