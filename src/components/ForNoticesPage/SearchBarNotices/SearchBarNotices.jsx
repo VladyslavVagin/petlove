@@ -8,7 +8,7 @@ import { SearchContainer, SelectContainer } from "./SearchBarNotices.styled";
 import SearchLocation from "./SearchLocation/SearchLocation";
 import TextInput from "./TextInput/TextInput";
 import RadioSection from "./RadioSection/RadioSection";
-import { fetchNotices } from "../../../redux/notices/operations";
+import { fetchNotices } from "../../../redux/notices/filtration";
 
 const SearchBarNotices = ({currentPage}) => {
   const [radioSearch, setRadioSearch] = useState(null);

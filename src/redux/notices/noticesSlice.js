@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCategories, fetchGenders, fetchSpecies, fetchCities, fetchNotices } from "./operations";
+import { fetchCategories, fetchGenders, fetchSpecies, fetchCities } from "./operations";
+import { fetchNotices } from "./filtration";
 
 const initialState = {
   notices: [],
