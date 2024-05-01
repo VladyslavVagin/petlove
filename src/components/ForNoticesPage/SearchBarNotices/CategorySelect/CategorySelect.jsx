@@ -2,21 +2,29 @@ import React from "react";
 import Select from "react-select";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const CategorySelect = ({setCategoryQuery}) => {
+const CategorySelect = ({ setCategoryQuery, categoryQuery, setCurrentPage }) => {
   const { categories } = useNotices();
   const categoriesData = [
     { value: "", label: "Show all" },
-    ...categories?.map(item => ({
+    ...categories?.map((item) => ({
       value: item,
-      label: item?.charAt(0).toUpperCase() + item?.slice(1)
-    }))
+      label: item?.charAt(0).toUpperCase() + item?.slice(1),
+    })),
   ];
 
-  const handleChangeCategory = (e) => setCategoryQuery(e?.value);
+  const handleChangeCategory = (selectedOption) => {
+    setCategoryQuery(selectedOption?.value);
+    setCurrentPage(1);
+  };
+
+  const selectValue = categoryQuery === null
+    ? null // Set to default value
+    : categoriesData.find((option) => option.value === categoryQuery);
 
   return (
     <div>
       <Select
+        value={selectValue}
         onChange={handleChangeCategory}
         options={categoriesData}
         placeholder={"Category"}

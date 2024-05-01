@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const ByTypeSelect = ({setByTypeQuery}) => {
+const ByTypeSelect = ({setByTypeQuery, byTypeQuery, setCurrentPage}) => {
   const { species } = useNotices();
 
   const speciesData = [
@@ -13,11 +13,16 @@ const ByTypeSelect = ({setByTypeQuery}) => {
     })),
   ];
 
-  const handleByType = (e) => setByTypeQuery(e?.value);
+  const handleByType = (e) => {
+    setByTypeQuery(e?.value);
+    setCurrentPage(1);
+  };
+  const selectValue = byTypeQuery === null ? null : speciesData.find((option) => option.value === byTypeQuery);
 
   return (
     <div>
       <Select
+        value={selectValue}
         onChange={handleByType}
         options={speciesData}
         placeholder={"By type"}

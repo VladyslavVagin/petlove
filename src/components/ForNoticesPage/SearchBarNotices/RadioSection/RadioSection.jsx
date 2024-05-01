@@ -3,15 +3,17 @@ import React from "react";
 import sprite from "../../../../assets/icons/icons.svg";
 import { ContainerRadioBtns, OptionsList } from "./RadioSection.styled";
 
-const RadioSection = ({ setRadioSearch, radioSearch }) => {
+const RadioSection = ({ setRadioSearch, radioSearch, setCurrentPage }) => {
   const handleClick = (e) => {
     const choosenValue = e.currentTarget.dataset.value;
     setRadioSearch(choosenValue);
+    setCurrentPage(1);
   };
 
   const handleCancel = (e) => {
     e.stopPropagation();
     setRadioSearch(null);
+    setCurrentPage(1);
   };
 
   return (

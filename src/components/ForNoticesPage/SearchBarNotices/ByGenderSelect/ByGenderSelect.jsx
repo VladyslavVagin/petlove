@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const ByGenderSelect = ({setGenderQuery}) => {
+const ByGenderSelect = ({setGenderQuery, genderQuery, setCurrentPage}) => {
   const { genders } = useNotices();
    
   const gendersData = [
@@ -13,11 +13,17 @@ const ByGenderSelect = ({setGenderQuery}) => {
     }))
   ];
 
-  const handleChangeGender = (e) => setGenderQuery(e?.value);
+  const handleChangeGender = (e) => {
+    setGenderQuery(e?.value);
+    setCurrentPage(1);
+  };
+
+  const selectValue = genderQuery === null ? null : gendersData.find((option) => option.value === genderQuery);
 
   return (
     <div>
     <Select
+      value={selectValue}
       onChange={handleChangeGender}
       options={gendersData}
       placeholder={"By gender"}

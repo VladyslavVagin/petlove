@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import sprite from "../../../../assets/icons/icons.svg";
 import {
     CancelSearchBtn,
@@ -6,8 +6,7 @@ import {
     SubmitSearchBtn,
   } from "./TextInput.styled";
 
-const TextInput = ({setTextQuery, textQuery}) => {
-    const [inputValue, setInputValue] = useState("");
+const TextInput = ({setTextQuery, textQuery, inputValue, setInputValue}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();

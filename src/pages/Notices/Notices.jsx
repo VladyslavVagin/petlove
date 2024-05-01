@@ -23,7 +23,7 @@ const Notices = () => {
   return (
     <HomePageSection>
       <h1>Find your favorite pet</h1>
-      <SearchBarNotices currentPage={currentPage}/>
+      <SearchBarNotices currentPage={currentPage} setCurrentPage={setCurrentPage}/>
       <AnimalsList/>
       <PaginationGeneral currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPagesNotices}/>
     </HomePageSection>
