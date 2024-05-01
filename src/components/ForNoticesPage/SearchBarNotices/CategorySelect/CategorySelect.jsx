@@ -5,7 +5,7 @@ import { useNotices } from "../../../../hooks/useNotices";
 const CategorySelect = ({setCategoryQuery}) => {
   const { categories } = useNotices();
   const categoriesData = [
-    { value: "all", label: "Show all" },
+    { value: "", label: "Show all" },
     ...categories?.map(item => ({
       value: item,
       label: item?.charAt(0).toUpperCase() + item?.slice(1)

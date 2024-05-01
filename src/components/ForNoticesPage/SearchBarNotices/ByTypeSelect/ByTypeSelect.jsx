@@ -6,7 +6,7 @@ const ByTypeSelect = ({setByTypeQuery}) => {
   const { species } = useNotices();
 
   const speciesData = [
-    { value: "all", label: "Show all" },
+    { value: "", label: "Show all" },
     ...species?.map((item) => ({
       value: item,
       label: item?.charAt(0).toUpperCase() + item?.slice(1),

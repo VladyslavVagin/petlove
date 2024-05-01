@@ -6,7 +6,7 @@ const ByGenderSelect = ({setGenderQuery}) => {
   const { genders } = useNotices();
    
   const gendersData = [
-    { value: "all", label: "Show all" },
+    { value: "", label: "Show all" },
     ...genders?.map(item => ({
       value: item,
       label: item?.charAt(0).toUpperCase() + item?.slice(1)
