@@ -55,7 +55,7 @@ const SearchBarNotices = ({ currentPage, setCurrentPage }) => {
     genderQuery,
     locationQuery,
     radioSearch,
-    textQuery,
+    textQuery
   ]);
 
   return (

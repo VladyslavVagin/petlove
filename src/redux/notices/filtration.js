@@ -15,7 +15,7 @@ export const fetchNotices = createAsyncThunk("notices/fetchAll",
   try {
     // ================================ IF ONLY ONE PARAMETER RECEIVED =============================================================================================
     if(!keyword && !category && !species && !locationId && !radioSearch && !sex) {
-      const response = await axios.get(`/notices?${page}`);
+      const response = await axios.get(`/notices?page=${page}`);
       filteredData = response.data;
     } else if (keyword && !category && !species && !locationId && !radioSearch && !sex) {
       const response = await axios.get(`/notices?page=${page}&keyword=${keyword}`);
