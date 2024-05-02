@@ -3,6 +3,7 @@ import React, { lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import SharedLayout from "./SharedLayout/SharedLayout";
 import { RestrictedRoute } from "./RestrictedRoute";
+import { PrivateRoute } from "./PrivateRoute";
 
 const HomePage = lazy(() => import("../pages/Home/HomePage"));
 const News = lazy(() => import("../pages/News/News"));
@@ -28,8 +29,8 @@ function App() {
           <Route path="news" element={<News />} />
           <Route path="notices" element={<Notices />} />
           <Route path="friends" element={<Friends />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="add-pet" element={<AddPet />} />
+          <Route path="profile" element={ <PrivateRoute redirectTo="/home" component={<Profile />} />} />
+          <Route path="add-pet" element={ <PrivateRoute redirectTo="/home" component={<AddPet />} />} />
           <Route path="/login" element={<RestrictedRoute redirectTo="/profile" component={<Login />}/>} />
           <Route path="/register" element={<RestrictedRoute redirectTo="/profile" component={<Register />}/>} />
           <Route />

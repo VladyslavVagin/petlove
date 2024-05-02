@@ -17,3 +17,9 @@ export const HeaderContainer = styled.div`
   border-top-left-radius: ${({ishomepage}) => (ishomepage === 'true' ? "30px" : "0px")};
   border-top-right-radius: ${({ishomepage}) => (ishomepage === 'true' ? "30px" : "0px")};
 `;
+
+export const BlockBtns = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+`

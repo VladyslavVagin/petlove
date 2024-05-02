@@ -50,5 +50,17 @@
     <symbol id="icon-heart" viewBox="0 0 32 32">
       <path fill="none" stroke="#f6b83d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M27.784 6.147a7.345 7.345 0 0 0-5.187-2.15 7.33 7.33 0 0 0-5.187 2.15L15.997 7.56l-1.413-1.413a7.333 7.333 0 0 0-10.374 0 7.333 7.333 0 0 0 0 10.374l11.787 11.787 11.787-11.787a7.345 7.345 0 0 0 2.15-5.187 7.33 7.33 0 0 0-2.15-5.187z" style="stroke:var(--color2, #f6b83d)"/>
     </symbol>
+      <symbol id="icon-plus" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M16 6.667v18.667M6.667 16h18.667" />
+    </symbol>
+    <symbol id="icon-trash" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M4 8h24M25.335 8v18.667a2.668 2.668 0 0 1-2.667 2.667H9.335a2.668 2.668 0 0 1-2.667-2.667V8m4 0V5.333a2.668 2.668 0 0 1 2.667-2.667h5.333a2.67 2.67 0 0 1 2.667 2.667V8M13.332 14.667v8M18.668 14.667v8"/>
+    </symbol>
+    <symbol id="icon-pencil" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M22.667 4a3.766 3.766 0 0 1 4.109-.817 3.766 3.766 0 0 1 2.04 4.926 3.766 3.766 0 0 1-.817 1.223l-18 18-7.333 2 2-7.333 18-18z" />
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 29 32">
+      <path  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.454" d="M14.545 18.182c-3.843 0-7.26 1.855-9.435 4.734-.468.62-.702.93-.695 1.348.006.323.209.732.464.931.329.259.786.259 1.699.259h15.934c.913 0 1.37 0 1.699-.259.255-.2.458-.608.464-.931.008-.419-.226-.729-.695-1.348-2.175-2.879-5.593-4.734-9.435-4.734zM14.545 14.545a5.455 5.455 0 1 0 0-10.91 5.455 5.455 0 0 0 0 10.91z" />
+    </symbol>
   </defs>
 </svg>

@@ -1,9 +1,20 @@
-import React from 'react'
+// @ts-nocheck
+import React, { useState } from "react";
+import { HomePageSection } from "../Home/HomePage.styled";
+import UserAndEditBtns from "../../components/ForProfilePage/UserAndEditBtns/UserAndEditBtns";
+import { Container } from "./Profile.styled";
 
 const Profile = () => {
-  return (
-    <div>Profile</div>
-  )
-}
+ const [showEditForm, setShowEditForm] = useState(false);
+ console.log(showEditForm);
 
-export default Profile
+  return (
+    <HomePageSection>
+      <Container>
+        <UserAndEditBtns setShowEditForm={setShowEditForm}/>
+      </Container>
+    </HomePageSection>
+  );
+};
+
+export default Profile;
