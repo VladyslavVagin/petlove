@@ -18,7 +18,7 @@ const setAuthHeader = token => {
       try {
         const res = await axios.post('/users/signup', credentials);
         setAuthHeader(res.data.token);
-        toast.success(`Welcome ${res.data.user.name}`);
+        toast.success(`Welcome ${res?.data?.name}`);
         return res.data;
       } catch (error) {
         toast.error('ERROR, Invalid data');
@@ -26,3 +26,20 @@ const setAuthHeader = token => {
       }
     }
   );
+
+  export const logIn = createAsyncThunk(
+    'auth/login',
+    async (credentials, thunkAPI) => {
+      try {
+        const res = await axios.post('/users/signin', credentials);
+        console.log(res);
+        setAuthHeader(res.data.token);
+        toast.success(`Welcome ${res.data.name}`);
+        return res.data;
+      } catch (error) {
+        toast.error('ERROR, Invalid data');
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  );
+  

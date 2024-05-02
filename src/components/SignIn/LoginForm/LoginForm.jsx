@@ -1,8 +1,10 @@
 // @ts-nocheck
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import * as yup from "yup";
+import { logIn } from "../../../redux/auth/operations";
 import sprite from "../../../assets/icons/icons.svg";
 import {
   FormContainer,
@@ -36,8 +38,14 @@ const initialValues = {
 
 const LoginForm = () => {
     const [showPasswordLogin, setShowPasswordLogin] = useState(false);
+    const dispatch = useDispatch();
 
     const handleShowPasswordLogin = () => setShowPasswordLogin((prev) => !prev);
+
+    const submitLogin = (dataForm) => {
+      const {email, password} = dataForm;
+      dispatch(logIn({email, password}));
+    }
 
   return (
     <FormContainer>
@@ -48,7 +56,7 @@ const LoginForm = () => {
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
-        onSubmit={(dataForm) => console.log(dataForm)}
+        onSubmit={submitLogin}
       >
         {({ errors, touched }) => (
           <StyledForm>

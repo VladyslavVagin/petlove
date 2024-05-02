@@ -1,8 +1,10 @@
 // @ts-nocheck
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import * as yup from "yup";
+import { register } from "../../../redux/auth/operations";
 import sprite from "../../../assets/icons/icons.svg";
 import {
   FormContainer,
@@ -44,10 +46,16 @@ const schema = yup.object().shape({
 const RegistrationForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const dispatch = useDispatch();
 
   const handleShowPassword = () => setShowPassword((prev) => !prev);
   const handleShowConfirmPassword = () =>
     setShowConfirmPassword((prev) => !prev);
+
+  const submitRegistration = (dataForm) => {
+    const { name, email, password } = dataForm;
+    dispatch(register({name, email, password}));
+  };
 
   return (
     <FormContainer>
@@ -58,7 +66,7 @@ const RegistrationForm = () => {
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
-        onSubmit={(dataForm) => console.log(dataForm)}
+        onSubmit={submitRegistration}
       >
         {({ errors, touched }) => (
           <StyledForm>
