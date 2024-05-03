@@ -4,6 +4,7 @@
   --hover-general: all 400ms ease;
   --bg-main: #f9f9f9;
   --dark-color: #262626;
+  --dark-light: #2b2b2a;
   --white-color: #ffffff;
   --accent-color: #f6b83d;
   --hover-color: #fbe7c1;
@@ -16,6 +17,7 @@
   --text-input: rgba(38, 38, 38, 0.8);
   --success-color: #08aa83;
   --bright-orange: #f9b020;
+  --bg-button:  rgba(38, 38, 38, 0.05);
 }
 
 * {

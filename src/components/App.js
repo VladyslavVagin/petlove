@@ -1,6 +1,8 @@
 // @ts-nocheck
-import React, { lazy } from "react";
+import React, { lazy, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { refreshUser } from "../redux/auth/operations";
 import SharedLayout from "./SharedLayout/SharedLayout";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
@@ -16,10 +18,15 @@ const AddPet = lazy(() => import("../pages/AddPet/AddPet"));
 
 function App() {
   const location = useLocation();
+  const dispatch = useDispatch();
 
   if (location.pathname === "/") {
     location.pathname = "/home";
   }
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch])
 
   return (
     <>
