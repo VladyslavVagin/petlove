@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React, { useRef } from "react";
 import { createPortal } from "react-dom";
-import { Backdrop, ModalContainer } from "./ModalGeneral.styled";
+import sprite from "../../assets/icons/icons.svg";
+import { Backdrop, ModalContainer, CloseBtn } from "./ModalGeneral.styled";
 
 const Modal = ({children, fn}) => {
   const modalRoot = document?.getElementById("modal-root");
@@ -17,6 +18,11 @@ const Modal = ({children, fn}) => {
   {createPortal(
     <Backdrop ref={backdropRef} onClick={handleBackdropClick}>
       <ModalContainer>
+      <CloseBtn onClick={() => fn(false)} type="button">
+        <svg width={24} height={24}>
+          <use xlinkHref={`${sprite}#icon-close`}></use>
+        </svg>
+      </CloseBtn>
         {children}
       </ModalContainer>
     </Backdrop>,

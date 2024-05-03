@@ -3,9 +3,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../../redux/auth/operations"
 import ModalGeneral from "../../ModalGeneral/ModalGeneral";
-import sprite from "../../../assets/icons/icons.svg";
 import imgModal from "../../../assets/images/modals/formodal.webp";
-import { BtnsBox, CancelBtn, CloseBtn, ImgContainer, LogoutConfirmBtn } from "./ModalLogout.styled";
+import { BtnsBox, CancelBtn, ImgContainer, LogoutConfirmBtn } from "./ModalLogout.styled";
 
 const ModalLogout = ({setShowLogout, showLogout}) => {
 const dispatch = useDispatch();
@@ -39,11 +38,6 @@ useEffect(() => {
 
   return (
     <ModalGeneral fn={setShowLogout}>
-      <CloseBtn onClick={handleCloseModal} type="button">
-        <svg width={24} height={24}>
-          <use xlinkHref={`${sprite}#icon-close`}></use>
-        </svg>
-      </CloseBtn>
       <ImgContainer>
         <div>
           <img src={imgModal} alt="Animated white-orange cat" />

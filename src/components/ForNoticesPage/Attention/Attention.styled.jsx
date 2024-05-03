@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ImgContainer = styled.div`
   width: calc(100dvw - 40px);
@@ -21,13 +22,23 @@ export const ImgContainer = styled.div`
     }
   }
 
-  p {
+  span {
     font-weight: 700;
     font-size: 20px;
     line-height: 1;
     letter-spacing: -0.03em;
-    color: var(--dark-color);
-    margin-top: 20px;
+    color: var(--accent-color);
+    margin: 20px 0;
+    display: inline-block;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: var(--dark-light);
   }
 `;
 
@@ -39,18 +50,17 @@ export const BtnsBox = styled.div`
     margin-top: 28px;
 `
 
-export const LogoutConfirmBtn = styled.button`
+export const ToLogin = styled(Link)`
   outline: none;
   border: none;
-  width: 137px;
-  height: 42px;
   border-radius: 30px;
-  color: var(--white-color);
+  width: 135px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--accent-color);
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.03em;
+  color: var(--white-color);
   transition: var(--hover-general);
 
   &:hover {
@@ -59,22 +69,21 @@ export const LogoutConfirmBtn = styled.button`
   }
 `;
 
-export const CancelBtn = styled.button`
+export const ToRegistration = styled(Link)`
   outline: none;
   border: none;
-  width: 137px;
-  height: 42px;
   border-radius: 30px;
-  color: var(--dark-color);
-  background-color:  var(--bg-button);
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.03em;
+  width: 135px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-light);
+  color: var(--accent-color);
   transition: var(--hover-general);
 
   &:hover {
     background-color: var(--hover-color);
-    color: var(--accent-color);
   }
 `;
+

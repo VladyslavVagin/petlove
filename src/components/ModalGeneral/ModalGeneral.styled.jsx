@@ -20,3 +20,24 @@ export const ModalContainer = styled.div`
   transform: translate(-50%, -50%);
   padding: 40px 20px;
 `;
+
+export const CloseBtn = styled.button`
+  outline: none;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: var(--hover-general);
+
+  svg {
+    stroke: var(--dark-color);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;

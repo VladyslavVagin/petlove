@@ -1,15 +1,33 @@
 import React from 'react'
+import { useAuth } from "../../../hooks/useAuth"
 import sprite from "../../../assets/icons/icons.svg"
 import { BtnLike, ButtonLearnMore, ButtonsCardBox, CardContainer, CommentText, ImageAnimalContainer, ListInfo, TitlePopularityBox } from './Card.styled';
 
-const Card = ({notice}) => {
+const Card = ({notice, setShowAttention}) => {
 const {imgURL, name, title, birthday, sex, species, popularity, comment, category} = notice;
+const { isLoggedIn } = useAuth();
 const date = new Date(birthday);
 const formattedDate = date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: '2-digit',
   day: '2-digit'
 }).replace(/\//g, '.');
+
+const handleAddFavorites = () => {
+   if(!isLoggedIn) {
+    setShowAttention(true);
+   } else {
+    console.log("Add to favorites");
+   }
+}
+
+const handleLearnMore = () => {
+  if(!isLoggedIn) {
+   setShowAttention(true);
+  } else {
+   console.log("Open Modal with info animal");
+  }
+}
 
   return (
     <CardContainer>
@@ -45,8 +63,8 @@ const formattedDate = date.toLocaleDateString('en-US', {
           <CommentText>{comment}</CommentText>
         </div>
         <ButtonsCardBox>
-          <ButtonLearnMore type='button'>Learn more</ButtonLearnMore>
-          <BtnLike type='button'>
+          <ButtonLearnMore type='button' onClick={handleLearnMore}>Learn more</ButtonLearnMore>
+          <BtnLike type='button' onClick={handleAddFavorites}>
             <svg width={18} height={18}>
               <use xlinkHref={`${sprite}#icon-heart`}></use>
             </svg>
