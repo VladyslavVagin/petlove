@@ -8,3 +8,4 @@ export const selectIsLoading = state => state.auth.isLoading;
 export const selectFavoritesNotices = state => state.auth.noticesFavorites;
 export const selectViewedNotices = state => state.auth.noticesViewed;
 export const selectPets = state => state.auth.pets;
+export const selectIsFirstFavorite = state => state.auth.isFirstFavorite;

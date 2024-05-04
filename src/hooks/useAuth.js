@@ -6,7 +6,8 @@ import {
   selectIsLoading,
   selectFavoritesNotices,
   selectViewedNotices,
-  selectPets
+  selectPets,
+  selectIsFirstFavorite,
 } from "../redux/auth/selectors";
 
 export const useAuth = () => {
@@ -17,6 +18,7 @@ export const useAuth = () => {
   const favoritesNotices = useSelector(selectFavoritesNotices);
   const viewedNotices = useSelector(selectViewedNotices);
   const pets = useSelector(selectPets);
+  const isFavoriteFirst = useSelector(selectIsFirstFavorite);
 
   return {
     isLoggedIn,
@@ -26,5 +28,6 @@ export const useAuth = () => {
     favoritesNotices,
     viewedNotices,
     pets,
+    isFavoriteFirst,
   };
 };

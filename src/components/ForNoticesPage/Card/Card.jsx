@@ -1,7 +1,10 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../../hooks/useAuth";
-import { AddToFavorites, RemoveFromFavorites } from "../../../redux/notices/operations";
+import {
+  AddToFavorites,
+  RemoveFromFavorites,
+} from "../../../redux/notices/operations";
 import { refreshUser } from "../../../redux/auth/operations";
 import sprite from "../../../assets/icons/icons.svg";
 import {
@@ -30,10 +33,12 @@ const Card = ({ notice, setShowAttention }) => {
     popularity,
     comment,
     category,
-    _id
+    _id,
   } = notice;
   const { isLoggedIn, favoritesNotices } = useAuth();
-  const [isFavorite, setIsFavorite] = useState(favoritesNotices?.find(fav => (fav._id === _id) ? true : false));
+  const [isFavorite, setIsFavorite] = useState(
+    favoritesNotices?.find((fav) => (fav._id === _id ? true : false))
+  );
   const date = new Date(birthday);
   const formattedDate = date
     .toLocaleDateString("en-US", {
@@ -52,8 +57,8 @@ const Card = ({ notice, setShowAttention }) => {
   ];
 
   useEffect(() => {
-      dispatch(refreshUser());
-  }, [dispatch, isFavorite])
+    dispatch(refreshUser());
+  }, [dispatch, isFavorite]);
 
   const handleAddFavorites = () => {
     if (!isLoggedIn) {
@@ -62,12 +67,12 @@ const Card = ({ notice, setShowAttention }) => {
       dispatch(AddToFavorites(_id));
       setIsFavorite(true);
     }
-  }
+  };
 
   const handleRemoveFavorites = () => {
-      dispatch(RemoveFromFavorites(_id));
-      setIsFavorite(false);
-    }
+    dispatch(RemoveFromFavorites(_id));
+    setIsFavorite(false);
+  };
 
   const handleLearnMore = () =>
     !isLoggedIn ? setShowAttention(true) : setShowDetails(true);
@@ -75,7 +80,13 @@ const Card = ({ notice, setShowAttention }) => {
   return (
     <>
       {showDetails && (
-        <DetailsModal setShowDetails={setShowDetails} notice={notice} showDetails={showDetails}/>
+        <DetailsModal
+          setShowDetails={setShowDetails}
+          notice={notice}
+          showDetails={showDetails}
+          isFavorite={isFavorite}
+          setIsFavorite={setIsFavorite}
+        />
       )}
       <CardContainer>
         <ImageAnimalContainer>
@@ -106,9 +117,16 @@ const Card = ({ notice, setShowAttention }) => {
           <ButtonLearnMore type="button" onClick={handleLearnMore}>
             Learn more
           </ButtonLearnMore>
-          <BtnLike type="button" onClick={isFavorite ? handleRemoveFavorites : handleAddFavorites}>
+          <BtnLike
+            type="button"
+            onClick={isFavorite ? handleRemoveFavorites : handleAddFavorites}
+          >
             <svg width={18} height={18}>
-              <use xlinkHref={isFavorite ? `${sprite}#icon-trash` : `${sprite}#icon-heart`}></use>
+              <use
+                xlinkHref={
+                  isFavorite ? `${sprite}#icon-trash` : `${sprite}#icon-heart`
+                }
+              ></use>
             </svg>
           </BtnLike>
         </ButtonsCardBox>

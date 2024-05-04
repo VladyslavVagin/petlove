@@ -10,6 +10,7 @@ const initialState = {
   pets: [],
   noticesViewed: [],
   noticesFavorites: [],
+  isFirstFavorite: false,
 };
 
 export const authSlice = createSlice({
@@ -58,12 +59,13 @@ export const authSlice = createSlice({
         state.isRefreshing = true;
       })
       .addCase(refreshUser.fulfilled, (state, {payload}) => {
-        state.user.name = payload.name;
-        state.user.email = payload.email;
-        state.user.phone = payload.phone;
-        state.user.avatar = payload.avatar;
-        state.noticesFavorites = payload.noticesFavorites;
-        state.noticesViewed = payload.noticesViewed;
+        state.user.name = payload.dataReceived.name;
+        state.user.email = payload.dataReceived.email;
+        state.user.phone = payload.dataReceived.phone;
+        state.user.avatar = payload.dataReceived.avatar;
+        state.noticesFavorites = payload.dataReceived.noticesFavorites;
+        state.noticesViewed = payload.dataReceived.noticesViewed;
+        state.isFirstFavorite = payload.isFirstFavorite;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })

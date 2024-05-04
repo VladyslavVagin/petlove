@@ -31,9 +31,11 @@ const FavCard = ({ notice }) => {
     popularity,
     comment,
     category,
-    _id
+    _id,
   } = notice;
-  const [isFavorite, setIsFavorite] = useState(favoritesNotices?.find(fav => (fav._id === _id) ? true : false));
+  const [isFavorite, setIsFavorite] = useState(
+    favoritesNotices?.find((fav) => (fav._id === _id ? true : false))
+  );
   const date = new Date(birthday);
   const formattedDate = date
     .toLocaleDateString("en-US", {
@@ -53,19 +55,27 @@ const FavCard = ({ notice }) => {
 
   useEffect(() => {
     dispatch(refreshUser());
-}, [dispatch, isFavorite])
+  }, [dispatch, isFavorite]);
 
-const handleRemoveFavorites = () => {
+  const handleRemoveFavorites = () => {
     dispatch(RemoveFromFavorites(_id));
     setIsFavorite(false);
     dispatch(refreshUser());
-  }
+  };
 
   const handleLearnMore = () => setShowDetails(true);
 
   return (
     <>
-      {showDetails && (<DetailsModal setShowDetails={setShowDetails} notice={notice} showDetails={showDetails} />)}
+      {showDetails && (
+        <DetailsModal
+          setShowDetails={setShowDetails}
+          notice={notice}
+          showDetails={showDetails}
+          isFavorite={isFavorite}
+          setIsFavorite={setIsFavorite}
+        />
+      )}
       <CardContainer>
         <ImageAnimalContainer>
           <img src={imgURL} alt={title} />

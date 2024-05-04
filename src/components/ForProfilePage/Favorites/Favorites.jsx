@@ -7,7 +7,6 @@ import { ListFavorites } from "./Favorites.styled";
 
 const Favorites = () => {
   const { favoritesNotices } = useAuth();
-  console.log(favoritesNotices);
 
   return (
     <>

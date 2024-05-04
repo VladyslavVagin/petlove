@@ -6,8 +6,8 @@ import Info from "./Info/Info";
 import Buttons from "./Buttons/Buttons";
 import { ContainerModal, ImgBox } from "./DetailsModal.styled";
 
-const DetailsModal = ({ setShowDetails, notice, showDetails }) => {
-  const { imgURL, title, popularity, comment, category } = notice;
+const DetailsModal = ({ setShowDetails, notice, showDetails, isFavorite, setIsFavorite }) => {
+  const { imgURL, title, popularity, comment, category, _id } = notice;
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -44,7 +44,7 @@ const DetailsModal = ({ setShowDetails, notice, showDetails }) => {
         <Rating popularity={popularity} />
         <Info notice={notice} />
         <p>{comment}</p>
-        <Buttons/>
+        <Buttons isFavorite={isFavorite} id={_id} setIsFavorite={setIsFavorite}/>
       </ContainerModal>
     </ModalGeneral>
   );

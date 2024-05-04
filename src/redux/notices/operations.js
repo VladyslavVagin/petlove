@@ -88,7 +88,6 @@ export const RemoveFromFavorites = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const response = await axios.delete(`/notices/favorites/remove/${id}`);
-      console.log(response);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
