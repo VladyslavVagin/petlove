@@ -33,7 +33,6 @@ const clearAuthHeader = () => {
     async (credentials, thunkAPI) => {
       try {
         const res = await axios.post('/users/signin', credentials);
-        console.log(res);
         setAuthHeader(res.data.token);
         toast.success(`Welcome ${res.data.name}`);
         return res.data;
@@ -67,7 +66,6 @@ const clearAuthHeader = () => {
       try {
         setAuthHeader(persistedToken);
         const res = await axios.get('/users/current/full');
-        console.log(res);
         return res.data;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);

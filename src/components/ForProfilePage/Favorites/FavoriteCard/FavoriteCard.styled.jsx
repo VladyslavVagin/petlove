@@ -110,7 +110,7 @@ export const ButtonLearnMore = styled.button`
   }
 `;
 
-export const BtnLike = styled.button`
+export const BtnRemove = styled.button`
   width: 46px;
   height: 46px;
   outline: none;

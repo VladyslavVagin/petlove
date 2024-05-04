@@ -4,11 +4,16 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 
+const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
 // GET CATEGORIES FOR SELECT
 export const fetchCategories = createAsyncThunk(
   "categories/fetchAll",
   async (thunkAPI) => {
     try {
+      setAuthHeader()
       const response = await axios.get("/notices/categories");
       return response.data;
     } catch (error) {
@@ -49,6 +54,41 @@ export const fetchCities = createAsyncThunk(
   async (thunkAPI) => {
     try {
       const response = await axios.get("/cities");
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// ADD NOTICE TO FAVORITES 
+export const AddToFavorites = createAsyncThunk(
+  "notices/addFavorites",
+  async (id, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    try {
+      setAuthHeader(persistedToken);
+      const response = await axios.post(`/notices/favorites/add/${id}`);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// REMOVE NOTICE FROM FAVORITES
+export const RemoveFromFavorites = createAsyncThunk(
+  "notices/removeFavorites",
+  async (id, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    try {
+      setAuthHeader(persistedToken);
+      const response = await axios.delete(`/notices/favorites/remove/${id}`);
+      console.log(response);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
