@@ -37,6 +37,14 @@ const Card = ({ notice, setShowAttention }) => {
     })
     .replace(/\//g, ".");
 
+  const details = [
+    { label: "Name", value: name },
+    { label: "Birthday", value: formattedDate },
+    { label: "Sex", value: sex },
+    { label: "Species", value: species },
+    { label: "Category", value: category },
+  ];
+
   const handleAddFavorites = () =>
     !isLoggedIn ? setShowAttention(true) : console.log("Add to favorites");
   const handleLearnMore = () =>
@@ -44,7 +52,9 @@ const Card = ({ notice, setShowAttention }) => {
 
   return (
     <>
-    {showDetails && <DetailsModal setShowDetails={setShowDetails} notice={notice}/>}
+      {showDetails && (
+        <DetailsModal setShowDetails={setShowDetails} notice={notice} />
+      )}
       <CardContainer>
         <ImageAnimalContainer>
           <img src={imgURL} alt={title} />
@@ -60,31 +70,13 @@ const Card = ({ notice, setShowAttention }) => {
             </span>
           </TitlePopularityBox>
           <ListInfo>
-            <li>
-              <p>
-                Name <span>{name}</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                Birthday <span>{formattedDate}</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                Sex <span>{sex}</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                Species <span>{species}</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                Category <span>{category}</span>
-              </p>
-            </li>
+            {details.map(({ label, value }) => (
+              <li key={label}>
+                <p>
+                  {label} <span>{value}</span>
+                </p>
+              </li>
+            ))}
           </ListInfo>
           <CommentText>{comment}</CommentText>
         </div>

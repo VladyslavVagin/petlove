@@ -4,6 +4,23 @@ export const ContainerModal = styled.div`
   width: calc(100dvw - 40px);
   max-width: 295px;
   text-align: center;
+  color: var(--dark-light);
+  padding: 0 8px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+  }
 `;
 
 export const ImgBox = styled.div`
