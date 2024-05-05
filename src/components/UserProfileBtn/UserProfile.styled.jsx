@@ -12,6 +12,11 @@ export const UserLinkBtn = styled(Link)`
     border-radius: 50%;
     transition: var(--hover-general);
 
+    img {
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
     svg {
         fill: var(--accent-color);
         stroke: var(--accent-color);

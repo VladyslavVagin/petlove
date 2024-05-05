@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, logIn, logOut, refreshUser } from "./operations";
+import { register, logIn, logOut, refreshUser, editUser } from "./operations";
 
 const initialState = {
   user: { name: null, email: null, phone: null, avatar: null },
@@ -70,6 +70,16 @@ export const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(refreshUser.rejected, state => {
+        state.isRefreshing = false;
+      }).addCase(editUser.pending, (state) => {
+        state.isLoading = true;
+        state.isRefreshing = true;
+      }).addCase(editUser.fulfilled, (state, {payload}) => {
+        state.user.name = payload.name;
+        state.user.email = payload.email;
+        state.user.phone = payload.phone;
+        state.user.avatar = payload.avatar;
+        state.isLoading = false;
         state.isRefreshing = false;
       });
   },

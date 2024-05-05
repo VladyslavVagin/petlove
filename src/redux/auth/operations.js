@@ -75,3 +75,23 @@ const clearAuthHeader = () => {
       }
     }
   );
+
+  export const editUser = createAsyncThunk(
+    'auth/edit',
+    async (credentials, thunkAPI) => {
+      const state = thunkAPI.getState();
+      const persistedToken = state.auth.token;
+  
+      if (persistedToken === null) {
+        return thunkAPI.rejectWithValue('Unable to fetch user');
+      }
+  
+      try {
+        setAuthHeader(persistedToken);
+        const res = await axios.patch('/users/current/edit', credentials);
+        return res.data;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  );
