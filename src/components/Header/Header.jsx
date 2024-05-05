@@ -13,7 +13,7 @@ const Header = () => {
   const { isLoggedIn } = useAuth();
 
   useEffect(() => {
-    if (location.pathname === "/home") {
+    if (location.pathname === "/home" || location.pathname === "/") {
       setIsHomepage(true);
     } else {
       setIsHomepage(false);
@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <MainHeader>
       <HeaderContainer ishomepage={isHomepage.toString()}>
-        <Logo />
+        <Logo isHomepage={isHomepage}/>
         <BlockBtns>
           {isLoggedIn && <UserProfileBtn />}
           <BurgerBtn isHomepage={isHomepage} />

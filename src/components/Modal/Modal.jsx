@@ -11,7 +11,7 @@ const Modal = ({children, setIsShowMobileMenu}) => {
   const location = useLocation();
 
   useEffect(() => {
-    if(location.pathname === '/home') {
+    if(location.pathname === '/home' || location.pathname === '/') {
       setIsHomepage(true);
     } else {
       setIsHomepage(false);

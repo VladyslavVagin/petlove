@@ -21,6 +21,11 @@ export const AvatarBox = styled.div`
     stroke: var(--accent-color);
     stroke-width: 6px;
   }
+
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
 `;
 export const UploadPhotoButton = styled.button`
   outline: none;

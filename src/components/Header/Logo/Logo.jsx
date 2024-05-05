@@ -1,10 +1,9 @@
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import sprite from "../../../assets/icons/icons.svg";
 import { LogoContainer } from "./Logo.styled";
 
-const Logo = () => {
-  const location = useLocation();
+const Logo = ({isHomepage}) => {
 
   return (
     <LogoContainer>
@@ -12,7 +11,7 @@ const Logo = () => {
         <svg>
           <use
             xlinkHref={
-              location.pathname === "/home"
+              isHomepage
                 ? `${sprite}#icon-logo-white`
                 : `${sprite}#icon-logo-header`
             }
