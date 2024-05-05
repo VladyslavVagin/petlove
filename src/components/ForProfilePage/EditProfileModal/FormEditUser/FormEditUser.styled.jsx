@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.form`
+  max-width: 295px;
+  width: 100%;
   margin-top: 12px;
   display: flex;
   flex-direction: column;
@@ -27,6 +29,15 @@ export const Label = styled.label`
 
 export const InputAvatarURL = styled.input`
   width: 161px;
+  height: 42px;
+  outline: none;
+  border-radius: 30px;
+  border: 1px solid var(--accent-color);
+  padding: 12px;
+`;
+
+export const InputStandart = styled.input`
+  width: 100%;
   height: 42px;
   outline: none;
   border-radius: 30px;
@@ -66,7 +77,21 @@ export const AddAvatarInput = styled.input`
 
   &:hover {
     &::before {
-        background-color: var(--hover-color);
+      background-color: var(--hover-color);
     }
   }
+`;
+
+export const SubmitBtn = styled.button`
+  width: 100%;
+  height: 42px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.03em;
 `;

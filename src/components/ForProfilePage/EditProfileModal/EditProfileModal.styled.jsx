@@ -4,7 +4,7 @@ export const EditModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 335px;
+  width: 295px;
 
   h1 {
     width: 100%;
