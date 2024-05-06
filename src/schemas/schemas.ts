@@ -4,9 +4,9 @@ const emailRegExp = /^[\w-]+(.[\w-]+)*@([\w-]+.)+[a-zA-Z]{2,7}$/;
 
 export const schema = yup.object().shape({
     name: yup.string().required(),
-    email: yup.string().matches(emailRegExp, "Enter a valid Email"),
+    email: yup.string().matches(emailRegExp, "Enter a valid Email").required(),
     phone: yup.string().matches(/^\+38\d{10}$/, "Invalid phone format"),
-    avatar: yup.string().matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, "Ivalid format"),
+    avatar: yup.string().matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, "Invalid format"),
   });
 
   export const schemaRegister = yup.object().shape({

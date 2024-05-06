@@ -1,0 +1,28 @@
+import React from "react";
+import styled from "styled-components";
+
+const MainTitle = styled.h1`
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--dark-color);
+  margin-bottom: 24px;
+
+  span {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    color: var(--subtitle-color);
+  }
+`;
+
+const Title = () => {
+  return (
+    <MainTitle>
+      Add my pet / <span>Personal details</span>
+    </MainTitle>
+  );
+};
+
+export default Title;
