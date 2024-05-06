@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
 export const UserLinkBtn = styled(Link)`
+    overflow: hidden;
     display: inline-block;
     width: 40px;
     height: 40px;

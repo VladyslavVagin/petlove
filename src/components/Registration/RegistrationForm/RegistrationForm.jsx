@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";
-import * as yup from "yup";
+import { schemaRegister } from "../../../schemas/schemas.ts";
 import { register } from "../../../redux/auth/operations";
 import sprite from "../../../assets/icons/icons.svg";
 import {
@@ -27,22 +27,6 @@ const initialValues = {
   confirmPassword: "",
 };
 
-const schema = yup.object().shape({
-  name: yup.string().required(),
-  email: yup
-    .string()
-    .matches(
-      /^[\w-]+(.[\w-]+)*@([\w-]+.)+[a-zA-Z]{2,7}$/,
-      "Enter a valid Email"
-    )
-    .required(),
-  password: yup.string().min(7).required(),
-  confirmPassword: yup
-    .string()
-    .oneOf([yup.ref("password"), null], "Passwords must match")
-    .required(),
-});
-
 const RegistrationForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -65,7 +49,7 @@ const RegistrationForm = () => {
       </FormTitleBox>
       <Formik
         initialValues={initialValues}
-        validationSchema={schema}
+        validationSchema={schemaRegister}
         onSubmit={submitRegistration}
       >
         {({ errors, touched }) => (

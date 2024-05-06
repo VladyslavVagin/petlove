@@ -8,6 +8,7 @@ export const ContainerBox = styled.div`
 `
 
 export const AvatarBox = styled.div`
+  overflow: hidden;
   width: 94px;
   height: 94px;
   border-radius: 50%;
