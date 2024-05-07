@@ -6,7 +6,7 @@ const urlRegExp = /^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/;
 export const addPetSchema = yup.object().shape({
   title: yup.string().required(),
   name: yup.string().required(),
-  imgUrl: yup.string().matches(urlRegExp, "Invalid format").required(),
+  imgURL: yup.string().matches(urlRegExp, "Invalid format").required(),
   species: yup.string().required(),
   birthday: yup.string().matches(/^\d{4}-\d{2}-\d{2}$/, "Invalid format").required(),
   sex: yup.string().required(),
