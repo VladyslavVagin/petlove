@@ -16,7 +16,7 @@ import {
   Label,
   AddAvatarInput,
 } from "../../ForProfilePage/EditProfileModal/FormEditUser/FormEditUser.styled";
-import DatePicker from "./DatePicker/DatePicker";
+import BirthdayInput from "./BirthdayInput/BirthdayInput";
 
 const CreationForm = () => {
   const preset_key = process.env.REACT_APP_PRESET_KEY;
@@ -88,7 +88,7 @@ const CreationForm = () => {
       <p>{errors.title?.message}</p>
       <InputNormal type="text" {...register("name")} placeholder="Pet's Name"/>
       <p>{errors.name?.message}</p>
-      <DatePicker/>
+      <BirthdayInput/>
       <button type="submit">Submit</button>
     </form>
   );
