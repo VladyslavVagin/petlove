@@ -1,29 +1,30 @@
 import React from "react";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TextField } from "@mui/material";
 import { styled } from '@mui/material/styles'
+import IconCalendar from "./IconCalendar";
 
 const StyledTextField = styled(TextField)({
     color: '#bbdefb',
     borderRadius: '20px',
-    borderWidth: '0px',
-    borderColor: '#2196f3',
-    border: '0px solid',
-    backgroundColor: '#0d47a1',
+    border: '1px solid var(--link-gray)',
+    backgroundColor: "transparent",
+    outline: "none",
+    height: "42px"
   })
 
 const BirthdayInput = () => {
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker
+    <>
+      <DatePicker 
         onChange={(newValue) => console.log(newValue)}
-        views={["year", "month", "day"]} slots={{
+        slotProps={{ textField: { size: 'small' } }}
+        views={["day", "month", "year"]} slots={{
             textField: StyledTextField,
-          }} 
+            openPickerIcon: IconCalendar,
+          }}
       />
-    </LocalizationProvider>
+    </>
   );
 };
 
