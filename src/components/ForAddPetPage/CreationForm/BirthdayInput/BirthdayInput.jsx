@@ -10,7 +10,15 @@ const BirthdayInput = () => {
     <>
       <DatePicker format="DD.MM.YYYY"
         onChange={(newValue) => console.log(newValue)}
-        slotProps={{ textField: { size: 'small' } }}
+        slotProps={{ textField: { size: 'small', sx: {
+          ".MuiOutlineInput-root": {border: "none", "& .Mui-focused": {border: "none"}},
+          ".MuiInputBase-root": {border: "none", "& .Mui-focused": {border: "none"}},
+          ".MuiInputBase-input": {border: "none", outline: "none", "&:hover": {border: "none", outline: "none"}},
+        } },  popper: {
+          sx: {
+            ".MuiPaper-root": { border: "1px solid var(--accent-color)"},
+          },
+        }, }}
         views={["day", "month", "year"]} slots={{
             openPickerIcon: IconCalendar,
           }}
