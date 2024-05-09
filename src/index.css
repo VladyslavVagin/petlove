@@ -1,4 +1,4 @@
-@import 'assets/fonts/fonts.css';
+@import "assets/fonts/fonts.css";
 
 :root {
   --hover-general: all 400ms ease;
@@ -17,7 +17,7 @@
   --text-input: rgba(38, 38, 38, 0.8);
   --success-color: #08aa83;
   --bright-orange: #f9b020;
-  --bg-button:  rgba(38, 38, 38, 0.05);
+  --bg-button: rgba(38, 38, 38, 0.05);
   --subtitle-color: rgba(43, 43, 42, 0.4);
 }
 
@@ -42,7 +42,8 @@ p {
   margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
   padding: 0;
   list-style: none;
 }
@@ -61,25 +62,25 @@ img {
 }
 
 .css-1ysyrvn-MuiButtonBase-root-MuiPaginationItem-root {
-  font-family: "Manrope", sans-serif!important;
-  font-size: 14px!important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 14px !important;
 }
 
 .css-wjh20t-MuiPagination-ul li {
-  max-width: 40px!important;
-  padding: 0px!important;
+  max-width: 40px !important;
+  padding: 0px !important;
 
   @media screen and (min-width: 375px) {
-    margin: 2px!important;
+    margin: 2px !important;
   }
 }
 
 .css-bf9wz-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected,
 .css-1y7coo4-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected,
 .css-1ysyrvn-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-  background-color: var(--accent-color)!important;
-  border-color: var(--accent-color)!important;
-  color: var(--white-color)!important;
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--white-color) !important;
 }
 
 .css-1u9des2-indicatorSeparator {
@@ -87,10 +88,37 @@ img {
 }
 
 .css-tj5bde-Svg {
-  stroke: var(--dark-color)!important;
-  fill: var(--dark-color)!important;
+  stroke: var(--dark-color) !important;
+  fill: var(--dark-color) !important;
 }
 
 .css-1jqq78o-placeholder {
-  color: var(--dark-color)!important;
+  color: var(--dark-color) !important;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  width: 144px;
+  border: 1px solid var(--link-gray);
+  border-radius: 30px !important;
+  font-weight: 500!important;
+  font-size: 14px!important;
+  line-height: 1.29!important;
+  letter-spacing: -0.03em!important;
+  font-family: "Manrope", sans-serif!important;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root:hover,
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root:focus {
+  border-color: var(--accent-color);
+}
+
+.css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  outline: none;
+}
+
+.css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input:hover, 
+.css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input:focus {
+  border-color: var(--accent-color);
 }
