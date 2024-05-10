@@ -14,7 +14,6 @@ export const LogoutBtn = styled.button`
   line-height: 1.29;
   letter-spacing: -0.03em;
   transition: var(--hover-general);
-  margin-top: 40px;
 
   &:hover {
     background-color: var(--hover-color);

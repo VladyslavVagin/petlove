@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const AvatarContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const ImageBox = styled.div`
-overflow: hidden;
+  overflow: hidden;
   width: 68px;
   height: 68px;
   border-radius: 50%;
@@ -21,7 +21,8 @@ overflow: hidden;
   }
 
   img {
-    border-radius: 50%;
     object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
-`
+`;

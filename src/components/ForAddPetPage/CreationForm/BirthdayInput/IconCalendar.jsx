@@ -5,6 +5,12 @@ import styled from "styled-components";
 const Icon = styled.svg`
   fill: none;
   stroke: var(--dark-color);
+  transition: var(--hover-general);
+
+  &:hover,
+  &:focus {
+    stroke: var(--accent-color);
+  }
 `;
 
 const IconCalendar = () => {

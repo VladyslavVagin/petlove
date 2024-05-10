@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, logIn, logOut, refreshUser, editUser } from "./operations";
+import { register, logIn, logOut, refreshUser, editUser, addPet } from "./operations";
 
 const initialState = {
   user: { name: null, email: null, phone: null, avatar: null },
@@ -52,6 +52,7 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.noticesFavorites = [];
         state.noticesViewed = [];
+        state.pets = [];
       })
       .addCase(logOut.rejected, state => {
         state.isLoading = false;
@@ -66,6 +67,7 @@ export const authSlice = createSlice({
         state.noticesFavorites = payload.dataReceived.noticesFavorites;
         state.noticesViewed = payload.dataReceived.noticesViewed;
         state.isFirstFavorite = payload.isFirstFavorite;
+        state.pets = payload.dataReceived.pets;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
@@ -81,6 +83,16 @@ export const authSlice = createSlice({
         state.user.avatar = payload.avatar;
         state.isLoading = false;
         state.isRefreshing = false;
+      }).addCase(addPet.pending, (state) => {
+        state.isLoading = true;
+        state.isRefreshing = true;
+      }).addCase(addPet.rejected, (state) => {
+        state.isLoading = false;
+        state.isRefreshing = false;
+      }).addCase(addPet.fulfilled, (state, {payload}) => {
+        state.isLoading = false;
+        state.isRefreshing = false;
+        state.pets = payload.pets;
       });
   },
 });

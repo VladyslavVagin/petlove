@@ -5,6 +5,7 @@ import MyInformation from "./UserData/MyInformation/MyInformation";
 import MyPetsTitle from "./MyPetsTitle/MyPetsTitle";
 import Logout from "./Logout/Logout";
 import ModalLogout from "./ModalLogout/ModalLogout";
+import PetsList from "./PetsList/PetsList";
 
 const UserInformation = ({ setShowEditForm }) => {
   const [showLogout, setShowLogout] = useState(false);
@@ -14,6 +15,7 @@ const UserInformation = ({ setShowEditForm }) => {
       <AvatarData setShowEditForm={setShowEditForm}/>
       <MyInformation/>
       <MyPetsTitle/>
+      <PetsList/>
       <Logout setShowLogout={setShowLogout}/>
       {showLogout && <ModalLogout setShowLogout={setShowLogout} showLogout={showLogout}/>}
     </div>
