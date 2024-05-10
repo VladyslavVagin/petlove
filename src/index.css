@@ -107,3 +107,20 @@ img {
   font-family: "Manrope", sans-serif!important;
 }
 
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root:hover {
+  unicode-bidi: unset;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root:focus-visible {
+  outline: none;
+}
+
+.MuiInputBase-root.Mui-focused,
+.MuiOutlinedInput-root.Mui-focused {
+  border: 1px solid var(--accent-color);
+}
+
+.MuiInputBase-root.Mui-focused:focus-visible,
+.MuiOutlinedInput-root.Mui-focused:focus-visible {
+  outline: none;
+}
