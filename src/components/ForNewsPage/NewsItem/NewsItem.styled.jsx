@@ -27,6 +27,10 @@ export const ItemContainer = styled.li`
     line-height: 1.29;
     letter-spacing: -0.02em;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 340px;
+  }
 `;
 
 export const DateReadBox = styled.div`

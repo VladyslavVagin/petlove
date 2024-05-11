@@ -1,15 +1,30 @@
+// @ts-nocheck
 import React from "react";
+import { useMediaQuery } from "react-responsive";
+import { LoginMessage } from "../../../lib/messageContent/messageContent.ts";
+import Message from "../../Message/Message.jsx";
 import DogImgMobile from "../../../assets/images/login/dog-mobile.webp";
 import DogImgMobile2x from "../../../assets/images/login/dog-mobile-2x.webp";
 import DogImgMobile3x from "../../../assets/images/login/dog-mobile-3x.webp";
+import DogImgTablet from "../../../assets/images/login/dogLogin-tablet.webp";
+import DogImgTablet2x from "../../../assets/images/login/dogLogin-tablet-2x.webp";
+import DogImgTablet3x from "../../../assets/images/login/dogLogin-tablet-3x.webp";
 import sprite from "../../../assets/icons/icons.svg";
 import { LoginImageBox } from "./LoginImage.styled";
 
 const LoginImage = () => {
+  const tablet = useMediaQuery({minWidth: 768});
+  const {imgUrl, name, birthday, comment} = LoginMessage;
+
   return (
     <div>
       <LoginImageBox>
         <picture>
+        <source
+            media="(min-width: 768px)"
+            srcSet={`${DogImgTablet} 1x, ${DogImgTablet2x} 2x, ${DogImgTablet3x} 3x`}
+            type="image/webp"
+          />
           <source
             media="(max-width: 767.98px)"
             srcSet={`${DogImgMobile} 1x, ${DogImgMobile2x} 2x, ${DogImgMobile3x} 3x`}
@@ -20,6 +35,7 @@ const LoginImage = () => {
         <svg width={332}>
           <use xlinkHref={`${sprite}#icon-shape`}></use>
         </svg>
+        {tablet && <Message imgUrl={imgUrl} name={name} birthday={birthday} comment={comment}/>}
       </LoginImageBox>
     </div>
   );

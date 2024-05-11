@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import loaderImg from "../../assets/images/loader.webp"
-import { LoaderContainer } from './Loader.styled'
+import React, { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import loaderImg from "../../assets/images/loader.webp";
+import loaderTablet from "../../assets/images/bgTablet.webp";
+import { LoaderContainer } from "./Loader.styled";
 
 const Loader = () => {
-const [progress, setProgress] = useState(0);
+  const tablet = useMediaQuery({ minWidth: 768 });
+  const [progress, setProgress] = useState(0);
 
-useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       if (progress < 100) {
         setProgress(progress + 1);
@@ -17,10 +20,10 @@ useEffect(() => {
 
   return (
     <LoaderContainer>
-      <img src={loaderImg} alt='loader'/>
+      <img src={tablet ? loaderTablet : loaderImg} alt="loader" />
       <span>{progress}%</span>
     </LoaderContainer>
-  )
-}
+  );
+};
 
-export default Loader
+export default Loader;

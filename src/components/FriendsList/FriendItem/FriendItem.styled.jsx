@@ -27,6 +27,16 @@ export const CardContainer = styled.li`
     align-items: center;
     justify-content: center;
   }
+
+  @media screen and (min-width: 768px) {
+    column-gap: 16px;
+
+    span {
+      font-size: 14px;
+      width: 102px;
+      height: 34px;
+    }
+  }
 `;
 
 export const LogoCompany = styled(Link)`
@@ -38,6 +48,11 @@ export const LogoCompany = styled(Link)`
     width: 100%;
     border-radius: 50%;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 90px;
+    height: 90px;
+  }
 `;
 
 export const InfoCompany = styled.div`
@@ -48,6 +63,13 @@ export const InfoCompany = styled.div`
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: -0.04em;
+  }
+
+  @media screen and (min-width: 768px) {
+    h2 {
+      font-size: 20px;
+      line-height: 1.3;
+    }
   }
 `;
 
@@ -64,8 +86,8 @@ export const ListDetails = styled.ul`
     align-items: center;
     column-gap: 2px;
 
-     &:not(:last-of-type) {
-        margin-bottom: 8px;
+    &:not(:last-of-type) {
+      margin-bottom: 8px;
     }
 
     p {
@@ -81,7 +103,7 @@ export const InfoLink = styled(Link)`
   overflow-x: hidden;
   transition: var(--hover-general);
 
-  &:hover, 
+  &:hover,
   &:focus {
     color: var(--accent-color);
     text-decoration: underline;

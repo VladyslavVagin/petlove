@@ -4,5 +4,11 @@ export const CardsListContainer = styled.ul`
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 20px;
+    gap: 20px;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 44px;
+    }
 `

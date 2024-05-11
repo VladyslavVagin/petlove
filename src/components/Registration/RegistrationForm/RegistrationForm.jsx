@@ -105,14 +105,14 @@ const RegistrationForm = () => {
               />
               {errors.email && touched.email && (
                 <IconCheck>
-                  <svg width={18} height={18}>
+                  <svg>
                     <use xlinkHref={`${sprite}#icon-x-red`}></use>
                   </svg>
                 </IconCheck>
               )}
               {!errors.email && touched.email && (
                 <IconCheck>
-                  <svg width={18} height={18}>
+                  <svg>
                     <use xlinkHref={`${sprite}#icon-check`}></use>
                   </svg>
                 </IconCheck>
@@ -136,7 +136,7 @@ const RegistrationForm = () => {
                 }}
               />
               <ShowPasswordBtn type="button" onClick={handleShowPassword}>
-                <svg width={18} height={18}>
+                <svg>
                   <use
                     xlinkHref={
                       showPassword
@@ -148,14 +148,14 @@ const RegistrationForm = () => {
               </ShowPasswordBtn>
               {errors.password && touched.password && (
                 <IconCheckPassword>
-                  <svg width={18} height={18}>
+                  <svg>
                     <use xlinkHref={`${sprite}#icon-x-red`}></use>
                   </svg>
                 </IconCheckPassword>
               )}
               {!errors.password && touched.password && (
                 <IconCheckPassword>
-                  <svg width={18} height={18}>
+                  <svg>
                     <use xlinkHref={`${sprite}#icon-check`}></use>
                   </svg>
                 </IconCheckPassword>
@@ -185,7 +185,7 @@ const RegistrationForm = () => {
                 type="button"
                 onClick={handleShowConfirmPassword}
               >
-                <svg width={18} height={18}>
+                <svg>
                   <use
                     xlinkHref={
                       showConfirmPassword
@@ -197,14 +197,14 @@ const RegistrationForm = () => {
               </ShowPasswordBtn>
               {errors.confirmPassword && touched.confirmPassword && (
                 <IconCheckPassword>
-                  <svg width={18} height={18}>
+                  <svg>
                     <use xlinkHref={`${sprite}#icon-x-red`}></use>
                   </svg>
                 </IconCheckPassword>
               )}
               {!errors.confirmPassword && touched.confirmPassword && (
                 <IconCheckPassword>
-                  <svg width={18} height={18}>
+                  <svg>
                     <use xlinkHref={`${sprite}#icon-check`}></use>
                   </svg>
                 </IconCheckPassword>

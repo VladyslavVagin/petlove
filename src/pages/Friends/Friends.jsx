@@ -4,6 +4,7 @@ import { fetchFriends } from "../../redux/friends/operations";
 import { useDispatch } from "react-redux";
 import FriendsList from "../../components/FriendsList/FriendsList";
 import { HomePageSection } from "../Home/HomePage.styled";
+import { TitleOfPage } from "../../components/Common/TitlePage/TitlePage";
 
 const Friends = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Friends = () => {
 
   return (
     <HomePageSection>
-      <h1>Our friends</h1>
+      <TitleOfPage>Our friends</TitleOfPage>
       <FriendsList/>
     </HomePageSection>
   );

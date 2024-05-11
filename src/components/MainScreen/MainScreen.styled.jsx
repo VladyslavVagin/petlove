@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import bgImg from "../../assets/images/main/maindog.webp";
+import bgImg2x from "../../assets/images/main/maindog-2x.webp";
+import bgTablet from "../../assets/images/main/preloaderTablet.webp";
+import bgTablet2x from "../../assets/images/main/preloaderTablet-2x.webp";
 
 export const MainScreenContainer = styled.div`
   position: fixed;
@@ -24,6 +27,27 @@ export const MainScreenContainer = styled.div`
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background: url(${bgImg2x}) no-repeat center / cover;
+  }
+
+  @media screen and (min-width: 768px) {
+    background: url(${bgTablet}) no-repeat center / cover;
+
+    svg {
+      width: 374px;
+      height: 100px;
+    }
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background: url(${bgTablet2x}) no-repeat center / cover;
     }
   }
 `;

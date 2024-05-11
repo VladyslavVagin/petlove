@@ -31,4 +31,8 @@ export const ModalContainer = styled.div`
       right: 0%;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 374px;
+  }
 `;

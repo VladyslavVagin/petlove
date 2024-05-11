@@ -1,30 +1,49 @@
+// @ts-nocheck
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export const UserLinkBtn = styled(Link)`
-    overflow: hidden;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: var(--accent-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: var(--hover-general);
+  overflow: hidden;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: var(--hover-general);
 
-    img {
-        object-fit: cover;
-        border-radius: 50%;
-    }
+  img {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  svg {
+    fill: var(--accent-color);
+    stroke: var(--accent-color);
+    stroke-width: 2px;
+  }
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
 
     svg {
-        fill: var(--accent-color);
-        stroke: var(--accent-color);
-        stroke-width: 2px;
+      width: 24px;
+      height: 24px;
     }
+  }
+`;
 
-    &:hover {
-        background-color: var(--hover-color);
-    }
-`
+export const UserName = styled.p`
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: ${({ ishomepage }) => ishomepage === "true" ? "var(--white-color)" : "var(--dark-color)"};
+`;

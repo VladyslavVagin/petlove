@@ -30,4 +30,15 @@ export const LoaderContainer = styled.div`
       transform: rotate(360deg);
     }
   }
+
+  @media screen and (min-width: 768px) {
+    img {
+      width: 396px;
+      height: 396px;
+    }
+
+    span {
+      font-size: 80px;
+    }
+  }
 `;

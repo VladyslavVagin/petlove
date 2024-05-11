@@ -22,4 +22,10 @@ export const StyledLink = styled(Link)`
   &:hover {
     background-color: var(--hover-color);
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 14px 30px;
+  }
 `;

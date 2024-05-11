@@ -18,4 +18,18 @@ export const RegisterImageBox = styled.div`
         transform: scale(1.6);
         z-index: 0;
     }
+
+    @media screen and (min-width: 768px) {
+        border-radius: 60px;
+
+        picture {
+            right: -250px;
+        }
+
+        svg {
+            transform: scale(2.8);
+            bottom: -24px;
+            left: 224px;
+        }
+    }
 `

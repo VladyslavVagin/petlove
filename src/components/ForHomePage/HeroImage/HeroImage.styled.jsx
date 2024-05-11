@@ -7,4 +7,12 @@ export const HeroImgContainer = styled.div`
             border-radius: 30px;
         }
     }
+
+    @media screen and (min-width: 768px) {
+        picture {
+            img {
+                border-radius: 60px;
+            }
+        }
+    }
 `

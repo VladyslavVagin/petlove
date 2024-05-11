@@ -20,4 +20,14 @@ export const Button = styled.button`
   svg {
     stroke: ${({ ishomepage }) => ishomepage === "true" ? "var(--white-color)" : "var(--dark-color)"};
   }
+
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+    
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
 `;

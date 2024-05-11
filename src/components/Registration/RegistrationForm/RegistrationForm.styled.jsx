@@ -6,6 +6,12 @@ export const FormContainer = styled.div`
   padding: 20px;
   background-color: var(--white-color);
   border-radius: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 16px;
+    border-radius: 60px;
+    padding: 27px 140px;
+  }
 `;
 
 export const FormTitleBox = styled.div`
@@ -28,6 +34,20 @@ export const FormTitleBox = styled.div`
     line-height: 1.29;
     letter-spacing: -0.02em;
   }
+
+  @media screen and (min-width: 768px) {
+    row-gap: 16px;
+    margin-bottom: 32px;
+
+    h1 {
+      font-size: 54px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.22;
+    }
+  }
 `;
 
 export const StyledForm = styled(Form)`
@@ -40,18 +60,52 @@ export const StyledForm = styled(Form)`
     width: 100%;
     position: relative;
   }
+
+  @media screen and (min-width: 768px) {
+    row-gap: 16px;
+  }
 `;
 
 export const IconCheck = styled.span`
   position: absolute;
   top: 12px;
   right: 12px;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 14px;
+    right: 16px;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
 `;
 
 export const IconCheckPassword = styled.span`
   position: absolute;
   top: 12px;
   right: 44px;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 14px;
+    right: 54px;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
 `;
 
 export const ShowPasswordBtn = styled.button`
@@ -66,7 +120,21 @@ export const ShowPasswordBtn = styled.button`
   position: absolute;
   top: 6px;
   right: 12px;
-`
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 36px;
+    height: 36px;
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+`;
 
 export const StyledField = styled(Field)`
   font-family: "Manrope", sans-serif;
@@ -88,6 +156,16 @@ export const StyledField = styled(Field)`
     letter-spacing: -0.03em;
     color: var(--placeholder-color);
   }
+
+  @media screen and (min-width: 768px) {
+    height: 52px;
+    padding: 16px;
+    font-size: 16px;
+
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
 `;
 export const StyledErrorMessage = styled(ErrorMessage)`
   color: var(--error-color);
@@ -96,6 +174,11 @@ export const StyledErrorMessage = styled(ErrorMessage)`
   line-height: 1.2;
   letter-spacing: -0.03em;
   text-transform: capitalize;
+
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+    line-height: 1.17;
+  }
 `;
 
 export const PasswordSecure = styled.p`
@@ -104,6 +187,11 @@ export const PasswordSecure = styled.p`
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: -0.03em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+    line-height: 1.17;
+  }
 `;
 
 export const SubmitBtn = styled.button`
@@ -124,6 +212,18 @@ export const SubmitBtn = styled.button`
   align-items: center;
   justify-content: center;
   margin-top: 14px;
+  transition: var(--hover-general);
+
+  &:hover {
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+  }
+
+  @media screen  and ( min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    margin-top: 24px;
+  }
 `;
 
 export const TextHaveAccount = styled.p`
@@ -135,5 +235,10 @@ export const TextHaveAccount = styled.p`
 
   a {
     color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.43;
   }
 `;

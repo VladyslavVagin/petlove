@@ -8,6 +8,15 @@ export const ContainerContent = styled.div`
   column-gap: 8px;
 `;
 
+export const IconBox = styled.div`
+  svg {
+    @media screen and (min-width: 768px) {
+      width: 175px;
+      height: 300px;
+    }
+  }
+`
+
 export const CatImgBox = styled.div`
   width: 109px;
   height: 109px;
@@ -17,5 +26,10 @@ export const CatImgBox = styled.div`
 
   picture {
     object-fit: cover;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 280px;
+    height: 280px;
   }
 `;
