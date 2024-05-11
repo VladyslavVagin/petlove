@@ -114,3 +114,22 @@ const clearAuthHeader = () => {
     }
    }
   )
+
+  export const removePet = createAsyncThunk("auth/removePet", 
+  async (id, thunkAPI) => {
+   const state = thunkAPI.getState();
+   const persistedToken = state.auth.token;
+
+   if (persistedToken === null) {
+     return thunkAPI.rejectWithValue('Unable to fetch user');
+   }
+
+   try {
+     setAuthHeader(persistedToken);
+     const res = await axios.delete(`/users/current/pets/remove/${id}`);
+     return res.data;
+   } catch (error) {
+     return thunkAPI.rejectWithValue(error.message);
+   }
+  }
+ )

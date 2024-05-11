@@ -88,5 +88,8 @@
      <symbol id="icon-calendar" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M25.333 5.333H6.666A2.667 2.667 0 0 0 3.999 8v18.667a2.667 2.667 0 0 0 2.667 2.667h18.667A2.667 2.667 0 0 0 28 26.667V8a2.667 2.667 0 0 0-2.667-2.667zM21.333 2.667V8M10.667 2.667V8M4 13.333h24"/>
     </symbol>
+     <symbol id="icon-four" viewBox="0 0 23 32">
+      <path fill="#fff" d="M13.815 32v-4.943H0v-5.606L10.019.221h6.886L6.886 21.451h6.93v-7.945h6.091v7.945h2.825v5.606h-2.825V32h-6.091z" style="fill:var(--color1, #fff)"/>
+    </symbol>
   </defs>
 </svg>

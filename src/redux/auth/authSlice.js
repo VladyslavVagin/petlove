@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, logIn, logOut, refreshUser, editUser, addPet } from "./operations";
+import { register, logIn, logOut, refreshUser, editUser, addPet, removePet } from "./operations";
 
 const initialState = {
   user: { name: null, email: null, phone: null, avatar: null },
@@ -90,6 +90,16 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.isRefreshing = false;
       }).addCase(addPet.fulfilled, (state, {payload}) => {
+        state.isLoading = false;
+        state.isRefreshing = false;
+        state.pets = payload.pets;
+      }).addCase(removePet.pending, (state) => {
+        state.isLoading = true;
+        state.isRefreshing = true;
+      }).addCase(removePet.rejected, (state) => {
+        state.isLoading = false;
+        state.isRefreshing = false;
+      }).addCase(removePet.fulfilled, (state, {payload}) => {
         state.isLoading = false;
         state.isRefreshing = false;
         state.pets = payload.pets;
