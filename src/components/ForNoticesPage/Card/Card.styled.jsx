@@ -5,6 +5,14 @@ export const CardContainer = styled.li`
   padding: 24px;
   border-radius: 16px;
   color: var(--dark-color);
+
+  @media screen and (min-width: 768px) {
+    width: 342px;
+    height: 444px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 export const ImageAnimalContainer = styled.div`

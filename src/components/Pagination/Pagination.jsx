@@ -14,6 +14,7 @@ import { PaginationContainer } from "./Pagination.styled";
 const PaginationGeneral = ({ totalPages, setCurrentPage, currentPage }) => {
   const [localCurrentPage, setLocalCurrentPage] = useState(currentPage);
   const mobilesSmall = useMediaQuery({ maxWidth: 374.98 });
+  const tablet = useMediaQuery({ minWidth: 768 });
 
   useEffect(() => {
     setLocalCurrentPage(currentPage);
@@ -34,7 +35,7 @@ const PaginationGeneral = ({ totalPages, setCurrentPage, currentPage }) => {
               page={localCurrentPage}
               onChange={onPageChanged}
               variant="outlined"
-              boundaryCount={0}
+              boundaryCount={tablet ? 1 : 0}
               siblingCount={0}
               color="primary"
               size={mobilesSmall ? "medium" : "large"}

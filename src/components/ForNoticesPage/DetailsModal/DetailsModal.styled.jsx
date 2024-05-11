@@ -21,6 +21,18 @@ export const ContainerModal = styled.div`
     line-height: 1.29;
     letter-spacing: -0.02em;
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 330px;
+    width: 330px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 18px;
+      line-height: 1.33;
+      margin-top: 16px;
+    }
+  }
 `;
 
 export const ImgBox = styled.div`
@@ -49,5 +61,16 @@ export const ImgBox = styled.div`
     position: absolute;
     top: 0;
     left: -4px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 150px;
+    height: 150px;
+
+    span {
+      font-size: 14px;
+      line-height: 1.29;
+      height: 34px;
+    }
   }
 `;

@@ -21,9 +21,11 @@ const NoAvatar = ({ setShowEditForm }) => {
           </svg>
         )}
       </AvatarBox>
-      <UploadPhotoButton type="button" onClick={() => setShowEditForm(true)}>
-        Upload photo
-      </UploadPhotoButton>
+      {!user.avatar && (
+        <UploadPhotoButton type="button" onClick={() => setShowEditForm(true)}>
+          Upload photo
+        </UploadPhotoButton>
+      )}
     </ContainerBox>
   );
 };

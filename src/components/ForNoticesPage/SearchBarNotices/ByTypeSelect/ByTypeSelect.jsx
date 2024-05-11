@@ -1,8 +1,10 @@
 import React from "react";
 import Select from "react-select";
+import { useMediaQuery } from "react-responsive";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const ByTypeSelect = ({setByTypeQuery, byTypeQuery, setCurrentPage}) => {
+const ByTypeSelect = ({ setByTypeQuery, byTypeQuery, setCurrentPage }) => {
+  const tablet = useMediaQuery({ minWidth: 768 });
   const { species } = useNotices();
 
   const speciesData = [
@@ -17,7 +19,10 @@ const ByTypeSelect = ({setByTypeQuery, byTypeQuery, setCurrentPage}) => {
     setByTypeQuery(e?.value);
     setCurrentPage(1);
   };
-  const selectValue = byTypeQuery === null ? null : speciesData.find((option) => option.value === byTypeQuery);
+  const selectValue =
+    byTypeQuery === null
+      ? null
+      : speciesData.find((option) => option.value === byTypeQuery);
 
   return (
     <div>
@@ -32,15 +37,15 @@ const ByTypeSelect = ({setByTypeQuery, byTypeQuery, setCurrentPage}) => {
           control: (baseStyles) => ({
             ...baseStyles,
             border: "1px solid transparent",
-            width: "100%",
-            height: "42px",
+            width: tablet ? "190px" : "100%",
+            height: tablet ? "48px" : "42px",
             background: "var(--white-color)",
             borderRadius: "30px",
             boxShadow: "none",
-            fontSize: "14px",
+            fontSize: tablet ? "16px" : "14px",
             outline: "none",
             fontWeight: "500",
-            lineHeight: "1.29",
+            lineHeight: tablet ? "1.25" : "1.29",
             letterSpacing: "-0.03em",
             color: "var(--dark-color)",
             fontFamily: "Manrope",
@@ -56,7 +61,7 @@ const ByTypeSelect = ({setByTypeQuery, byTypeQuery, setCurrentPage}) => {
           option: (baseStyles, state) => ({
             ...baseStyles,
             border: "none",
-            fontSize: "14px",
+            fontSize: tablet ? "16px" : "14px",
             fontWeight: "500",
             fontFamily: "Manrope",
             lineHeight: "1.25",
@@ -73,7 +78,7 @@ const ByTypeSelect = ({setByTypeQuery, byTypeQuery, setCurrentPage}) => {
           }),
           menu: (baseStyles) => ({
             ...baseStyles,
-            width: "100%",
+            width: tablet ? "190px" : "100%",
             borderRadius: "15px",
           }),
         }}

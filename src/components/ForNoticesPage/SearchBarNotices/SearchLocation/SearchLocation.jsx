@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import { useMediaQuery } from "react-responsive";
 import { DropdownIndicator } from "./DropDownIndicator";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const SearchLocation = ({setLocationQuery, locationQuery, setCurrentPage}) => {
+const SearchLocation = ({
+  setLocationQuery,
+  locationQuery,
+  setCurrentPage,
+}) => {
+  const tablet = useMediaQuery({ minWidth: 768 });
   const [inputValue, setInputValue] = useState("");
   const { cities } = useNotices();
   let filteredCities;
@@ -41,9 +47,12 @@ const SearchLocation = ({setLocationQuery, locationQuery, setCurrentPage}) => {
   const handleChangeLocation = (e) => {
     setLocationQuery(e?.value);
     setCurrentPage(1);
-  }
+  };
 
-  const selectValue = locationQuery === null ? null : options?.find((option) => option.value === locationQuery);
+  const selectValue =
+    locationQuery === null
+      ? null
+      : options?.find((option) => option.value === locationQuery);
 
   return (
     <>
@@ -61,16 +70,16 @@ const SearchLocation = ({setLocationQuery, locationQuery, setCurrentPage}) => {
           control: (baseStyles) => ({
             ...baseStyles,
             border: "1px solid transparent",
-            width: "100%",
-            height: "42px",
-            marginTop: "12px",
+            width: tablet ? "227px" : "100%",
+            height: tablet ? "48px" : "42px",
+            marginTop: tablet ? "0px" : "12px",
             background: "var(--white-color)",
             borderRadius: "30px",
-            fontSize: "14px",
+            fontSize: tablet ? "16px" : "14px",
             outline: "none",
             boxShadow: "none",
             fontWeight: "500",
-            lineHeight: "1.29",
+            lineHeight: tablet ? "1.25" : "1.29",
             letterSpacing: "-0.03em",
             color: "var(--dark-color)",
             fontFamily: "Manrope",
@@ -86,7 +95,7 @@ const SearchLocation = ({setLocationQuery, locationQuery, setCurrentPage}) => {
           option: (baseStyles, state) => ({
             ...baseStyles,
             border: "none",
-            fontSize: "14px",
+            fontSize: tablet ? "16px" : "14px",
             fontWeight: "500",
             fontFamily: "Manrope",
             lineHeight: "1.25",
@@ -103,7 +112,7 @@ const SearchLocation = ({setLocationQuery, locationQuery, setCurrentPage}) => {
           }),
           menu: (baseStyles) => ({
             ...baseStyles,
-            width: "100%",
+            width: tablet ? "227px" : "100%",
             borderRadius: "15px",
           }),
         }}

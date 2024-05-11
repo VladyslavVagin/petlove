@@ -27,7 +27,18 @@ export const AvatarBox = styled.div`
     border-radius: 50%;
     object-fit: cover;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 110px;
+    height: 110px;
+
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
 `;
+
 export const UploadPhotoButton = styled.button`
   outline: none;
   border: none;
@@ -39,4 +50,9 @@ export const UploadPhotoButton = styled.button`
   letter-spacing: -0.02em;
   text-decoration: underline;
   text-decoration-skip-ink: none;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.29;
+  }
 `;

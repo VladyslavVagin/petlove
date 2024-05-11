@@ -6,6 +6,11 @@ export const ContainerRadioBtns = styled.div`
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid rgba(38, 38, 38, 0.1);
+
+  @media screen and (min-width: 768px) {
+    margin-top: 4px;
+    padding-top: 4px;
+  }
 `;
 
 export const OptionsList = styled.ul`
@@ -44,6 +49,18 @@ export const OptionsList = styled.ul`
       svg {
         stroke: var(--white-color);
       }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    gap: 8px;
+    flex-wrap: nowrap;
+
+    li {
+      height: 48px;
+      padding: 14px;
+      font-size: 16px;
+      line-height: 1.25;
     }
   }
 `;

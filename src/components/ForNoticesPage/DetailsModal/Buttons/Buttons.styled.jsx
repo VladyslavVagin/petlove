@@ -27,6 +27,11 @@ export const ContactBtn = styled(Link)`
   &:hover {
     background-color: var(--hover-color);
   }
+
+  @media screen and (min-width: 768px) {
+    width: 160px;
+    height: 48px;
+  }
 `;
 
 export const AddRemoveBtn = styled.button`
@@ -60,5 +65,10 @@ export const AddRemoveBtn = styled.button`
     svg {
       stroke: var(--accent-color);
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 160px;
+    height: 48px;
   }
 `;

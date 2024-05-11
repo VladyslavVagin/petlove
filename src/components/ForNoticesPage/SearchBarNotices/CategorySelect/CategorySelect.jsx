@@ -1,8 +1,14 @@
 import React from "react";
 import Select from "react-select";
+import { useMediaQuery } from "react-responsive";
 import { useNotices } from "../../../../hooks/useNotices";
 
-const CategorySelect = ({ setCategoryQuery, categoryQuery, setCurrentPage }) => {
+const CategorySelect = ({
+  setCategoryQuery,
+  categoryQuery,
+  setCurrentPage,
+}) => {
+  const tablet = useMediaQuery({ minWidth: 768 });
   const { categories } = useNotices();
   const categoriesData = [
     { value: "", label: "Show all" },
@@ -17,9 +23,10 @@ const CategorySelect = ({ setCategoryQuery, categoryQuery, setCurrentPage }) => 
     setCurrentPage(1);
   };
 
-  const selectValue = categoryQuery === null
-    ? null // Set to default value
-    : categoriesData.find((option) => option.value === categoryQuery);
+  const selectValue =
+    categoryQuery === null
+      ? null // Set to default value
+      : categoriesData.find((option) => option.value === categoryQuery);
 
   return (
     <div>
@@ -34,15 +41,15 @@ const CategorySelect = ({ setCategoryQuery, categoryQuery, setCurrentPage }) => 
           control: (baseStyles) => ({
             ...baseStyles,
             border: "1px solid transparent",
-            width: "143px",
-            height: "42px",
+            width:  tablet ? "170px" : "143px",
+            height: tablet ? "48px" : "42px",
             background: "var(--white-color)",
             borderRadius: "30px",
             boxShadow: "none",
-            fontSize: "14px",
+            fontSize: tablet ? "16px" : "14px",
             outline: "none",
             fontWeight: "500",
-            lineHeight: "1.29",
+            lineHeight: tablet ? "1.25" : "1.29",
             letterSpacing: "-0.03em",
             color: "var(--dark-color)",
             fontFamily: "Manrope",
@@ -58,7 +65,7 @@ const CategorySelect = ({ setCategoryQuery, categoryQuery, setCurrentPage }) => 
           option: (baseStyles, state) => ({
             ...baseStyles,
             border: "none",
-            fontSize: "14px",
+            fontSize: tablet ? "18px" : "14px",
             fontWeight: "500",
             fontFamily: "Manrope",
             lineHeight: "1.25",
@@ -75,7 +82,7 @@ const CategorySelect = ({ setCategoryQuery, categoryQuery, setCurrentPage }) => 
           }),
           menu: (baseStyles) => ({
             ...baseStyles,
-            width: "143px",
+            width: tablet ? "170px" : "143px",
             borderRadius: "15px",
           }),
         }}

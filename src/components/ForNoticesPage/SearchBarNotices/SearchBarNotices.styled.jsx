@@ -5,6 +5,15 @@ export const SearchContainer = styled.div`
     border-radius: 30px;
     padding: .1px 20px 20px;
     margin-top: 40px;
+
+    @media screen and (min-width: 768px) {
+        padding: 40px 32px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+    }
 `
 export const SelectContainer = styled.div`
     margin-top: 12px;
@@ -13,6 +22,12 @@ export const SelectContainer = styled.div`
     align-items: center;
     justify-content: center;
     column-gap: 8px;
+
+    @media screen and (min-width: 768px) {
+        width: 356px;
+        column-gap: 16px;
+        margin: 0;
+    }
 `
 
 export const ResetFilterBtn = styled.button`
@@ -31,5 +46,9 @@ export const ResetFilterBtn = styled.button`
 
     &:hover {
         color: var(--placeholder-color);
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-top: -20px;
     }
 `
