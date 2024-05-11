@@ -30,6 +30,30 @@ export const ItemContainer = styled.li`
 
   @media screen and (min-width: 768px) {
     width: 340px;
+    height: 476px;
+    row-gap: 0px;
+
+    img {
+      width: 340px;
+      height: 226px;
+      min-width: 340px;
+      min-height: 226px;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 1.3;
+      margin-top: 28px;
+      margin-bottom: 14px;
+    }
+
+    p {
+      max-height: 100px;
+      min-height: 100px;
+      font-size: 16px;
+      line-height: 1.25;
+      overflow-y: scroll;
+    }
   }
 `;
 
@@ -51,5 +75,12 @@ export const DateReadBox = styled.div`
     color: var(--accent-color);
     text-decoration: underline;
     text-decoration-skip-ink: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    height: 100%;
+    align-items: flex-end;
   }
 `;

@@ -5,4 +5,13 @@ export const List = styled.ul`
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        column-gap: 24px;
+        row-gap: 32px;
+    }
 `
