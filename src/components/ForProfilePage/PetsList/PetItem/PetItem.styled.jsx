@@ -10,6 +10,12 @@ export const ItemContainer = styled.li`
   display: flex;
   align-items: flex-start;
   column-gap: 14px;
+
+  @media screen and (min-width: 768px) {
+    width: 305px;
+    height: 149px;
+    padding: 22px 16px;
+  }
 `;
 
 export const Content = styled.div`
@@ -39,6 +45,13 @@ export const PetImgBox = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media screen and (min-width: 768px) {
+    min-width: 75px;
+    min-height: 75px;
+    width: 75px;
+    height: 75px;
+  }
 `;
 
 export const DeletePetBtn = styled.button`
@@ -63,5 +76,10 @@ export const DeletePetBtn = styled.button`
   svg {
     fill: none;
     stroke: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 32px;
   }
 `;

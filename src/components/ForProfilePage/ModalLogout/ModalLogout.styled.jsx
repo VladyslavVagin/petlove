@@ -24,10 +24,21 @@ export const ImgContainer = styled.div`
   p {
     font-weight: 700;
     font-size: 20px;
-    line-height: 1;
     letter-spacing: -0.03em;
     color: var(--dark-color);
     margin-top: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 288px;
+    height: 204px;
+    padding-top: 40px;
+    margin: 0 auto;
+
+    p {
+      font-size: 24px;
+      line-height: 1.17;
+    }
   }
 `;
 
@@ -37,6 +48,11 @@ export const BtnsBox = styled.div`
     justify-content: center;
     column-gap: 8px;
     margin-top: 28px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 0px;
+      margin-bottom: 40px;
+    }
 `
 
 export const LogoutConfirmBtn = styled.button`
@@ -57,6 +73,13 @@ export const LogoutConfirmBtn = styled.button`
     background-color: var(--hover-color);
     color: var(--accent-color);
   }
+
+  @media screen and (min-width: 768px) {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const CancelBtn = styled.button`
@@ -76,5 +99,12 @@ export const CancelBtn = styled.button`
   &:hover {
     background-color: var(--hover-color);
     color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
   }
 `;

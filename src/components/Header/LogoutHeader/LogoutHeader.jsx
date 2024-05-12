@@ -1,16 +1,18 @@
 // @ts-nocheck
-import React from "react";
-import { useDispatch } from "react-redux";
-import { logOut } from "../../../redux/auth/operations";
+import React, { useState } from "react";
+import ModalLogout from "../../ForProfilePage/ModalLogout/ModalLogout";
 import { LogoutButton } from "./LogoutHeader.styled";
 
 const LogoutHeader = () => {
-  const dispatch = useDispatch();
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   return (
-    <LogoutButton type="button" onClick={() => dispatch(logOut())}>
-      log out
-    </LogoutButton>
+    <>
+    {showLogoutModal && <ModalLogout showLogout={showLogoutModal} setShowLogout={setShowLogoutModal}/>}
+      <LogoutButton type="button" onClick={() => setShowLogoutModal(true)}>
+        log out
+      </LogoutButton>
+    </>
   );
 };
 

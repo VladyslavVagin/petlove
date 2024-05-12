@@ -37,4 +37,30 @@ export const MyInfoContainer = styled.div`
       }
     }
   }
+
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 18px;
+      line-height: 1.33;
+    }
+
+    ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      row-gap: 14px;
+      column-gap: 14px;
+
+      li {
+        width: 305px;
+        height: 52px;
+        padding: 16px;
+
+        p {
+          font-size: 16px;
+          line-height: 1.25;
+        }
+      }
+    }
+  }
 `;

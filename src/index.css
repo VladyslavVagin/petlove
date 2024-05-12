@@ -117,3 +117,12 @@ img {
   font-family: "Manrope", sans-serif!important;
   color: var(--placeholder-color)!important;
 }
+
+@media screen and (min-width: 768px) {
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    width: 210px;
+    height: 52px;
+    font-size: 16px!important;
+    line-height: 1.25!important;
+  }
+}

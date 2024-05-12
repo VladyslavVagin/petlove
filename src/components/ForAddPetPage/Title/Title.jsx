@@ -15,6 +15,15 @@ const MainTitle = styled.h1`
     line-height: 1.29;
     color: var(--subtitle-color);
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+
+    span {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
 `;
 
 const Title = () => {

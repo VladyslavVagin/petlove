@@ -12,4 +12,9 @@ export const Text = styled.p`
   b {
     color: var(--accent-color);
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;

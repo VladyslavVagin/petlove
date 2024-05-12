@@ -13,6 +13,13 @@ export const TitlePetsContainer = styled.div`
     line-height: 1.25;
     color: var(--dark-light);
   }
+
+  @media screen and (min-width: 768px) {
+    h2 {
+      font-size: 18px;
+      line-height: 1.33;
+    }
+  }
 `;
 
 export const AddPetLink = styled(Link)`
@@ -43,5 +50,12 @@ export const AddPetLink = styled(Link)`
     svg {
       stroke: var(--accent-color);
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 118px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 1.25;
   }
 `;

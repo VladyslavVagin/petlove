@@ -40,6 +40,17 @@ export const ImgContainer = styled.div`
     text-align: center;
     color: var(--dark-light);
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 346px;
+    width: 346px;
+    margin: 20px auto;
+
+    span {
+      font-size: 24px;
+      line-height: 1.17;
+    }
+  }
 `;
 
 export const BtnsBox = styled.div`
@@ -56,6 +67,9 @@ export const ToLogin = styled(Link)`
   border-radius: 30px;
   width: 135px;
   height: 42px;
+  font-size: 14px;
+  line-height: 1.29;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,12 +81,22 @@ export const ToLogin = styled(Link)`
     background-color: var(--hover-color);
     color: var(--accent-color);
   }
+
+  @media screen and (min-width: 768px) {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const ToRegistration = styled(Link)`
   outline: none;
   border: none;
   border-radius: 30px;
+  font-size: 14px;
+  line-height: 1.29;
+  font-weight: 700;
   width: 135px;
   height: 42px;
   display: flex;
@@ -84,6 +108,13 @@ export const ToRegistration = styled(Link)`
 
   &:hover {
     background-color: var(--hover-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
   }
 `;
 

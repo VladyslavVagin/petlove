@@ -5,6 +5,15 @@ export const CardContainer = styled.li`
   padding: 24px;
   border-radius: 16px;
   color: var(--dark-color);
+
+  @media screen and (min-width: 768px) {
+    width: 342px;
+    height: 388px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ImageAnimalContainer = styled.div`
@@ -17,6 +26,12 @@ export const ImageAnimalContainer = styled.div`
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 314px;
+    height: 162px;
+    margin-bottom: 14px;
   }
 `;
 
@@ -38,6 +53,17 @@ export const TitlePopularityBox = styled.div`
     display: flex;
     align-items: center;
     column-gap: 4px;
+  }
+
+  @media screen  and (min-width: 768px) {
+    h2 {
+      font-size: 18px;
+      line-height: 1.33;
+    }
+
+    span {
+      line-height: 1.43;
+    }
   }
 `;
 
@@ -85,6 +111,10 @@ export const ButtonsCardBox = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 24px;
+
+  @media screen and (min-width: 768px) {
+    column-gap: 10px;
+  }
 `;
 
 export const ButtonLearnMore = styled.button`
@@ -108,6 +138,13 @@ export const ButtonLearnMore = styled.button`
   &:hover {
     background-color: var(--bright-orange);
   }
+
+  @media screen and (min-width: 768px) {
+    width: 260px;
+    height: 44px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const BtnRemove = styled.button`
@@ -129,5 +166,10 @@ export const BtnRemove = styled.button`
 
   &:hover {
     background-color: var(--hover-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
   }
 `;

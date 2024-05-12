@@ -30,6 +30,17 @@ export const ImgContainer = styled.div`
     color: var(--accent-color);
     margin-top: 20px;
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 300px;
+    width: 300px;
+    margin: 25px auto;
+
+    p {
+      font-size: 24px;
+      line-height: 1.17;
+    }
+  }
 `;
 
 export const TextCongrats = styled.p`
@@ -41,21 +52,34 @@ export const TextCongrats = styled.p`
   color: var(--dark-light);
   margin-top: 20px;
   margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 300px;
+    margin: 14px auto 28px auto;
+  }
 `;
 
 export const ButtonLink = styled(Link)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 42px;
-    border-radius: 30px;
-    background-color: var(--accent-color);
-    color: var(--white-color);
-    transition: var(--hover-general);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 42px;
+  border-radius: 30px;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  transition: var(--hover-general);
 
-    &:hover {
-        background-color: var(--hover-color);
-        color: var(--accent-color);
-    }
-`
+  &:hover {
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 250px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0 auto;
+  }
+`;

@@ -24,7 +24,6 @@ export const ModalContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     max-width: 473px;
-    height: 476px;
   }
 `;
 

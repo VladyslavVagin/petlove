@@ -18,4 +18,11 @@ export const LogoutBtn = styled.button`
   &:hover {
     background-color: var(--hover-color);
   }
+
+  @media screen and (min-width: 768px) {
+    width: 136px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;

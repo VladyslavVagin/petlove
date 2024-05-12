@@ -90,7 +90,7 @@ const FormEditUser = ({ setImageURL, setShowEditForm }) => {
         defaultValue={user.phone || "Phone number"}
       />
       <p>{errors.phone?.message}</p>
-      <SubmitBtn type="submit">Go to profile</SubmitBtn>
+      <SubmitBtn type="submit">Save</SubmitBtn>
     </FormContainer>
   );
 };

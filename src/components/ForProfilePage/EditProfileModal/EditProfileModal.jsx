@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import ModalGeneral from "../../ModalGeneral/ModalGeneral";
 import { useAuth } from "../../../hooks/useAuth";
 import sprite from "../../../assets/icons/icons.svg";
-import { AvatarBox } from "../UserData/AvatarData/AvatarData.styled";
-import { EditModalContainer } from "./EditProfileModal.styled";
+import { EditModalContainer, AvatarBox } from "./EditProfileModal.styled";
 import FormEditUser from "./FormEditUser/FormEditUser";
 
 const EditProfileModal = ({ setShowEditForm, showEditForm }) => {

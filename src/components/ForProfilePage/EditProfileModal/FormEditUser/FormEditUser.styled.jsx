@@ -15,6 +15,17 @@ export const FormContainer = styled.form`
     justify-content: center;
     column-gap: 8px;
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 380px;
+    row-gap: 14px;
+
+    div {
+      width: 380px;
+      justify-content: flex-start;
+      margin-bottom: 14px;
+    }
+  }
 `;
 
 export const Label = styled.label`
@@ -25,6 +36,12 @@ export const Label = styled.label`
     top: 0px;
     right: 18px;
   }
+
+  @media screen and (min-width: 768px) {
+    svg {
+      right: 0px;
+    }
+  }
 `;
 
 export const InputAvatarURL = styled.input`
@@ -34,6 +51,10 @@ export const InputAvatarURL = styled.input`
   border-radius: 30px;
   border: 1px solid var(--accent-color);
   padding: 12px;
+
+  @media screen and (min-width: 768px) {
+    width: 226px;
+  }
 `;
 
 export const InputStandart = styled.input`
@@ -43,6 +64,13 @@ export const InputStandart = styled.input`
   border-radius: 30px;
   border: 1px solid var(--accent-color);
   padding: 12px;
+
+  @media screen and (min-width: 768px) {
+    height: 52px;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const AddAvatarInput = styled.input`
@@ -80,6 +108,15 @@ export const AddAvatarInput = styled.input`
       background-color: var(--hover-color);
     }
   }
+
+  @media screen and (min-width: 768px) {
+    &::before {
+      width: 122px;
+      font-size: 14px;
+      line-height: 1.29;
+      padding-left: 18px;
+    }
+  }
 `;
 
 export const SubmitBtn = styled.button`
@@ -94,4 +131,16 @@ export const SubmitBtn = styled.button`
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.03em;
+  transition: var(--hover-general);
+
+  &:hover {
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;

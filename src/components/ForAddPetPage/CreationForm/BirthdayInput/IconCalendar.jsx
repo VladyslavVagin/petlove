@@ -11,6 +11,11 @@ const Icon = styled.svg`
   &:focus {
     stroke: var(--accent-color);
   }
+
+  @media screen  and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const IconCalendar = () => {

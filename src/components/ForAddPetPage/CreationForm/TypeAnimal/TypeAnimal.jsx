@@ -1,11 +1,13 @@
 // @ts-nocheck
 import React, { useEffect } from "react";
 import Select from "react-select";
+import { useMediaQuery } from "react-responsive";
 import { useDispatch } from "react-redux";
 import { fetchSpecies } from "../../../../redux/notices/operations";
 import { useNotices } from "../../../../hooks/useNotices";
 
 const TypeAnimal = ({ petType, setPetType }) => {
+  const tablet = useMediaQuery({ minWidth: 768 });
   const dispatch = useDispatch();
   const { species } = useNotices();
 
@@ -36,21 +38,21 @@ const TypeAnimal = ({ petType, setPetType }) => {
         onChange={handleByType}
         options={speciesData}
         placeholder={"Type of pet"}
-        maxMenuHeight={78}
+        maxMenuHeight={tablet ? 142 : 78}
         isClearable={true}
         styles={{
           control: (baseStyles) => ({
             ...baseStyles,
             border: "1px solid var(--link-gray)",
-            width: "143px",
-            height: "40px",
+            width: tablet ? "210px" : "143px",
+            height: tablet ? "52px" : "40px",
             background: "var(--white-color)",
             borderRadius: "30px",
             boxShadow: "none",
-            fontSize: "14px",
+            fontSize: tablet ? "16px" : "14px",
             outline: "none",
             fontWeight: "500",
-            lineHeight: "1.29",
+            lineHeight: tablet ? "1.25" : "1.29",
             letterSpacing: "-0.03em",
             color: "var(--dark-color)",
             fontFamily: "Manrope",
@@ -69,7 +71,7 @@ const TypeAnimal = ({ petType, setPetType }) => {
           option: (baseStyles, state) => ({
             ...baseStyles,
             border: "none",
-            fontSize: "14px",
+            fontSize: tablet ? "16px" : "14px",
             fontWeight: "500",
             fontFamily: "Manrope",
             lineHeight: "1.25",
@@ -90,7 +92,7 @@ const TypeAnimal = ({ petType, setPetType }) => {
           }),
           menu: (baseStyles) => ({
             ...baseStyles,
-            width: "100%",
+            width: tablet ? "210px" : "100%",
             borderRadius: "15px",
           }),
         }}

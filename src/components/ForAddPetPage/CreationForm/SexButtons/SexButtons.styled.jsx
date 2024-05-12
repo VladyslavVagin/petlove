@@ -16,6 +16,13 @@ export const ListItems = styled.ul`
     justify-content: center;
     transition: var(--hover-general);
   }
+
+  @media screen and (min-width: 768px) {
+    li {
+      width: 40px;
+      height: 40px;
+    }
+  }
 `;
 
 export const FemaleLi = styled.li`

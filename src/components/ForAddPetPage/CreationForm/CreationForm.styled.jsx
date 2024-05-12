@@ -22,6 +22,10 @@ export const InputPetImage = styled.input`
   &:hover {
     border: 1px solid var(--accent-color);
   }
+
+  @media screen and (min-width: 768px) {
+    width: 278px;
+  }
 `;
 
 export const InputNormal = styled.input`
@@ -32,7 +36,6 @@ export const InputNormal = styled.input`
   border: 1px solid var(--link-gray);
   padding: 12px;
   transition: var(--hover-general);
-  margin-bottom: 10px;
 
   &::placeholder {
     font-weight: 500;
@@ -45,6 +48,17 @@ export const InputNormal = styled.input`
   &:focus-within,
   &:hover {
     border: 1px solid var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 52px;
+    font-size: 16px;
+    line-height: 1.25;
+
+    &::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+    }
   }
 `;
 
@@ -68,6 +82,12 @@ export const UploadContainer = styled.div`
   column-gap: 8px;
   margin-top: 16px;
   margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+    margin-top: 12px;
+    margin-bottom: 18px;
+  }
 `;
 
 export const BoxContainer = styled.div`
@@ -75,6 +95,11 @@ export const BoxContainer = styled.div`
   align-items: center;
   justify-content: center;
   column-gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+    column-gap: 12px;
+  }
 `;
 
 export const SubmitBtn = styled.button`
@@ -95,6 +120,13 @@ export const SubmitBtn = styled.button`
   &:hover {
     background-color: var(--hover-color);
     color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 170px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
   }
 `;
 
@@ -120,6 +152,13 @@ export const BackBtn = styled(Link)`
     background-color: var(--hover-color);
     color: var(--accent-color);
   }
+
+  @media screen and (min-width: 768px) {
+    width: 170px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const ButtonsBox = styled.div`
@@ -129,4 +168,29 @@ export const ButtonsBox = styled.div`
   justify-content: flex-end;
   column-gap: 8px;
   margin-top: 31px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
 `;
+
+export const ErrorMsg = styled.p`
+  color: var(--error-color);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: capitalize;
+
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+    line-height: 1.17;
+  }
+`
+export const InputBox = styled.div`
+  margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 18px;
+  }
+`

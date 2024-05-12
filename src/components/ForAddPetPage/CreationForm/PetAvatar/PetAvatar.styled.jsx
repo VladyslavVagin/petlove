@@ -25,4 +25,16 @@ export const ImageBox = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 86px;
+    height: 86px;
+    margin-top: -36px;
+
+    svg {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
 `;

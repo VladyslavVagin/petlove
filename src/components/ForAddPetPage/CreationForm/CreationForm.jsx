@@ -15,13 +15,18 @@ import {
   BackBtn,
   BoxContainer,
   ButtonsBox,
+  ErrorMsg,
+  InputBox,
   InputNormal,
   InputPetImage,
   InvisibleInput,
   SubmitBtn,
   UploadContainer,
 } from "./CreationForm.styled";
-import { Label, AddAvatarInput } from "../../ForProfilePage/EditProfileModal/FormEditUser/FormEditUser.styled";
+import {
+  Label,
+  AddAvatarInput,
+} from "../../ForProfilePage/EditProfileModal/FormEditUser/FormEditUser.styled";
 
 const CreationForm = () => {
   const dispatch = useDispatch();
@@ -39,7 +44,7 @@ const CreationForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(addPetSchema) });
 
-  const onSubmit = (data) => { 
+  const onSubmit = (data) => {
     dispatch(addPet(data));
     navigate("/profile");
   };
@@ -80,7 +85,7 @@ const CreationForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <SexButtons setSexPet={setSexPet} sexPet={sexPet} />
       <InvisibleInput type="text" {...register("sex")} />
-      <p>{errors.sex?.message}</p>
+      <ErrorMsg>{errors.sex?.message}</ErrorMsg>
       <PetAvatar petImageURL={petImageURL} />
       <UploadContainer>
         <label>
@@ -89,7 +94,7 @@ const CreationForm = () => {
             {...register("imgURL")}
             placeholder="Enter URL"
           />
-          <p>{errors.imgURL?.message}</p>
+          <ErrorMsg>{errors.imgURL?.message}</ErrorMsg>
         </label>
         <Label>
           <AddAvatarInput
@@ -102,19 +107,27 @@ const CreationForm = () => {
           </svg>
         </Label>
       </UploadContainer>
-      <InputNormal type="text" {...register("title")} placeholder="Title" />
-      <p>{errors.title?.message}</p>
-      <InputNormal type="text" {...register("name")} placeholder="Pet's Name" />
-      <p>{errors.name?.message}</p>
+      <InputBox>
+        <InputNormal type="text" {...register("title")} placeholder="Title" />
+        <ErrorMsg>{errors.title?.message}</ErrorMsg>
+      </InputBox>
+      <InputBox>
+        <InputNormal
+          type="text"
+          {...register("name")}
+          placeholder="Pet's Name"
+        />
+        <ErrorMsg>{errors.name?.message}</ErrorMsg>
+      </InputBox>
       <BoxContainer>
         <div>
           <BirthdayInput birthDate={birthDate} setBirthDate={setBirthDate} />
-          <p>{errors.birthday?.message}</p>
+          <ErrorMsg>{errors.birthday?.message}</ErrorMsg>
           <InvisibleInput type="text" {...register("birthday")} />
         </div>
         <div>
           <TypeAnimal petType={petType} setPetType={setPetType} />
-          <p>{errors.species?.message}</p>
+          <ErrorMsg>{errors.species?.message}</ErrorMsg>
           <InvisibleInput type="text" {...register("species")} />
         </div>
       </BoxContainer>
