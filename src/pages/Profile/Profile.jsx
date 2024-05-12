@@ -9,6 +9,7 @@ import UserAndEditBtns from "../../components/ForProfilePage/UserAndEditBtns/Use
 import { Container } from "./Profile.styled";
 import UserInformation from "../../components/ForProfilePage/UserInformation";
 import LinksCollections from "../../components/ForProfilePage/LinksCollections/LinksCollections";
+import { DesktopBox } from "../../components/Common/DesktopBox/DesktopBox";
 
 const Profile = () => {
   const [showEditForm, setShowEditForm] = useState(false);
@@ -20,16 +21,25 @@ const Profile = () => {
 
   return (
     <>
-    {showEditForm && <EditProfileModal setShowEditForm={setShowEditForm} showEditForm={showEditForm}/>}
+      {showEditForm && (
+        <EditProfileModal
+          setShowEditForm={setShowEditForm}
+          showEditForm={showEditForm}
+        />
+      )}
       <HomePageSection>
-        <Container>
-          <UserAndEditBtns setShowEditForm={setShowEditForm} />
-          <UserInformation setShowEditForm={setShowEditForm} />
-        </Container>
-        <LinksCollections />
-        <Suspense fallback={<p>Loading...</p>}>
-          <Outlet />
-        </Suspense>
+        <DesktopBox>
+          <Container>
+            <UserAndEditBtns setShowEditForm={setShowEditForm} />
+            <UserInformation setShowEditForm={setShowEditForm} />
+          </Container>
+          <div>
+            <LinksCollections />
+            <Suspense fallback={<p>Loading...</p>}>
+              <Outlet />
+            </Suspense>
+          </div>
+        </DesktopBox>
       </HomePageSection>
     </>
   );

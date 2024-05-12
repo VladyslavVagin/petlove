@@ -14,6 +14,10 @@ export const SearchContainer = styled.div`
         justify-content: flex-start;
         gap: 16px;
     }
+
+    @media screen and (min-width: 1280px) {
+        justify-content: center;
+    }
 `
 export const SelectContainer = styled.div`
     margin-top: 12px;
@@ -27,6 +31,10 @@ export const SelectContainer = styled.div`
         width: 356px;
         column-gap: 16px;
         margin: 0;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 406px;
     }
 `
 

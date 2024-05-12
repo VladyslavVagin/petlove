@@ -33,9 +33,15 @@ export const CardContainer = styled.li`
 
     span {
       font-size: 14px;
+      line-height: 1.29;
       width: 102px;
       height: 34px;
     }
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 371px;
+    height: 196px;
   }
 `;
 

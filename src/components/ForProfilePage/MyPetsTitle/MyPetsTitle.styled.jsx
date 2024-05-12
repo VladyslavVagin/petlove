@@ -20,6 +20,10 @@ export const TitlePetsContainer = styled.div`
       line-height: 1.33;
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 24px;
+  }
 `;
 
 export const AddPetLink = styled(Link)`

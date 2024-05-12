@@ -32,4 +32,22 @@ export const RegisterImageBox = styled.div`
             left: 224px;
         }
     }
-`
+
+    @media screen and (min-width: 1280px) {
+        width: 592px;
+        height: 654px;
+
+        picture {
+            right: unset;
+            left: 40px;
+            bottom: -22px;
+        }
+
+        svg {
+            transform: scale(4);
+            bottom: unset;
+            top: 278px;
+            left: 134px;
+        }
+    }
+    `

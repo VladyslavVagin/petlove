@@ -45,4 +45,9 @@ export const ListInfoPet = styled.ul`
       }
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 243px;
+    column-gap: 27px;
+  }
 `;

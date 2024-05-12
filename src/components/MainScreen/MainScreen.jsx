@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sprite from "../../assets/icons/icons.svg";
-import { MainScreenContainer } from "./MainScreen.styled";
 import Loader from "../Loader/Loader";
+import { MainScreenContainer } from "./MainScreen.styled";
 
 const MainScreen = () => {
   const [isLoading, setIsLoading] = useState(false);

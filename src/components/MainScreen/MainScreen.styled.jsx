@@ -3,6 +3,8 @@ import bgImg from "../../assets/images/main/maindog.webp";
 import bgImg2x from "../../assets/images/main/maindog-2x.webp";
 import bgTablet from "../../assets/images/main/preloaderTablet.webp";
 import bgTablet2x from "../../assets/images/main/preloaderTablet-2x.webp";
+import bgDesktop from "../../assets/images/main/screenPC.webp"
+import bgDesktop2x from "../../assets/images/main/screenPC-2x.webp"
 
 export const MainScreenContainer = styled.div`
   position: fixed;
@@ -48,6 +50,16 @@ export const MainScreenContainer = styled.div`
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       background: url(${bgTablet2x}) no-repeat center / cover;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    background: url(${bgDesktop}) no-repeat center / cover;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background: url(${bgDesktop2x}) no-repeat center / cover;
     }
   }
 `;

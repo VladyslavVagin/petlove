@@ -14,8 +14,12 @@ export const IconBox = styled.div`
       width: 175px;
       height: 300px;
     }
+
+    @media screen and (min-width: 1280px) {
+      width: 185px;
+    }
   }
-`
+`;
 
 export const CatImgBox = styled.div`
   width: 109px;
@@ -31,5 +35,19 @@ export const CatImgBox = styled.div`
   @media screen and (min-width: 768px) {
     width: 280px;
     height: 280px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 300px;
+    height: 300px;
+
+    picture {
+      object-position: -20px;
+
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    }
   }
 `;

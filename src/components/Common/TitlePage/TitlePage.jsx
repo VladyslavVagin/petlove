@@ -9,4 +9,8 @@ export const TitleOfPage = styled.h1`
   @media screen and (min-width: 768px) {
     font-size: 54px;
   }
+
+  @media screen and (min-width: 1280px) {
+    padding-left: 32px;
+  }
 `;

@@ -14,6 +14,11 @@ export const CardContainer = styled.li`
     flex-direction: column;
     align-items: center;
   }
+
+  @media screen and (min-width: 1280px) {
+    width: 320px;
+    justify-content: space-between;
+  }
 `;
 
 export const ImageAnimalContainer = styled.div`
@@ -32,6 +37,10 @@ export const ImageAnimalContainer = styled.div`
     width: 314px;
     height: 162px;
     margin-bottom: 14px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 292px;
   }
 `;
 
@@ -55,7 +64,7 @@ export const TitlePopularityBox = styled.div`
     column-gap: 4px;
   }
 
-  @media screen  and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     h2 {
       font-size: 18px;
       line-height: 1.33;
@@ -79,6 +88,19 @@ export const ListInfo = styled.ul`
     flex-direction: column;
     align-items: flex-start;
     row-gap: 2px;
+    &:first-of-type {
+      p {
+        max-width: 54px !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        span {
+          max-width: 54px !important;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
 
     p {
       font-weight: 500;
@@ -115,6 +137,10 @@ export const ButtonsCardBox = styled.div`
   @media screen and (min-width: 768px) {
     column-gap: 10px;
   }
+
+  @media screen and (min-width: 1280px) {
+    column-gap: 4px;
+  }
 `;
 
 export const ButtonLearnMore = styled.button`
@@ -144,6 +170,10 @@ export const ButtonLearnMore = styled.button`
     height: 44px;
     font-size: 16px;
     line-height: 1.25;
+  }
+
+  @media screen and (min-width: 1280) {
+    width: 238px;
   }
 `;
 

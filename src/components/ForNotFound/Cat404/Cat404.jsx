@@ -6,6 +6,9 @@ import cat3x from "../../../assets/images/notFound/cat404-3x.webp";
 import catTablet from "../../../assets/images/notFound/cat404tablet.webp";
 import catTablet2x from "../../../assets/images/notFound/cat404tablet-2x.webp";
 import catTablet3x from "../../../assets/images/notFound/cat404tablet-3x.webp";
+import catDesktop from "../../../assets/images/notFound/errorPC.webp";
+import catDesktop2x from "../../../assets/images/notFound/errorPC-2x.webp";
+import catDesktop3x from "../../../assets/images/notFound/errorPC-3x.webp";
 import { CatImgBox, ContainerContent, IconBox } from "./Cat404.styled";
 
 const Cat404 = () => {
@@ -18,6 +21,11 @@ const Cat404 = () => {
       </IconBox>
       <CatImgBox>
         <picture>
+        <source
+            media="(min-width: 1280px)"
+            srcSet={`${catDesktop} 1x, ${catDesktop2x} 2x, ${catDesktop3x} 3x`}
+            type="image/webp"
+          />
         <source
             media="(min-width: 768px)"
             srcSet={`${catTablet} 1x, ${catTablet2x} 2x, ${catTablet3x} 3x`}

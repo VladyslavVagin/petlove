@@ -56,6 +56,10 @@ export const MyInfoContainer = styled.div`
         height: 52px;
         padding: 16px;
 
+        @media screen and (min-width: 1280px) {
+          width: 100%;
+        }
+
         p {
           font-size: 16px;
           line-height: 1.25;

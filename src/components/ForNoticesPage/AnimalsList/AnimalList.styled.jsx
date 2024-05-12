@@ -13,4 +13,11 @@ export const ListOfNotices = styled.ul`
         margin-top: 32px;
         column-gap: 20px;
     }
+
+    @media screen and (min-width: 1280px) {
+        margin-top: 40px;
+        column-gap: 32px;
+        row-gap: 40px;
+        justify-content: center;
+    }
 `

@@ -12,6 +12,13 @@ export const FormContainer = styled.div`
     border-radius: 60px;
     padding: 27px 140px;
   }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 0;
+    width: 592px;
+    height: 654px;
+    padding: 77px 82px;
+  }
 `;
 
 export const FormTitleBox = styled.div`
@@ -220,6 +227,7 @@ export const SubmitBtn = styled.button`
   }
 
   @media screen  and ( min-width: 768px) {
+    height: 52px;
     font-size: 16px;
     line-height: 1.25;
     margin-top: 24px;

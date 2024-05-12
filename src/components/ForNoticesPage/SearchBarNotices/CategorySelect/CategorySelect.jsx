@@ -9,6 +9,8 @@ const CategorySelect = ({
   setCurrentPage,
 }) => {
   const tablet = useMediaQuery({ minWidth: 768 });
+  const tabletEnd = useMediaQuery({maxWidth: 1279.98});
+  const desktop = useMediaQuery({ minWidth: 1280 });
   const { categories } = useNotices();
   const categoriesData = [
     { value: "", label: "Show all" },
@@ -41,7 +43,7 @@ const CategorySelect = ({
           control: (baseStyles) => ({
             ...baseStyles,
             border: "1px solid transparent",
-            width:  tablet ? "170px" : "143px",
+            width: tablet && tabletEnd ? "170px" : (desktop ? "200px" : "143px"),
             height: tablet ? "48px" : "42px",
             background: "var(--white-color)",
             borderRadius: "30px",

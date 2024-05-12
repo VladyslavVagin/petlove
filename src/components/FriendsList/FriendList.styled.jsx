@@ -11,4 +11,11 @@ export const CardsListContainer = styled.ul`
         flex-wrap: wrap;
         margin-top: 44px;
     }
+
+    @media screen and (min-width: 1280px) {
+        justify-content: center;
+        margin-top: 60px;
+        row-gap: 28px;
+        
+    }
 `

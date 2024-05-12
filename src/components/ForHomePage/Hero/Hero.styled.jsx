@@ -45,4 +45,17 @@ export const HeroContainer = styled.div`
       margin-left: auto;
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    padding: 1px 64px 32px 64px;
+    display: flex;
+    align-items: flex-end;
+
+    h1 {
+      font-size: 90px;
+      line-height: 0.97;
+      max-width: 760px;
+      margin-bottom: 0;
+    }
+  }
 `;

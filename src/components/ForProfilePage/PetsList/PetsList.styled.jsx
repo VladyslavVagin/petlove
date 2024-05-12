@@ -14,4 +14,10 @@ export const ListOfPets = styled.ul`
         justify-content: flex-start;
         column-gap: 14px;
     }
+
+    @media screen and (min-width: 1280px) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-bottom: 40px;
+    }
 `

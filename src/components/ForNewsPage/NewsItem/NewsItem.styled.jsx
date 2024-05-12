@@ -55,6 +55,15 @@ export const ItemContainer = styled.li`
       overflow-y: scroll;
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    width: 361px;
+
+    img {
+      width: 361px;
+      min-width: 361px
+    }
+  }
 `;
 
 export const DateReadBox = styled.div`

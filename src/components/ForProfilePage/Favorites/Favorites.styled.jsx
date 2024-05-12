@@ -13,4 +13,10 @@ export const ListFavorites = styled.ul`
         flex-wrap: wrap;
         column-gap: 20px;
     }
+
+    @media screen and (min-width: 1280px) {
+        margin-top: 32px;
+        column-gap: 24px;
+        row-gap: 24px;
+    }
 `

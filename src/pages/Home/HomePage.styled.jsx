@@ -9,4 +9,8 @@ export const HomePageSection = styled.section`
     max-width: 768px;
     padding: 0 32px;
   }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1280px;
+  }
 `;

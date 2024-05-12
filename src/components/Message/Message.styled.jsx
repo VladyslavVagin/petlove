@@ -13,6 +13,11 @@ export const MessageContainer = styled.div`
   align-items: flex-start;
   column-gap: 8px;
   z-index: 2;
+
+  @media screen and (min-width: 1280px) {
+    left: 61px;
+    bottom: 97px;
+  }
 `;
 
 export const ImgBox = styled.div`

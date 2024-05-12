@@ -44,6 +44,10 @@ export const SearchForm = styled.form`
       }
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    margin-right: 32px;
+  }
 `;
 
 export const SubmitSearchBtn = styled.button`

@@ -9,6 +9,12 @@ export const NavMenuList = styled.ul`
   justify-content: center;
   row-gap: 10px;
   width: 100%;
+
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+  }
 `;
 
 export const StyledNavLink = styled(NavLink)`

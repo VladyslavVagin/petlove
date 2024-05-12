@@ -14,4 +14,9 @@ export const List = styled.ul`
         column-gap: 24px;
         row-gap: 32px;
     }
+
+    @media screen and (min-width: 1280px) {
+        column-gap: 35px;
+        row-gap: 40px;
+    }
 `

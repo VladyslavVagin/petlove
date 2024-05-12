@@ -11,6 +11,19 @@ export const ListInfo = styled.ul`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    &:first-of-type {
+      p {
+        max-width: 54px !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        span {
+          max-width: 54px !important;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
 
     p {
       font-weight: 500;

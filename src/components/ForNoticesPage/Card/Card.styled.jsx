@@ -13,6 +13,10 @@ export const CardContainer = styled.li`
     flex-direction: column;
     justify-content: space-between;
   }
+
+  @media screen and (min-width: 1280px) {
+    width: 363px;
+  }
 `;
 
 export const ImageAnimalContainer = styled.div`
@@ -25,6 +29,10 @@ export const ImageAnimalContainer = styled.div`
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 315px;
   }
 `;
 
@@ -47,6 +55,17 @@ export const TitlePopularityBox = styled.div`
     align-items: center;
     column-gap: 4px;
   }
+
+  @media screen and (min-width: 1280px) {
+    h2 {
+      font-size: 18px;
+      line-height: 1.33;
+    }
+
+    span {
+      line-height: 1.43;
+    }
+  }
 `;
 
 export const ListInfo = styled.ul`
@@ -68,6 +87,8 @@ export const ListInfo = styled.ul`
       line-height: 1.4;
       letter-spacing: -0.02em;
       color: var(--placeholder-color);
+      display: flex;
+      flex-direction: column;
 
       span {
         font-weight: 500;
@@ -116,6 +137,17 @@ export const ButtonLearnMore = styled.button`
   &:hover {
     background-color: var(--bright-orange);
   }
+
+  @media screen and (min-width: 768px) {
+    width: 236px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 257px;
+  }
 `;
 
 export const BtnLike = styled.button`
@@ -137,5 +169,10 @@ export const BtnLike = styled.button`
 
   &:hover {
     background-color: var(--hover-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 48px;
+    height: 48px;
   }
 `;
