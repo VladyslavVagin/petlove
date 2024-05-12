@@ -17,4 +17,8 @@ export const Text = styled.p`
     font-size: 16px;
     line-height: 1.25;
   }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 140px;
+  }
 `;

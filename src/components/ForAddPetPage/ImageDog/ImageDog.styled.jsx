@@ -39,4 +39,22 @@ export const ImageBox = styled.div`
     bottom: -82px;
     left: 223px;
   }
+
+  @media screen and (min-width: 1280px) {
+        width: 592px;
+        height: 654px;
+
+        picture {
+            right: unset;
+            left: -132px;
+            bottom: -8px;
+        }
+
+        svg {
+            transform: scale(4);
+            bottom: unset;
+            top: 278px;
+            left: 134px;
+        }
+    }
 `;

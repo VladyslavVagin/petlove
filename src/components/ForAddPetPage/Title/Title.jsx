@@ -24,6 +24,10 @@ const MainTitle = styled.h1`
       line-height: 1.25;
     }
   }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 40px;
+  }
 `;
 
 const Title = () => {
