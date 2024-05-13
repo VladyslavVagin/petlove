@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 export const UserLinkBtn = styled(Link)`
   overflow: hidden;
   display: inline-block;
+  min-height: 40px;
+  min-width: 40px;
   width: 40px;
   height: 40px;
   background-color: var(--accent-light);
@@ -32,6 +34,8 @@ export const UserLinkBtn = styled(Link)`
   @media screen and (min-width: 768px) {
     width: 50px;
     height: 50px;
+    min-height: 50px;
+    min-width: 50px;
 
     svg {
       width: 24px;
