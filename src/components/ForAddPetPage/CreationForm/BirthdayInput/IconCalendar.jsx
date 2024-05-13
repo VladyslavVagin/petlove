@@ -12,7 +12,7 @@ const Icon = styled.svg`
     stroke: var(--accent-color);
   }
 
-  @media screen  and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     width: 20px;
     height: 20px;
   }

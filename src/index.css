@@ -74,33 +74,3 @@ img {
 .css-1jqq78o-placeholder {
   color: var(--dark-color) !important;
 }
-
-.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
-  width: 144px;
-  border: 1px solid var(--link-gray);
-  border-radius: 30px !important;
-  font-weight: 500!important;
-  font-size: 14px!important;
-  line-height: 1.29!important;
-  letter-spacing: -0.03em!important;
-  font-family: "Manrope", sans-serif!important;
-  color: var(--dark-color)!important;
-}
-
-.css-19qh8xo-MuiInputBase-input {
-  font-weight: 500!important;
-  font-size: 14px!important;
-  line-height: 1.29!important;
-  letter-spacing: -0.03em!important;
-  font-family: "Manrope", sans-serif!important;
-  color: var(--placeholder-color)!important;
-}
-
-@media screen and (min-width: 768px) {
-  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
-    width: 210px;
-    height: 52px;
-    font-size: 16px!important;
-    line-height: 1.25!important;
-  }
-}

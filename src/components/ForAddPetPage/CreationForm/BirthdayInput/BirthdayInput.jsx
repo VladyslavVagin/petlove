@@ -1,9 +1,12 @@
 // @ts-nocheck
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import IconCalendar from "./IconCalendar";
 
 const BirthdayInput = ({ setBirthDate }) => {
+  const tablet = useMediaQuery({ minWidth: 768 });
+
   const handleDatePicker = (newValue) => {
     const year = newValue.$y;
     const month = String(+newValue.$M + 1).padStart(2, "0");
@@ -22,17 +25,19 @@ const BirthdayInput = ({ setBirthDate }) => {
             size: "small",
             sx: {
               ".MuiInputBase-root.Mui-focused": {
-                width: "210px",
-                height: "52px",
-                borderRadius: "30px",
                 border: "1px solid var(--accent-color)",
               },
               ".MuiInputBase-root": {
-                width: "210px",
-                height: "52px",
+                width: tablet ? "210px" : "144px",
+                height: tablet ? "52px" : "40px",
+                fontSize: tablet ? "16px" : "14px",
+                lineHeight: tablet ? "1.25" : "1.29",
+                letterSpacing: "-0.03em",
+                fontWeight: "500",
+                transition: "var(--hover-general)",
                 borderRadius: "30px",
                 border: "1px solid var(--link-gray)",
-                "&:hover": { border: "1px solid var(--accent-color)" },
+                "&:hover": { border: "1px solid var(--accent-color)", outline: "none" },
               },
             },
           },
