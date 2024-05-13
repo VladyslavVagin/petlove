@@ -15,3 +15,12 @@ export const Container = styled.div`
     padding: 40px 40px 30px 40px;
   }
 `
+
+export const SubLoader = styled.div`
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  text-align: center;
+  margin-top: 20px;
+`

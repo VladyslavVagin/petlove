@@ -1,24 +1,27 @@
 // @ts-nocheck
 import React, { useEffect } from "react";
-import { fetchFriends } from "../../redux/friends/operations";
 import { useDispatch } from "react-redux";
+import { useFriends } from "../../hooks/useFriends";
+import { fetchFriends } from "../../redux/friends/operations";
 import FriendsList from "../../components/FriendsList/FriendsList";
-import { HomePageSection } from "../Home/HomePage.styled";
 import { TitleOfPage } from "../../components/Common/TitlePage/TitlePage";
+import LoaderMain, { LoaderNewsBox } from "../../components/Common/LoaderMain/LoaderMain"
+import { HomePageSection } from "../Home/HomePage.styled";
 
 const Friends = () => {
   const dispatch = useDispatch();
+  const { isLoadFriends } = useFriends();
 
   useEffect(() => {
     const getFriends = async () => await dispatch(fetchFriends());
     getFriends();
     return () => getFriends();
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <HomePageSection>
       <TitleOfPage>Our friends</TitleOfPage>
-      <FriendsList/>
+      {isLoadFriends ? (<LoaderNewsBox><LoaderMain/></LoaderNewsBox>) : <FriendsList />}
     </HomePageSection>
   );
 };

@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const InputPetImage = styled.input`
-  width: 161px;
+  max-width: 161px;
+  width: 100%;
   height: 42px;
   outline: none;
   border-radius: 30px;
@@ -24,7 +25,7 @@ export const InputPetImage = styled.input`
   }
 
   @media screen and (min-width: 768px) {
-    width: 278px;
+    max-width: 278px;
   }
 `;
 
@@ -92,12 +93,12 @@ export const UploadContainer = styled.div`
 
 export const BoxContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  column-gap: 8px;
+  justify-content: flex-start;
+  gap: 8px;
 
   @media screen and (min-width: 768px) {
-    justify-content: flex-start;
     column-gap: 12px;
   }
 `;

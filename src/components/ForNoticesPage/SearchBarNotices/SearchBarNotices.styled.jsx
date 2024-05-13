@@ -23,9 +23,10 @@ export const SelectContainer = styled.div`
     margin-top: 12px;
     margin-bottom: 12px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    column-gap: 8px;
+    justify-content: flex-start;
+    gap: 8px;
 
     @media screen and (min-width: 768px) {
         width: 356px;

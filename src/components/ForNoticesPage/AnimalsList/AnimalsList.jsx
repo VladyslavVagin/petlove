@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNotices } from "../../../hooks/useNotices";
 import Card from "../Card/Card";
 import { ListOfNotices } from "./AnimalList.styled";
+import { Text } from "../../ForProfilePage/NoCollectionText/NoCollectionText.styled";
 import Attention from "../Attention/Attention";
 import FirstItemNotification from "../FirstItemNotification/FirstItemNotification";
 
@@ -13,8 +14,19 @@ const AnimalsList = () => {
 
   return (
     <>
-    {showFirstNotification && <FirstItemNotification setShowFirstNotification={setShowFirstNotification} showFirstNotification={showFirstNotification}/>}
-    {showAttention && <Attention setShowAttention={setShowAttention} showAttention={showAttention}/>}
+      {showFirstNotification && (
+        <FirstItemNotification
+          setShowFirstNotification={setShowFirstNotification}
+          showFirstNotification={showFirstNotification}
+        />
+      )}
+      {showAttention && (
+        <Attention
+          setShowAttention={setShowAttention}
+          showAttention={showAttention}
+        />
+      )}
+      {notices?.length === 0 && <Text>Sorry, <b>no find</b> any notice for these search parameters!</Text>}
       <ListOfNotices>
         {notices?.map((notice) => (
           <Card

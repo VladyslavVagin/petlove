@@ -18,7 +18,7 @@ const initialState = {
   cities: [],
   isLoading: false,
   isError: false,
-  totalPages: 1,
+  totalPages: 1
 };
 
 const isPending = (state) => {
@@ -77,14 +77,13 @@ export const noticesSlice = createSlice({
         state.isLoading = false;
         state.isError = false;
       })
-      .addCase(AddToFavorites.pending, isPending)
-      .addCase(AddToFavorites.rejected, isRejected)
       .addCase(RemoveFromFavorites.fulfilled, (state) => {
-        state.isLoading = false;
         state.isError = false;
+      }).addCase(RemoveFromFavorites.pending, (state) => {
+        state.isError = false;
+      }).addCase(RemoveFromFavorites.rejected, (state) => {
+        state.isError = true;
       })
-      .addCase(RemoveFromFavorites.pending, isPending)
-      .addCase(RemoveFromFavorites.rejected, isRejected);
   },
 });
 

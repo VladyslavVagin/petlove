@@ -6,7 +6,7 @@ import {
   selectIsLoading,
   selectFavoritesNotices,
   selectViewedNotices,
-  selectPets
+  selectPets,
 } from "../redux/auth/selectors";
 
 export const useAuth = () => {

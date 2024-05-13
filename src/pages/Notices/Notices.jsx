@@ -9,6 +9,9 @@ import {
   fetchCities,
 } from "../../redux/notices/operations";
 import AnimalsList from "../../components/ForNoticesPage/AnimalsList/AnimalsList";
+import LoaderMain, {
+  LoaderNewsBox,
+} from "../../components/Common/LoaderMain/LoaderMain";
 import PaginationGeneral from "../../components/Pagination/Pagination";
 import { useNotices } from "../../hooks/useNotices";
 import { HomePageSection } from "../Home/HomePage.styled";
@@ -16,7 +19,7 @@ import { TitleOfPage } from "../../components/Common/TitlePage/TitlePage";
 
 const Notices = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const { totalPagesNotices } = useNotices();
+  const { totalPagesNotices, isLoadNotices } = useNotices();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,12 +36,12 @@ const Notices = () => {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-      <AnimalsList />
+      {isLoadNotices ? (<LoaderNewsBox><LoaderMain/></LoaderNewsBox>) : (<><AnimalsList />
       <PaginationGeneral
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         totalPages={totalPagesNotices}
-      />
+      /></>)}
     </HomePageSection>
   );
 };

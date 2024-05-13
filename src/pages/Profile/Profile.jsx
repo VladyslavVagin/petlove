@@ -6,7 +6,7 @@ import { HomePageSection } from "../Home/HomePage.styled";
 import { refreshUser } from "../../redux/auth/operations";
 import EditProfileModal from "../../components/ForProfilePage/EditProfileModal/EditProfileModal";
 import UserAndEditBtns from "../../components/ForProfilePage/UserAndEditBtns/UserAndEditBtns";
-import { Container } from "./Profile.styled";
+import { Container, SubLoader } from "./Profile.styled";
 import UserInformation from "../../components/ForProfilePage/UserInformation";
 import LinksCollections from "../../components/ForProfilePage/LinksCollections/LinksCollections";
 import { DesktopBox } from "../../components/Common/DesktopBox/DesktopBox";
@@ -35,7 +35,7 @@ const Profile = () => {
           </Container>
           <div>
             <LinksCollections />
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<SubLoader><p>Loading...</p></SubLoader>}>
               <Outlet />
             </Suspense>
           </div>
