@@ -20,7 +20,7 @@ import {
 import DetailsModal from "../DetailsModal/DetailsModal";
 import { useDispatch } from "react-redux";
 
-const Card = ({ notice, setShowAttention }) => {
+const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
   const dispatch = useDispatch();
   const [showDetails, setShowDetails] = useState(false);
   const {
@@ -64,6 +64,9 @@ const Card = ({ notice, setShowAttention }) => {
     if (!isLoggedIn) {
       setShowAttention(true);
     } else {
+      if (favoritesNotices?.length === 0) {
+        setShowFirstNotification(true);
+      }
       dispatch(AddToFavorites(_id));
       setIsFavorite(true);
     }
@@ -86,6 +89,7 @@ const Card = ({ notice, setShowAttention }) => {
           showDetails={showDetails}
           isFavorite={isFavorite}
           setIsFavorite={setIsFavorite}
+          setShowFirstNotification={setShowFirstNotification}
         />
       )}
       <CardContainer>

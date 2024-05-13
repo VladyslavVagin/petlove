@@ -1,6 +1,7 @@
 // @ts-nocheck
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { useAuth } from "../../../../hooks/useAuth";
 import { refreshUser } from "../../../../redux/auth/operations";
 import {
   AddToFavorites,
@@ -9,14 +10,18 @@ import {
 import sprite from "../../../../assets/icons/icons.svg";
 import { AddRemoveBtn, ButtonsContainer, ContactBtn } from "./Buttons.styled";
 
-const Buttons = ({ isFavorite, id, setIsFavorite }) => {
+const Buttons = ({ isFavorite, id, setIsFavorite, setShowFirstNotification }) => {
   const dispatch = useDispatch();
+  const {favoritesNotices} = useAuth();
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch, isFavorite]);
 
   const handleAddFavorites = () => {
+    if(favoritesNotices?.length === 0) {
+      setShowFirstNotification(true);
+    }
     dispatch(AddToFavorites(id));
     setIsFavorite(true);
   };

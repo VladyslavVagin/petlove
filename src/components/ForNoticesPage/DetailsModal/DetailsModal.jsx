@@ -6,7 +6,7 @@ import Info from "./Info/Info";
 import Buttons from "./Buttons/Buttons";
 import { ContainerModal, ImgBox } from "./DetailsModal.styled";
 
-const DetailsModal = ({ setShowDetails, notice, showDetails, isFavorite, setIsFavorite }) => {
+const DetailsModal = ({ setShowDetails, notice, showDetails, isFavorite, setIsFavorite, setShowFirstNotification }) => {
   const { imgURL, title, popularity, comment, category, _id } = notice;
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const DetailsModal = ({ setShowDetails, notice, showDetails, isFavorite, setIsFa
         <Rating popularity={popularity} />
         <Info notice={notice} />
         <p>{comment}</p>
-        <Buttons isFavorite={isFavorite} id={_id} setIsFavorite={setIsFavorite}/>
+        <Buttons isFavorite={isFavorite} id={_id} setIsFavorite={setIsFavorite} setShowFirstNotification={setShowFirstNotification}/>
       </ContainerModal>
     </ModalGeneral>
   );

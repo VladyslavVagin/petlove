@@ -58,7 +58,6 @@ const clearAuthHeader = () => {
     async (_, thunkAPI) => {
       const state = thunkAPI.getState();
       const persistedToken = state.auth.token;
-      const currentFavorites = state.auth.noticesFavorites;
   
       if (persistedToken === null) {
         return thunkAPI.rejectWithValue('Unable to fetch user');
@@ -67,9 +66,7 @@ const clearAuthHeader = () => {
       try {
         setAuthHeader(persistedToken);
         const res = await axios.get('/users/current/full');
-        const dataReceived = res.data;
-        const isFirstFavorite = currentFavorites?.length === 0 && res?.data?.noticesFavorites?.length === 1 ? true : false;
-        return {dataReceived, isFirstFavorite};
+        return res.data;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
       }
