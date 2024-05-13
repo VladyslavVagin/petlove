@@ -4,7 +4,6 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import IconCalendar from "./IconCalendar";
 
 const BirthdayInput = ({ setBirthDate }) => {
-
   const handleDatePicker = (newValue) => {
     const year = newValue.$y;
     const month = String(+newValue.$M + 1).padStart(2, "0");
@@ -30,12 +29,15 @@ const BirthdayInput = ({ setBirthDate }) => {
                 "&:focus-visible": { border: "1px solid var(--accent-color)" },
               },
               ".MuiInputBase-root.Mui-focused": {
+                width: "210px",
+                height: "52px",
+                borderRadius: "30px",
                 border: "1px solid var(--accent-color)",
               },
               ".MuiOutlinedInput-root": {
                 width: "210px",
                 height: "52px",
-                 border: "1px solid var(--link-gray)",
+                border: "1px solid var(--link-gray)",
                 "&:hover": { border: "1px solid var(--accent-color)" },
               },
             },
