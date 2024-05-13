@@ -21,22 +21,23 @@ const BirthdayInput = ({ setBirthDate }) => {
           textField: {
             size: "small",
             sx: {
-              ".MuiOutlinedInput-notchedOutline": {
-                width: "210px",
-                height: "52px",
-                border: "none",
-                outline: "none",
-                "&:focus-visible": { border: "1px solid var(--accent-color)" },
-              },
+              // ".MuiOutlinedInput-notchedOutline": {
+              //   width: "210px",
+              //   height: "52px",
+              //   border: "none",
+              //   outline: "none",
+              //   "&:focus-visible": { border: "1px solid var(--accent-color)" },
+              // },
               ".MuiInputBase-root.Mui-focused": {
                 width: "210px",
                 height: "52px",
                 borderRadius: "30px",
                 border: "1px solid var(--accent-color)",
               },
-              ".MuiOutlinedInput-root": {
+              "..MuiInputBase-root": {
                 width: "210px",
                 height: "52px",
+                borderRadius: "30px",
                 border: "1px solid var(--link-gray)",
                 "&:hover": { border: "1px solid var(--accent-color)" },
               },
