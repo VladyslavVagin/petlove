@@ -26,6 +26,11 @@ export const InputPetImage = styled.input`
 
   @media screen and (min-width: 768px) {
     max-width: 278px;
+    width: 278px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 100%;
   }
 `;
 
@@ -57,8 +62,8 @@ export const InputNormal = styled.input`
     line-height: 1.25;
 
     &::placeholder {
-    font-size: 16px;
-    line-height: 1.25;
+      font-size: 16px;
+      line-height: 1.25;
     }
   }
 `;
@@ -77,6 +82,7 @@ export const InvisibleInput = styled.input`
 `;
 
 export const UploadContainer = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,11 +193,11 @@ export const ErrorMsg = styled.p`
     font-size: 12px;
     line-height: 1.17;
   }
-`
+`;
 export const InputBox = styled.div`
   margin-bottom: 10px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 18px;
   }
-`
+`;

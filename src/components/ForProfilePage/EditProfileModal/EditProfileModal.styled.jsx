@@ -28,6 +28,8 @@ export const EditModalContainer = styled.div`
 
 export const AvatarBox = styled.div`
   overflow: hidden;
+  min-width: 94px;
+  min-height: 94px;
   width: 94px;
   height: 94px;
   border-radius: 50%;
@@ -50,5 +52,7 @@ export const AvatarBox = styled.div`
   @media screen and (min-width: 768px) {
     width: 86px;
     height: 86px;
+    min-width: 86px;
+    min-height: 86px;
   }
 `;
