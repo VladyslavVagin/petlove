@@ -7,6 +7,7 @@ import { schema } from "../../../../schemas/schemas.ts";
 import { editUser } from "../../../../redux/auth/operations";
 import { useAuth } from "../../../../hooks/useAuth";
 import sprite from "../../../../assets/icons/icons.svg";
+import { ErrorMsg } from "../../../ForAddPetPage/CreationForm/CreationForm.styled.jsx";
 import {
   AddAvatarInput,
   FormContainer,
@@ -57,9 +58,9 @@ const FormEditUser = ({ setImageURL, setShowEditForm }) => {
           <InputAvatarURL
             type="text"
             {...register("avatar")}
-            defaultValue={user.avatar || "Avatar URL"}
+            defaultValue={user?.avatar || "Avatar URL"}
           />
-          <p>{errors.avatar?.message}</p>
+          <ErrorMsg>{errors.avatar?.message}</ErrorMsg>
         </label>
         <Label>
           <AddAvatarInput
@@ -77,19 +78,19 @@ const FormEditUser = ({ setImageURL, setShowEditForm }) => {
         {...register("name")}
         defaultValue={user.name}
       />
-      <p>{errors.name?.message}</p>
+      <ErrorMsg>{errors.name?.message}</ErrorMsg>
       <InputStandart
         type="email"
         {...register("email")}
         defaultValue={user.email}
       />
-      <p>{errors.email?.message}</p>
+      <ErrorMsg>{errors.email?.message}</ErrorMsg>
       <InputStandart
         type="tel"
         {...register("phone")}
-        defaultValue={user.phone || "Phone number"}
+        defaultValue={user?.phone || "+380"}
       />
-      <p>{errors.phone?.message}</p>
+      <ErrorMsg>{errors.phone?.message}</ErrorMsg>
       <SubmitBtn type="submit">Save</SubmitBtn>
     </FormContainer>
   );

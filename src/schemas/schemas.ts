@@ -15,8 +15,8 @@ export const addPetSchema = yup.object().shape({
 export const schema = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().matches(emailRegExp, "Enter a valid Email").required(),
-  phone: yup.string().matches(/^\+38\d{10}$/, "Invalid phone format"),
-  avatar: yup.string().matches(urlRegExp, "Invalid format"),
+  phone: yup.string().matches(/^\+38\d{10}$/, "Invalid phone format").notRequired(),
+  avatar: yup.string().matches(urlRegExp, "Invalid format").notRequired(),
 });
 
 export const schemaRegister = yup.object().shape({

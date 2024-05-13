@@ -9,14 +9,14 @@ const MyInformation = () => {
     <MyInfoContainer>
       <h1>My information</h1>
       <ul>
-        <li>
+        <li  style={{borderColor: user.name && "var(--accent-color)"}}>
           <p>{user?.name}</p>
         </li>
-        <li>
+        <li style={{borderColor: user.email && "var(--accent-color)"}}>
           <p>{user?.email}</p>
         </li>
-        <li>
-          <p>{user?.phone || "Phone number"}</p>
+        <li style={{borderColor: user.phone &&  "var(--accent-color)"}}>
+          <p>{user?.phone || "+38"}</p>
         </li>
       </ul>
     </MyInfoContainer>
