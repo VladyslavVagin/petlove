@@ -23,9 +23,9 @@ const BirthdayInput = ({ setBirthDate }) => {
             size: "small",
             sx: {
               ".MuiOutlinedInput-notchedOutline": {
-                border: "none",
+                width: "210px",
+                border: "1px solid var(--link-gray)",
                 outline: "none",
-                borderStyle: "none",
                 "&:focus-visible": { border: "1px solid var(--accent-color)" },
               },
               ".MuiInputBase-root.Mui-focused": {
