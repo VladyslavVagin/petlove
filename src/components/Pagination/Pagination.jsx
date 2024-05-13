@@ -38,7 +38,6 @@ const PaginationGeneral = ({ totalPages, setCurrentPage, currentPage }) => {
               boundaryCount={tablet ? 1 : 0}
               siblingCount={0}
               color="primary"
-              size={mobilesSmall ? "medium" : "large"}
               renderItem={(item) => (
                 <PaginationItem
                   slots={{
@@ -48,6 +47,16 @@ const PaginationGeneral = ({ totalPages, setCurrentPage, currentPage }) => {
                     first: FirstIcon,
                   }}
                   {...item}
+                  sx={{
+                    width: mobilesSmall ? "32px" : "40px",
+                    height: mobilesSmall ? "32px" : "40px",
+                    borderRadius: "50%",
+                    '&.Mui-selected': {
+                      backgroundColor: "var(--accent-color)",
+                      color: "var(--white-color)",
+                      borderColor: "var(--accent-color)",
+                    }
+                  }}
                 />
               )}
               showFirstButton

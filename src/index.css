@@ -62,28 +62,6 @@ img {
   max-width: 100%;
 }
 
-.css-1ysyrvn-MuiButtonBase-root-MuiPaginationItem-root {
-  font-family: "Manrope", sans-serif !important;
-  font-size: 14px !important;
-}
-
-.css-wjh20t-MuiPagination-ul li {
-  max-width: 40px !important;
-  padding: 0px !important;
-
-  @media screen and (min-width: 375px) {
-    margin: 2px !important;
-  }
-}
-
-.css-bf9wz-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected,
-.css-1y7coo4-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected,
-.css-1ysyrvn-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-  background-color: var(--accent-color) !important;
-  border-color: var(--accent-color) !important;
-  color: var(--white-color) !important;
-}
-
 .css-1u9des2-indicatorSeparator {
   display: none;
 }
