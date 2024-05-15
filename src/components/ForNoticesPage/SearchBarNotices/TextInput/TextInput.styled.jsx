@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SearchForm = styled.form`
   position: relative;
   margin-top: 20px;
+  animation: appearDown 1400ms ease 1;
 
   input {
     width: 100%;

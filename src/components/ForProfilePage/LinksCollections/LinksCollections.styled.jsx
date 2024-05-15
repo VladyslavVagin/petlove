@@ -7,6 +7,7 @@ export const NavContainer = styled.div`
   justify-content: flex-start;
   column-gap: 10px;
   margin-top: 40px;
+  animation: appear 1000ms ease 1;
 `;
 
 export const StyledLinkTo = styled(NavLink)`

@@ -8,6 +8,7 @@ export const Text = styled.p`
   text-align: center;
   color: var(--dark-color);
   margin: 80px 0;
+  animation: appearDown 1000ms ease 1;
 
   b {
     color: var(--accent-color);

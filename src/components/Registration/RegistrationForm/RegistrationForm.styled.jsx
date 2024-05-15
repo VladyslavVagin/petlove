@@ -6,6 +6,7 @@ export const FormContainer = styled.div`
   padding: 20px;
   background-color: var(--white-color);
   border-radius: 30px;
+  animation: appear 1000ms ease 1;
 
   @media screen and (min-width: 768px) {
     margin-top: 16px;

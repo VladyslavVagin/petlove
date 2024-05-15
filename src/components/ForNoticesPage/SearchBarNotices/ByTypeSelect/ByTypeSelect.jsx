@@ -44,6 +44,7 @@ const ByTypeSelect = ({ setByTypeQuery, byTypeQuery, setCurrentPage }) => {
             boxShadow: "none",
             fontSize: tablet ? "16px" : "14px",
             outline: "none",
+            animation: "appearDown 1400ms ease 1",
             fontWeight: "500",
             lineHeight: tablet ? "1.25" : "1.29",
             letterSpacing: "-0.03em",

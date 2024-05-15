@@ -5,6 +5,7 @@ export const SearchContainer = styled.div`
     border-radius: 30px;
     padding: .1px 20px 20px;
     margin-top: 40px;
+    animation: appearDown 1000ms ease 1;
 
     @media screen and (min-width: 768px) {
         padding: 40px 32px;
@@ -27,6 +28,7 @@ export const SelectContainer = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 8px;
+    animation: appearDown 1400ms ease 1;
 
     @media screen and (min-width: 768px) {
         width: 356px;
@@ -51,6 +53,7 @@ export const ResetFilterBtn = styled.button`
     margin-left: auto;
     display: block;
     text-transform: uppercase;
+    animation: appearDown 1400ms ease 1;
     transition: var(--hover-general);
 
     &:hover {

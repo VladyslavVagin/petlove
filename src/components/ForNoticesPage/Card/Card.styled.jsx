@@ -5,6 +5,12 @@ export const CardContainer = styled.li`
   padding: 24px;
   border-radius: 16px;
   color: var(--dark-color);
+  &:nth-of-type(3n + 1) {
+    animation: appearRight 1400ms ease 1;
+  }
+  &:nth-of-type(3n) {
+    animation: appearLeft 1400ms ease 1;
+  }
 
   @media screen and (min-width: 768px) {
     width: 342px;
@@ -33,6 +39,12 @@ export const ImageAnimalContainer = styled.div`
 
   @media screen and (min-width: 1280px) {
     width: 315px;
+    &:nth-of-type(3n + 1) {
+    animation: appearRight 1400ms ease 1;
+  }
+  &:nth-of-type(3n) {
+    animation: appearLeft 1400ms ease 1;
+  }
   }
 `;
 

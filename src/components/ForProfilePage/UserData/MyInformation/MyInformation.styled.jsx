@@ -6,6 +6,7 @@ export const MyInfoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-top: 28px;
+  animation: appear 1000ms ease 1;
 
   h1 {
     color: var(--dark-light);

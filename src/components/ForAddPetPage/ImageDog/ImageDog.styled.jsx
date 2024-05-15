@@ -13,6 +13,7 @@ export const ImageBox = styled.div`
     img {
       position: relative;
       left: 6%;
+      animation: appearDown 1000ms ease 1;
     }
   }
 

@@ -21,6 +21,7 @@ export const ModalContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 40px 20px;
+  animation: appear 1000ms ease 1;
 
   @media screen and (min-width: 768px) {
     max-width: 473px;

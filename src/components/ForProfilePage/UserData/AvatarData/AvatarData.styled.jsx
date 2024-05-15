@@ -16,6 +16,7 @@ export const AvatarBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: scalingItem 1000ms ease 1;
 
   svg {
     fill: var(--accent-color);

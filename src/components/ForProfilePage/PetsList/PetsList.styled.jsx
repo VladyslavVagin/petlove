@@ -7,6 +7,7 @@ export const ListOfPets = styled.ul`
     row-gap: 14px;
     margin-top: 20px;
     margin-bottom: 20px;
+    animation: appearRight 1000ms ease 1;
 
     @media screen and (min-width: 768px) {
         flex-direction: row;

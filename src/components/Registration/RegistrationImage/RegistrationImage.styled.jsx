@@ -9,6 +9,10 @@ export const RegisterImageBox = styled.div`
     picture {
         position: relative;
         z-index: 1;
+
+        img {
+            animation: appearDown 1000ms ease 1;
+        }
     }
 
     svg {

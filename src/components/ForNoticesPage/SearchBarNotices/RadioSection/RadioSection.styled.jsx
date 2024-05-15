@@ -6,6 +6,7 @@ export const ContainerRadioBtns = styled.div`
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid rgba(38, 38, 38, 0.1);
+  animation: appearDown 1400ms ease 1;
 
   @media screen and (min-width: 768px) {
     margin-top: 4px;

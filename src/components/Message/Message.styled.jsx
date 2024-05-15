@@ -13,6 +13,7 @@ export const MessageContainer = styled.div`
   align-items: flex-start;
   column-gap: 8px;
   z-index: 2;
+  animation: appearRight 2000ms ease 1;
 
   @media screen and (min-width: 1280px) {
     left: 61px;

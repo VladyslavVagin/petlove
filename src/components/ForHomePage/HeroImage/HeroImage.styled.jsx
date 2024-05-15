@@ -4,6 +4,7 @@ export const HeroImgContainer = styled.div`
     picture {
         img {
             border-radius: 30px;
+            animation: appearDown 1000ms ease 1;
         }
     }
 

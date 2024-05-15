@@ -13,6 +13,7 @@ export const HeroContainer = styled.div`
     line-height: 0.96;
     letter-spacing: -0.03em;
     margin-bottom: 24px;
+    animation: appearRight 1000ms ease 1;
 
     strong {
       color: var(--title-accent);
@@ -24,6 +25,7 @@ export const HeroContainer = styled.div`
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: -0.02em;
+    animation: appearLeft 1000ms ease 1;
   }
 
   @media screen and (min-width: 768px) {

@@ -74,3 +74,62 @@ img {
 .css-1jqq78o-placeholder {
   color: var(--dark-color) !important;
 }
+
+.css-o9k5xi-MuiInputBase-input-MuiOutlinedInput-input,
+.css-o9k5xi-MuiInputBase-input-MuiOutlinedInput-input:hover {
+  -webkit-tap-highlight-color: none!important;
+  border: none!important;
+  outline: none!important;
+  display: none;
+}
+
+@keyframes appearDown {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes appearLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes appearRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes appearLeft {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scalingItem {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

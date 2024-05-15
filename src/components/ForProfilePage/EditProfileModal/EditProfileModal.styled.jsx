@@ -46,6 +46,8 @@ export const AvatarBox = styled.div`
 
   img {
     border-radius: 50%;
+    min-width: 100%;
+    min-height: 100%;
     object-fit: cover;
   }
 

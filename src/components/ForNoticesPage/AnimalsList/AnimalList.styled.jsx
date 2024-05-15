@@ -6,6 +6,7 @@ export const ListOfNotices = styled.ul`
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
+    animation: appearDown 1000ms ease 1;
 
     @media screen and (min-width: 768px) {
         flex-direction: row;

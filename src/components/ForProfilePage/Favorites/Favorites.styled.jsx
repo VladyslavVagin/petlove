@@ -6,6 +6,7 @@ export const ListFavorites = styled.ul`
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
+    animation: appearLeft 1000ms ease 1;
 
     @media screen and (min-width: 768px) {
         margin-top: 20px;
