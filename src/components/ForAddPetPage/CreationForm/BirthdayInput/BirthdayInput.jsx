@@ -37,7 +37,7 @@ const BirthdayInput = ({ setBirthDate }) => {
                 transition: "var(--hover-general)",
                 borderRadius: "30px",
                 outline: "none",
-                border: "none",
+                border: "1px solid var(--link-gray)",
                 "&:hover": { border: "1px solid var(--accent-color)", outline: "none" },
               },
             },

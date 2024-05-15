@@ -75,12 +75,8 @@ img {
   color: var(--dark-color) !important;
 }
 
-.css-o9k5xi-MuiInputBase-input-MuiOutlinedInput-input,
-.css-o9k5xi-MuiInputBase-input-MuiOutlinedInput-input:hover {
-  -webkit-tap-highlight-color: none!important;
-  border: none!important;
-  outline: none!important;
-  display: none;
+.MuiOutlinedInput-notchedOutline {
+  border: none ! important ;
 }
 
 @keyframes appearDown {
