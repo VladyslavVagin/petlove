@@ -7,6 +7,7 @@
 - Registration page - Page with form for register new user.
 - Login page - Page for login user to app.
 - 404 Page - if will be wrong URL, user transfer to 404 page. This page have button for go to Home page.
+  
 **PRIVATE PAGES**
   - Profile - Page with information about user, with list of pets of current user, with list of Favorites and Viewed pets. On this page user can change avatar and/or other information about him and Logout from app. For creating new pet user can go to page Add-pet. When user Logout he will transfer to Home page. By default on Profile page will be shown Favorites list of user's pets.
   - Add-pet - Page with form for creating new pet of current user. After succesfull creating user will transfer to Profile page.
