@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";
-import { schemaLogin } from "../../../schemas/schemas.ts";
+import { schemaLogin } from "../../../schemas/schemas";
 import { logIn } from "../../../redux/auth/operations";
 import sprite from "../../../assets/icons/icons.svg";
 import {

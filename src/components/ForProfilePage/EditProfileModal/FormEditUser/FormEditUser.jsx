@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "../../../../schemas/schemas.ts";
+import { schema } from "../../../../schemas/schemas";
 import { editUser } from "../../../../redux/auth/operations";
 import { useAuth } from "../../../../hooks/useAuth";
 import sprite from "../../../../assets/icons/icons.svg";

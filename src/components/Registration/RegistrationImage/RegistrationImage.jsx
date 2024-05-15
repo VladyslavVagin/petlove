@@ -2,7 +2,7 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import Message from "../../Message/Message";
-import { RegisterMessage } from "../../../lib/messageContent/messageContent.ts";
+import { RegisterMessage } from "../../../lib/messageContent/messageContent";
 import CatImgMobile from "../../../assets/images/register/cat-mobile.webp";
 import CatImgMobile2x from "../../../assets/images/register/cat-mobile-2x.webp";
 import CatImgMobile3x from "../../../assets/images/register/cat-mobile-3x.webp";

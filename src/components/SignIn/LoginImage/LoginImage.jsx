@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { LoginMessage } from "../../../lib/messageContent/messageContent.ts";
+import { LoginMessage } from "../../../lib/messageContent/messageContent";
 import Message from "../../Message/Message.jsx";
 import DogImgMobile from "../../../assets/images/login/dog-mobile.webp";
 import DogImgMobile2x from "../../../assets/images/login/dog-mobile-2x.webp";

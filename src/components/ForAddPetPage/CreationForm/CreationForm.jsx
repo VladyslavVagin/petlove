@@ -8,7 +8,7 @@ import { addPet } from "../../../redux/auth/operations";
 import sprite from "../../../assets/icons/icons.svg";
 import SexButtons from "./SexButtons/SexButtons";
 import PetAvatar from "./PetAvatar/PetAvatar";
-import { addPetSchema } from "../../../schemas/schemas.ts";
+import { addPetSchema } from "../../../schemas/schemas";
 import BirthdayInput from "./BirthdayInput/BirthdayInput";
 import TypeAnimal from "./TypeAnimal/TypeAnimal";
 import {
