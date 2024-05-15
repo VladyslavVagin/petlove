@@ -1,4 +1,4 @@
-<font size="36">**PetLove App**</font> - An application for searching a new house for pets and for people who looking for a new small friend in their life. App consist of 6 public pages, 2 private pages (with two sub pages Favorites and Viewed) and pages for login and registration user:
+<font size="36">**PetLove App**</font> - An application for searching a new house for pets and for people who looking for a new cute friend in their life. App consist of 6 public pages, 2 private pages (with two sub pages Favorites and Viewed) and pages for login and registration user:
 
 **PUBLIC PAGES**
 - Home -  this page will appear first when you load the app, and if user will logout from his profile. There are main title with hero image.
