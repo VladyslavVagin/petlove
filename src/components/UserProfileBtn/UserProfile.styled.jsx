@@ -17,6 +17,8 @@ export const UserLinkBtn = styled(Link)`
   transition: var(--hover-general);
 
   img {
+    min-width: 100%;
+    min-height: 100%;
     object-fit: cover;
     border-radius: 50%;
   }
