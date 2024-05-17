@@ -1,3 +1,4 @@
+// @ts-nocheck
 import styled from "styled-components";
 
 export const CardContainer = styled.li`
@@ -17,11 +18,13 @@ export const CardContainer = styled.li`
     height: 444px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 363px;
+    width: ${({ isviewedpage }) =>
+      isviewedpage === "true" ? "320px" : "363px"};
   }
 `;
 
@@ -37,14 +40,24 @@ export const ImageAnimalContainer = styled.div`
     border-radius: 16px;
   }
 
+  @media screen and (min-width: 768px) {
+    width: ${({ isviewedpage }) =>
+      isviewedpage === "true" ? "314px" : "287px"};
+    height: ${({ isviewedpage }) =>
+      isviewedpage === "true" ? "162px" : "178px"};
+    margin-bottom: ${({ isviewedpage }) =>
+      isviewedpage === "true" ? "14px" : "24px"};
+  }
+
   @media screen and (min-width: 1280px) {
-    width: 315px;
+    width: ${({ isviewedpage }) =>
+      isviewedpage === "true" ? "292px" : "315px"};
     &:nth-of-type(3n + 1) {
-    animation: appearRight 1400ms ease 1;
-  }
-  &:nth-of-type(3n) {
-    animation: appearLeft 1400ms ease 1;
-  }
+      animation: appearRight 1400ms ease 1;
+    }
+    &:nth-of-type(3n) {
+      animation: appearLeft 1400ms ease 1;
+    }
   }
 `;
 
@@ -122,9 +135,11 @@ export const CommentText = styled.p`
 `;
 
 export const ButtonsCardBox = styled.div`
+  min-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  column-gap: 8px;
   margin-top: 24px;
 `;
 
@@ -135,7 +150,7 @@ export const ButtonLearnMore = styled.button`
   border: none;
   border-radius: 30px;
   padding: 14px;
-  width: 231px;
+  width: 100%;
   height: 46px;
   display: flex;
   align-items: center;
@@ -151,18 +166,15 @@ export const ButtonLearnMore = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    width: 236px;
     height: 48px;
     font-size: 16px;
     line-height: 1.25;
   }
-
-  @media screen and (min-width: 1280px) {
-    width: 257px;
-  }
 `;
 
 export const BtnLike = styled.button`
+  min-width: 46px;
+  min-height: 46px;
   width: 46px;
   height: 46px;
   outline: none;
@@ -186,5 +198,7 @@ export const BtnLike = styled.button`
   @media screen and (min-width: 768px) {
     width: 48px;
     height: 48px;
+    min-width: 48px;
+    min-height: 48px;
   }
 `;

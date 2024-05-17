@@ -1,11 +1,14 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { useAuth } from "../../../hooks/useAuth";
 import {
   AddToFavorites,
   RemoveFromFavorites,
 } from "../../../redux/notices/operations";
-import { refreshUser } from "../../../redux/auth/operations";
+import DetailsModal from "../DetailsModal/DetailsModal";
+import { refreshUser, viewedPet } from "../../../redux/auth/operations";
 import sprite from "../../../assets/icons/icons.svg";
 import {
   BtnLike,
@@ -17,12 +20,12 @@ import {
   ListInfo,
   TitlePopularityBox,
 } from "./Card.styled";
-import DetailsModal from "../DetailsModal/DetailsModal";
-import { useDispatch } from "react-redux";
 
 const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
+  const location = useLocation();
   const dispatch = useDispatch();
   const [showDetails, setShowDetails] = useState(false);
+  const [isViewedPage, setIsViewedPage] = useState(false);
   const {
     imgURL,
     name,
@@ -55,6 +58,20 @@ const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
     { label: "Species", value: species },
     { label: "Category", value: category },
   ];
+
+  useEffect(() => {
+    if(location?.pathname === "/profile/viewed") {
+      setIsViewedPage(true);
+    } else {
+      setIsViewedPage(false);
+    }
+  }, [location?.pathname])
+
+  useEffect(() => {
+    if(showDetails && !isViewedPage) {
+      dispatch(viewedPet(_id));
+    }
+  }, [_id, dispatch, isViewedPage, showDetails]);
 
   useEffect(() => {
     dispatch(refreshUser());
@@ -92,11 +109,11 @@ const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
           setShowFirstNotification={setShowFirstNotification}
         />
       )}
-      <CardContainer>
-        <ImageAnimalContainer>
+      <CardContainer isviewedpage={isViewedPage.toString()}>
+        <ImageAnimalContainer isviewedpage={isViewedPage.toString()}>
           <img src={imgURL} alt={title} />
         </ImageAnimalContainer>
-        <div>
+        <div style={{width: "100%"}}>
           <TitlePopularityBox>
             <h2>{title}</h2>
             <span>
@@ -121,7 +138,7 @@ const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
           <ButtonLearnMore type="button" onClick={handleLearnMore}>
             Learn more
           </ButtonLearnMore>
-          <BtnLike
+          {location?.pathname !== "/profile/viewed" && (<BtnLike
             type="button"
             onClick={isFavorite ? handleRemoveFavorites : handleAddFavorites}
           >
@@ -132,7 +149,7 @@ const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
                 }
               ></use>
             </svg>
-          </BtnLike>
+          </BtnLike>)}
         </ButtonsCardBox>
       </CardContainer>
     </>
