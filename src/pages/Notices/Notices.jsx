@@ -5,8 +5,7 @@ import SearchBarNotices from "../../components/ForNoticesPage/SearchBarNotices/S
 import {
   fetchCategories,
   fetchGenders,
-  fetchSpecies,
-  fetchCities,
+  fetchCities
 } from "../../redux/notices/operations";
 import AnimalsList from "../../components/ForNoticesPage/AnimalsList/AnimalsList";
 import LoaderMain, {
@@ -25,9 +24,8 @@ const Notices = () => {
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(fetchGenders());
-    dispatch(fetchSpecies());
     dispatch(fetchCities());
-  }, [dispatch]);
+  }, []);
 
   return (
     <HomePageSection>

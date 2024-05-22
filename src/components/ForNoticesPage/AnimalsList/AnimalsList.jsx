@@ -1,5 +1,7 @@
 // @ts-nocheck
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { AddToFavorites, RemoveFromFavorites } from "../../../redux/notices/operations";
 import { useNotices } from "../../../hooks/useNotices";
 import Card from "../Card/Card";
 import { ListOfNotices } from "./AnimalList.styled";
@@ -9,8 +11,18 @@ import FirstItemNotification from "../FirstItemNotification/FirstItemNotificatio
 
 const AnimalsList = () => {
   const { notices } = useNotices();
+  const dispatch = useDispatch();
   const [showAttention, setShowAttention] = useState(false);
   const [showFirstNotification, setShowFirstNotification] = useState(false);
+
+
+  const handleAddFavorites = (id) => {
+    dispatch(AddToFavorites(id));
+  };
+
+  const handleRemoveFavorites = (id) => {
+    dispatch(RemoveFromFavorites(id));
+  };
 
   return (
     <>
@@ -34,6 +46,8 @@ const AnimalsList = () => {
             key={notice?._id}
             setShowAttention={setShowAttention}
             setShowFirstNotification={setShowFirstNotification}
+            onAddFavorites={handleAddFavorites}
+            onRemoveFavorites={handleRemoveFavorites}
           />
         ))}
       </ListOfNotices>

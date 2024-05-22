@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
+import { noScroll } from "../../../functions/noScroll";
 import MobileMenu from "../../MobileMenu/MobileMenu";
 import sprite from "../../../assets/icons/icons.svg";
 import { BurgerBtnContainer, Button } from "./BurgerBtn.styled";
@@ -8,14 +9,7 @@ const BurgerBtn = ({ isHomepage }) => {
   const [isShowMobileMenu, setIsShowMobileMenu] = useState(false);
 
   useEffect(() => {
-    if (isShowMobileMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    noScroll(isShowMobileMenu);
   }, [isShowMobileMenu]);
 
   return (
@@ -23,7 +17,7 @@ const BurgerBtn = ({ isHomepage }) => {
       <BurgerBtnContainer>
         <Button
           type="button"
-          onClick={() => setIsShowMobileMenu((prev) => !prev)}
+          onClick={() => setIsShowMobileMenu(prev => !prev)}
           ishomepage={isHomepage.toString()}
         >
           <svg width={32} height={32}>

@@ -1,35 +1,22 @@
 // @ts-nocheck
-import React, { useEffect } from "react";
+import React from "react";
 import Select from "react-select";
 import { useMediaQuery } from "react-responsive";
-import { useDispatch } from "react-redux";
-import { fetchSpecies } from "../../../../redux/notices/operations";
 import { useNotices } from "../../../../hooks/useNotices";
 
 const TypeAnimal = ({ petType, setPetType }) => {
   const tablet = useMediaQuery({ minWidth: 768 });
-  const dispatch = useDispatch();
   const { species } = useNotices();
 
-  const speciesData = [
-    ...species?.map((item) => ({
+  const speciesData = [...species?.map((item) => ({
       value: item,
       label: item?.charAt(0).toUpperCase() + item?.slice(1),
     })),
   ];
 
-  useEffect(() => {
-    dispatch(fetchSpecies());
-  }, [dispatch]);
+  const handleByType = e => setPetType(e?.value);
 
-  const handleByType = (e) => {
-    setPetType(e?.value);
-  };
-
-  const selectValue =
-    petType === null
-      ? null
-      : speciesData.find((option) => option.value === petType);
+  const selectValue = petType === null ? null : speciesData.find((option) => option.value === petType);
 
   return (
     <>

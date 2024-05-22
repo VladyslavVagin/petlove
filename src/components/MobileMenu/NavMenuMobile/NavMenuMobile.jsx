@@ -1,12 +1,7 @@
 // @ts-nocheck
 import React from "react";
+import { linksData } from "../../../lib/menuLinks/menu";
 import { NavMenuList, StyledNavLink } from "./NavMenuMobile.styled";
-
-const linksData = [
-  { to: "/news", label: "News" },
-  { to: "/notices", label: "Find pet" },
-  { to: "friends", label: "Our friends" },
-];
 
 const NavMenuMobile = ({ isHomepage, setIsShowMobileMenu }) => {
   return (

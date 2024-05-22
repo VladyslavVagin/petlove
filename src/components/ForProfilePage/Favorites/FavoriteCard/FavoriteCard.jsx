@@ -1,9 +1,6 @@
 // @ts-nocheck
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useAuth } from "../../../../hooks/useAuth";
-import { refreshUser } from "../../../../redux/auth/operations";
-import { RemoveFromFavorites } from "../../../../redux/notices/operations";
+import React, { useState } from "react";
+import { formatBirthday } from "../../../../functions/formatBirthday";
 import DetailsModal from "../../../ForNoticesPage/DetailsModal/DetailsModal";
 import sprite from "../../../../assets/icons/icons.svg";
 import {
@@ -17,9 +14,7 @@ import {
   TitlePopularityBox,
 } from "./FavoriteCard.styled";
 
-const FavCard = ({ notice }) => {
-  const dispatch = useDispatch();
-  const { favoritesNotices } = useAuth();
+const FavCard = ({ notice, onRemoveFavorites, favorites }) => {
   const [showDetails, setShowDetails] = useState(false);
   const {
     imgURL,
@@ -34,16 +29,9 @@ const FavCard = ({ notice }) => {
     _id,
   } = notice;
   const [isFavorite, setIsFavorite] = useState(
-    favoritesNotices?.find((fav) => (fav._id === _id ? true : false))
+    favorites?.find((fav) => (fav._id === _id ? true : false))
   );
-  const date = new Date(birthday);
-  const formattedDate = date
-    .toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    })
-    .replace(/\//g, ".");
+  const formattedDate = formatBirthday(birthday);
 
   const details = [
     { label: "Name", value: name },
@@ -53,15 +41,7 @@ const FavCard = ({ notice }) => {
     { label: "Category", value: category },
   ];
 
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch, isFavorite]);
-
-  const handleRemoveFavorites = () => {
-    dispatch(RemoveFromFavorites(_id));
-    setIsFavorite(false);
-    dispatch(refreshUser());
-  };
+  const handleRemoveFavorites = () => onRemoveFavorites(_id);
 
   const handleLearnMore = () => setShowDetails(true);
 

@@ -11,7 +11,6 @@ const SexButtons = ({ setSexPet, sexPet }) => {
   }
 
   return (
-    <div>
       <ListItems>
         <FemaleLi data-value="female" onClick={handleChooseSex} datavalue={sexPet}>
           <svg width={24} height={24} datavalue={sexPet}>
@@ -29,7 +28,6 @@ const SexButtons = ({ setSexPet, sexPet }) => {
           </svg>
         </MultipleLi>
       </ListItems>
-    </div>
   );
 };
 

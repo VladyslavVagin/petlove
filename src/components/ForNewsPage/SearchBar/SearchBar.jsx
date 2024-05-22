@@ -1,13 +1,14 @@
 // @ts-nocheck
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import sprite from "../../../assets/icons/icons.svg";
+import { fetchNews } from "../../../redux/news/operations";
 import {
   CancelSearchBtn,
   SearchForm,
   SubmitSearchBtn,
 } from "./SearchBar.styled";
-import { useDispatch } from "react-redux";
-import { fetchNews } from "../../../redux/news/operations";
 
 const SearchBar = ({ setSearchValue, setCurrentPage, searchValue }) => {
   const [inputValue, setInputValue] = useState("");
@@ -19,13 +20,11 @@ const SearchBar = ({ setSearchValue, setCurrentPage, searchValue }) => {
       setSearchValue(inputValue);
       setCurrentPage(1);
     } else {
-      alert("You can't put empty field");
+      toast.warning("You can't put empty field");
     }
   };
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
+  const handleInputChange = e => setInputValue(e.target.value);
 
   const handleCancelSearch = async () => {
     setInputValue("");

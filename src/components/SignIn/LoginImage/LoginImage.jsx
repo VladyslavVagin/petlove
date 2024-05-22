@@ -21,7 +21,6 @@ const LoginImage = () => {
   const {imgUrl, name, birthday, comment} = LoginMessage;
 
   return (
-    <div>
       <LoginImageBox>
         <picture>
         <source
@@ -46,7 +45,6 @@ const LoginImage = () => {
         </svg>
         {tablet && <Message imgUrl={imgUrl} name={name} birthday={birthday} comment={comment}/>}
       </LoginImageBox>
-    </div>
   );
 };
 

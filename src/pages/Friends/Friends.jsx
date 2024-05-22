@@ -13,9 +13,7 @@ const Friends = () => {
   const { isLoadFriends } = useFriends();
 
   useEffect(() => {
-    const getFriends = async () => await dispatch(fetchFriends());
-    getFriends();
-    return () => getFriends();
+   dispatch(fetchFriends());
   }, [dispatch]);
 
   return (

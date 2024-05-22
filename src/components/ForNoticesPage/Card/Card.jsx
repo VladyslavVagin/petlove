@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { formatBirthday } from "../../../functions/formatBirthday";
 import { useAuth } from "../../../hooks/useAuth";
 import {
   AddToFavorites,
   RemoveFromFavorites,
 } from "../../../redux/notices/operations";
 import DetailsModal from "../DetailsModal/DetailsModal";
-import { refreshUser, viewedPet } from "../../../redux/auth/operations";
+import { viewedPet } from "../../../redux/auth/operations";
 import sprite from "../../../assets/icons/icons.svg";
 import {
   BtnLike,
@@ -21,7 +22,7 @@ import {
   TitlePopularityBox,
 } from "./Card.styled";
 
-const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
+const Card = ({ notice, setShowAttention, setShowFirstNotification, onAddFavorites, onRemoveFavorites }) => {
   const location = useLocation();
   const dispatch = useDispatch();
   const [showDetails, setShowDetails] = useState(false);
@@ -42,14 +43,7 @@ const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
   const [isFavorite, setIsFavorite] = useState(
     favoritesNotices?.find((fav) => (fav._id === _id ? true : false))
   );
-  const date = new Date(birthday);
-  const formattedDate = date
-    .toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    })
-    .replace(/\//g, ".");
+  const formattedDate = formatBirthday(birthday);
 
   const details = [
     { label: "Name", value: name },
@@ -71,11 +65,7 @@ const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
     if(showDetails && !isViewedPage) {
       dispatch(viewedPet(_id));
     }
-  }, [_id, dispatch, isViewedPage, showDetails]);
-
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch, isFavorite]);
+  }, [_id, isViewedPage, showDetails]);
 
   const handleAddFavorites = () => {
     if (!isLoggedIn) {
@@ -84,13 +74,13 @@ const Card = ({ notice, setShowAttention, setShowFirstNotification }) => {
       if (favoritesNotices?.length === 0) {
         setShowFirstNotification(true);
       }
-      dispatch(AddToFavorites(_id));
+      onAddFavorites(_id);  
       setIsFavorite(true);
     }
   };
 
   const handleRemoveFavorites = () => {
-    dispatch(RemoveFromFavorites(_id));
+    onRemoveFavorites(_id);
     setIsFavorite(false);
   };
 

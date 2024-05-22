@@ -1,17 +1,10 @@
 import React from "react";
+import { formatBirthday } from "../../../../functions/formatBirthday";
 import { ListInfoPet } from "./PetInfo.styled";
 
 const PetInfo = ({ pet }) => {
   const { name, birthday, sex, species } = pet;
-
-  const date = new Date(birthday);
-  const formattedDate = date
-    .toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    })
-    .replace(/\//g, ".");
+  const formattedDate = formatBirthday(birthday);
 
   const details = [
     { label: "Name", value: name },

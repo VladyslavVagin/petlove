@@ -1,14 +1,10 @@
 import React from "react";
+import { workHours } from "../../../functions/workHours";
 import { CardContainer, InfoCompany, InfoLink, ListDetails, LogoCompany } from "./FriendItem.styled";
 
 const FriendItem = ({ friend }) => {
   const { address, addressUrl, email, imageUrl, phone, title, url, workDays } = friend;
-
-  const workingHours = workDays?.filter((day) => day?.isOpen).map((day) => {
-      const fromTime = day.from ? day.from.slice(0, 5) : "00:00";
-      const toTime = day.to ? day.to.slice(0, 5) : "00:00";
-      return `${fromTime} - ${toTime}`;
-    })[0];
+  const workingHours = workHours(workDays);
 
   return (
     <CardContainer>

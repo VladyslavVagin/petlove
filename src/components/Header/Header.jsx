@@ -8,7 +8,7 @@ import Logo from "./Logo/Logo";
 import BurgerBtn from "./BurgerBtn/BurgerBtn";
 import LogoutHeader from "./LogoutHeader/LogoutHeader";
 import NavMenu from "./NavMenu/NavMenu";
-import AuthNavHeader from "../AuthNav/AuthNavHeader/AuthNavHeader";
+import AuthNav from "../AuthNav/AuthNav";
 import { BlockBtns, HeaderContainer, MainHeader } from "./Header.styled";
 
 const Header = () => {
@@ -33,7 +33,7 @@ const Header = () => {
         <Logo isHomepage={isHomepage} />
         {desktop && <NavMenu isHomepage={isHomepage}/>}
         <BlockBtns>
-          {((!isLoggedIn && !isHomepage && tablet && tabletEnd) || (!isLoggedIn && desktop)) && <AuthNavHeader />}
+          {((!isLoggedIn && !isHomepage && tablet && tabletEnd) || (!isLoggedIn && desktop)) && <AuthNav />}
           {isLoggedIn && !isHomepage && tablet && <LogoutHeader />}
           {isLoggedIn && <UserProfileBtn isHomepage={isHomepage} />}
           <BurgerBtn isHomepage={isHomepage} />

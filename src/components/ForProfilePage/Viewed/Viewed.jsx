@@ -6,7 +6,6 @@ import ViewedList from "./ViewedList/ViewedList";
 
 const Viewed = () => {
   const { viewedNotices } = useAuth();
-  console.log(viewedNotices);
 
   return (
     <div>

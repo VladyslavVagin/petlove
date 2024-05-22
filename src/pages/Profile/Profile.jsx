@@ -17,7 +17,7 @@ const Profile = () => {
 
   useEffect(() => {
     dispatch(refreshUser());
-  }, [dispatch]);
+  }, []);
 
   return (
     <>

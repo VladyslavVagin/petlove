@@ -1,8 +1,7 @@
 // @ts-nocheck
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { useAuth } from "../../../../hooks/useAuth";
-import { refreshUser } from "../../../../redux/auth/operations";
 import {
   AddToFavorites,
   RemoveFromFavorites,
@@ -13,10 +12,6 @@ import { AddRemoveBtn, ButtonsContainer, ContactBtn } from "./Buttons.styled";
 const Buttons = ({ isFavorite, id, setIsFavorite, setShowFirstNotification }) => {
   const dispatch = useDispatch();
   const {favoritesNotices} = useAuth();
-
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch, isFavorite]);
 
   const handleAddFavorites = () => {
     if(favoritesNotices?.length === 0) {
