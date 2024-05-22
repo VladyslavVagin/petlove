@@ -16,7 +16,7 @@ const SharedLayout = () => {
   useEffect(() => {
     setTimeout(() => setShowFirstScreen(false), 6000);
     dispatch(fetchSpecies());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

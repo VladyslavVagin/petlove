@@ -1,6 +1,8 @@
 // @ts-nocheck
-import React, { lazy } from "react";
+import React, { lazy, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { refreshUser } from "../redux/auth/operations";
 import SharedLayout from "./SharedLayout/SharedLayout";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
@@ -18,6 +20,11 @@ const Favorites = lazy(() => import("../components/ForProfilePage/Favorites/Favo
 const Viewed = lazy(() => import("../components/ForProfilePage/Viewed/Viewed"));
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return (
     <>
